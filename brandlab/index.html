@@ -580,6 +580,66 @@ h1:focus { outline: none; }
 .cform .btn { width: 100%; }
 .fmsg { padding: 16px 18px; font-size: .9375rem; background: var(--paper); border-left: 2px solid var(--gold); }
 .fmsg.err { border-left-color: var(--error); }
+
+/* ---------- 관리자 ---------- */
+.ftr-admin { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.ftr-admin:hover { color: var(--white); }
+.adm-login { display: grid; gap: 10px; max-width: 440px; }
+.adm-login label { font-size: .8rem; font-weight: 500; color: var(--muted); }
+.adm-pw { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.adm-pw input { min-width: 0; padding: 12px 14px; border: 1px solid var(--rule); background: var(--white); font: inherit; }
+.adm-pw input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+.adm-top, .adm-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+.adm-top { margin-bottom: 18px; font-size: .8rem; color: var(--muted); }
+.adm-btns { display: flex; gap: 8px; }
+.adm-btn { padding: 8px 14px; border: 1px solid var(--ink); background: transparent; color: var(--ink); font: inherit; font-size: .78rem; font-weight: 700; cursor: pointer; }
+.adm-btn:hover { background: var(--ink); color: var(--white); }
+.adm-kpi { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.adm-kpi li { display: grid; gap: 6px; padding: 18px 12px 18px 0; border-bottom: 1px solid var(--rule); }
+.adm-kpi li + li { padding-left: 14px; border-left: 1px solid var(--rule); }
+.adm-kpi b { font-family: var(--serif-en); font-size: clamp(1.8rem, 1.4rem + 1.2vw, 2.6rem); font-weight: 500; line-height: 1; font-variant-numeric: lining-nums tabular-nums; color: var(--navy); }
+.adm-kpi span { font-size: .75rem; color: var(--muted); }
+.adm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.adm-card { padding: clamp(16px, 2vw, 24px); background: var(--white); border: 1px solid var(--rule); }
+.adm-gap { margin-top: 16px; }
+.adm-card h2 { margin-bottom: 16px; font-size: .9375rem; font-weight: 700; }
+.adm-head h2 { margin-bottom: 0; }
+.adm-head { margin-bottom: 12px; }
+.adm-bars { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); grid-template-rows: 140px; align-items: end; gap: 4px; border-bottom: 1px solid var(--muted); }
+.adm-bars span { min-height: 1px; background: var(--navy); border-radius: 3px 3px 0 0; }
+.adm-bars.inq span { background: var(--gold-deep); }
+.adm-bars span:hover { opacity: .75; }
+.adm-x { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); gap: 4px; margin-top: 6px; font-size: .62rem; color: var(--muted); white-space: nowrap; }
+.adm-sum { margin-top: 10px; font-size: .78rem; color: var(--muted); }
+.adm-sum b { color: var(--ink); }
+.adm-pages li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: .875rem; }
+.adm-pages li > b { font-variant-numeric: tabular-nums; }
+.adm-pages i { grid-column: 1 / -1; height: 4px; background: var(--paper-2); }
+.adm-pages em { display: block; height: 100%; background: var(--navy); }
+.adm-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.adm-table th { padding: 10px 8px; border-bottom: 1px solid var(--ink); text-align: left; font-size: .75rem; font-weight: 500; color: var(--muted); }
+.adm-table td { padding: 12px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.adm-table .t-date { white-space: nowrap; color: var(--muted); font-variant-numeric: tabular-nums; }
+.adm-table .t-co { font-weight: 700; }
+.adm-table a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+.adm-empty { padding: 20px 0; font-size: .875rem; color: var(--muted); }
+@media (max-width: 900px) {
+  .adm-kpi { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .adm-kpi li:nth-child(4) { padding-left: 0; border-left: 0; }
+  .adm-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .adm-kpi { grid-template-columns: 1fr 1fr; }
+  .adm-kpi li, .adm-kpi li + li { padding: 14px 10px 14px 0; border-left: 0; }
+  .adm-kpi li:nth-child(even) { padding-left: 12px; border-left: 1px solid var(--rule); }
+  .adm-kpi b { font-size: 1.6rem; }
+  .adm-bars { grid-template-rows: 110px; gap: 3px; }
+  .adm-table thead { display: none; }
+  .adm-table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+  .adm-table td { padding: 0; border: 0; }
+  .adm-table .t-date { grid-column: 1 / -1; font-size: .75rem; }
+  .adm-table .adm-empty { grid-column: 1 / -1; padding: 8px 0; }
+}
 .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .agree-more { margin-top: -8px; font-size: .78rem; color: var(--muted); }
 .agree-more summary { width: max-content; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
@@ -1938,9 +1998,8 @@ h1:focus { outline: none; }
           </div>
         </aside>
 
-        <form class="cform" id="cform" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-          <input type="hidden" name="form-name" value="contact">
-          <p class="hp" aria-hidden="true"><label>이 칸은 비워 두세요<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <form class="cform" id="cform" novalidate>
+          <p class="hp" aria-hidden="true"><label>이 칸은 비워 두세요<input id="c-bot" name="bot" tabindex="-1" autocomplete="off"></label></p>
           <h2 class="cform-h">상담 신청서</h2>
           <div class="fgrid">
             <div class="f"><label for="c-company">회사명</label><input id="c-company" name="company" autocomplete="organization" required></div>
@@ -1972,6 +2031,44 @@ h1:focus { outline: none; }
     </section>
     <section class="sec-m bg-white" id="dg-result-sec" hidden>
       <div class="wrap" id="dg-result"></div>
+    </section>
+  </section>
+
+  <!-- ===================== 관리자 (비밀번호 확인 · 데이터는 서버 함수가 맡는다) ===================== -->
+  <section class="page" data-route="admin" hidden>
+    <header class="phero dark">
+      <div class="wrap">
+        <h1 class="phero-title sm" tabindex="-1">Admin</h1>
+      </div>
+    </header>
+    <section class="sec-m">
+      <div class="wrap">
+        <form class="adm-login" id="adm-login" novalidate>
+          <label for="adm-pw">비밀번호</label>
+          <div class="adm-pw"><input id="adm-pw" type="password" autocomplete="current-password" required><button class="btn btn-navy" type="submit">로그인<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></button></div>
+          <p class="fmsg err" id="adm-msg" role="alert" hidden></p>
+        </form>
+
+        <div class="adm-dash" id="adm-dash" hidden>
+          <div class="adm-top">
+            <p id="adm-updated"></p>
+            <div class="adm-btns"><button class="adm-btn" type="button" id="adm-refresh">새로고침</button><button class="adm-btn" type="button" id="adm-logout">로그아웃</button></div>
+          </div>
+          <ul class="adm-kpi" id="adm-kpi"></ul>
+          <div class="adm-grid">
+            <section class="adm-card"><h2>최근 14일 방문자</h2><div id="adm-chart-v"></div></section>
+            <section class="adm-card"><h2>최근 14일 문의</h2><div id="adm-chart-i"></div></section>
+          </div>
+          <section class="adm-card adm-gap"><h2>많이 본 페이지 · 최근 30일</h2><ol class="adm-pages" id="adm-pages"></ol></section>
+          <section class="adm-card adm-gap">
+            <div class="adm-head"><h2>문의 목록 <span id="adm-count"></span></h2><button class="adm-btn" type="button" id="adm-csv">엑셀(CSV) 내려받기</button></div>
+            <table class="adm-table">
+              <thead><tr><th>접수일시</th><th>회사명</th><th>대표자명</th><th>연락처</th></tr></thead>
+              <tbody id="adm-rows"></tbody>
+            </table>
+          </section>
+        </div>
+      </div>
     </section>
   </section>
 </main>
@@ -2009,7 +2106,7 @@ h1:focus { outline: none; }
     </div>
     <div class="ftr-bot">
       <p>© 2026 토브 브랜딩 컴퍼니. All rights reserved.</p>
-      <p>Photography: Unsplash</p>
+      <p>Photography: Unsplash · <a class="ftr-admin" href="#admin">관리자</a></p>
     </div>
   </div>
 </footer>
@@ -2405,6 +2502,7 @@ h1:focus { outline: none; }
     if (h === 'press') return { page: 'work', nav: 'work', anchor: 'press-sec' };   // 보도는 WORK 페이지 안에 있다
     if (h === 'dental-program') return { page: 'program', nav: 'work' };
     if (h === 'mfg-program') return { page: 'mfg', nav: 'work' };
+    if (h === 'admin') return { page: 'admin', nav: '' };
     if (PAGES.indexOf(h) > -1) return { page: h, nav: h };
     return { page: 'home', nav: 'home' };
   }
@@ -2413,6 +2511,7 @@ h1:focus { outline: none; }
     const r = parse();
     if (r.page === 'service') renderService(r.slug);
     if (r.page === 'case') renderCase(r.slug);
+    if (r.page === 'admin') admEnter();
     $$('.page').forEach(p => { p.hidden = p.dataset.route !== r.page; });
     $$('[data-nav]').forEach(a => {
       if (a.dataset.nav === r.nav) a.setAttribute('aria-current', 'page');
@@ -2423,6 +2522,7 @@ h1:focus { outline: none; }
     window.scrollTo(0, 0);
     if (r.anchor) requestAnimationFrame(() => { const el = document.getElementById(r.anchor); if (el) el.scrollIntoView({ block: 'start' }); });
     onScroll();
+    track(r.page === 'home' ? 'home' : decodeURIComponent(location.hash.slice(1)) || 'home');
     if (ready) {
       const h1 = $(`.page[data-route="${r.page}"] h1`);
       if (h1) h1.focus({ preventScroll: true });
@@ -2506,12 +2606,15 @@ h1:focus { outline: none; }
     msg.className = 'fmsg full';
     if (PREVIEW) { msg.textContent = '미리보기 화면에서는 신청 내용이 전송되지 않습니다.'; return; }
 
-    const fd = new FormData(form);
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     msg.textContent = '전송 중입니다.';
     try {
-      const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fd).toString() });
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ company: $('#c-company').value, name: $('#c-name').value, phone: $('#c-phone').value, agree: $('#c-agree').checked, bot: $('#c-bot').value })
+      });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       form.reset();
       msg.textContent = '상담 신청이 접수되었습니다. 검토 후 연락드리겠습니다.';
@@ -2521,6 +2624,132 @@ h1:focus { outline: none; }
     } finally {
       btn.disabled = false;
     }
+  });
+
+  /* ================= 방문 집계 (배포된 사이트에서만, 관리자 화면 제외) ================= */
+  function track(key) {
+    if (PREVIEW || key === 'admin') return;
+    let isNew = false;
+    try {
+      const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+      if (localStorage.getItem('tov-visit') !== today) { localStorage.setItem('tov-visit', today); isNew = true; }
+    } catch (err) { /* 저장할 수 없는 브라우저는 방문자 수에서 빠진다 */ }
+    const body = JSON.stringify({ page: key, isNew });
+    try {
+      if (!(navigator.sendBeacon && navigator.sendBeacon('/api/track', body))) fetch('/api/track', { method: 'POST', body, keepalive: true });
+    } catch (err) { /* 집계 실패는 무시 */ }
+  }
+
+  /* ================= 관리자 ================= */
+  const ADM_KEY = 'tov-admin-token';
+  const admToken = {
+    get() { try { return sessionStorage.getItem(ADM_KEY) || ''; } catch (err) { return ''; } },
+    set(v) { try { if (v) sessionStorage.setItem(ADM_KEY, v); else sessionStorage.removeItem(ADM_KEY); } catch (err) { /* 저장 불가 */ } }
+  };
+  let admData = null;
+  const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const num = n => Number(n || 0).toLocaleString('ko-KR');
+  const kstTime = iso => new Date(iso).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
+  const mmdd = date => date.slice(5).replace('-', '.');
+  const PAGE_LABEL = { home: '홈', about: '소개', expertise: '서비스', work: '프로젝트', press: '보도', contact: '상담 신청', diagnosis: '브랜드 진단', 'dental-program': '치과 & 기공소 자세히 보기', 'mfg-program': '제조 · 유통 자세히 보기' };
+  const pageLabel = k => {
+    if (PAGE_LABEL[k]) return PAGE_LABEL[k];
+    if (k.indexOf('expertise-') === 0 && svcBy(k.slice(10))) return '서비스 · ' + svcBy(k.slice(10)).en;
+    if (k.indexOf('work-') === 0 && caseBy(k.slice(5))) return '사례 · ' + caseBy(k.slice(5)).name;
+    return k;
+  };
+
+  function admShow(dash) { $('#adm-login').hidden = dash; $('#adm-dash').hidden = !dash; }
+  function admEnter() { if (admToken.get()) admLoad(); else admShow(false); }
+
+  async function admLoad() {
+    const msg = $('#adm-msg');
+    try {
+      const res = await fetch('/api/admin/data', { headers: { Authorization: 'Bearer ' + admToken.get() }, cache: 'no-store' });
+      if (res.status === 401) { admToken.set(''); admShow(false); return; }
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      admData = await res.json();
+      admRender(admData);
+      msg.hidden = true;
+      admShow(true);
+    } catch (err) {
+      admShow(false);
+      msg.hidden = false;
+      msg.textContent = '데이터를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.';
+    }
+  }
+
+  // 막대 그래프 (한 가지 값, 마우스를 올리면 날짜 · 값)
+  function admBars(rows, key, label, cls) {
+    const max = Math.max(1, ...rows.map(r => r[key]));
+    const total = rows.reduce((s, r) => s + r[key], 0);
+    return `<div class="adm-bars ${cls}" role="img" aria-label="${label} 최근 14일 합계 ${num(total)}">${rows.map(r => `<span style="height:${(r[key] / max * 100).toFixed(1)}%" title="${mmdd(r.date)} · ${num(r[key])}"></span>`).join('')}</div>
+      <div class="adm-x" aria-hidden="true">${rows.map((r, i) => `<span>${i % 7 === 0 || i === rows.length - 1 ? mmdd(r.date) : ''}</span>`).join('')}</div>
+      <p class="adm-sum">합계 <b>${num(total)}</b> · 최고 ${num(max === 1 && !rows.some(r => r[key]) ? 0 : max)}</p>`;
+  }
+
+  function admRender(d) {
+    const sum = (rows, k) => rows.reduce((s, r) => s + r[k], 0);
+    const today = d.daily[d.daily.length - 1];
+    const kpi = [
+      [today.visitors, '오늘 방문자'],
+      [sum(d.daily.slice(-7), 'visitors'), '최근 7일 방문자'],
+      [sum(d.daily, 'visitors'), '최근 30일 방문자'],
+      [sum(d.daily, 'views'), '최근 30일 페이지뷰'],
+      [sum(d.daily, 'inquiries'), '최근 30일 문의'],
+      [d.inquiries.length, '전체 문의']
+    ];
+    $('#adm-kpi').innerHTML = kpi.map(([v, l]) => `<li><b>${num(v)}</b><span>${l}</span></li>`).join('');
+    const d14 = d.daily.slice(-14);
+    $('#adm-chart-v').innerHTML = admBars(d14, 'visitors', '방문자', '');
+    $('#adm-chart-i').innerHTML = admBars(d14, 'inquiries', '문의', 'inq');
+    const pmax = Math.max(1, ...d.pages.map(p => p[1]));
+    $('#adm-pages').innerHTML = d.pages.length
+      ? d.pages.map(([k, n]) => `<li><span>${esc(pageLabel(k))}</span><b>${num(n)}</b><i><em style="width:${(n / pmax * 100).toFixed(1)}%"></em></i></li>`).join('')
+      : '<li class="adm-empty">아직 집계된 방문이 없습니다.</li>';
+    $('#adm-count').textContent = num(d.inquiries.length) + '건';
+    $('#adm-rows').innerHTML = d.inquiries.length
+      ? d.inquiries.map(q => `<tr><td class="t-date">${esc(kstTime(q.createdAt))}</td><td class="t-co">${esc(q.company)}</td><td>${esc(q.name)}</td><td><a href="tel:${esc(q.phone.replace(/[^0-9+]/g, ''))}">${esc(q.phone)}</a></td></tr>`).join('')
+      : '<tr><td colspan="4" class="adm-empty">아직 접수된 문의가 없습니다.</td></tr>';
+    $('#adm-updated').textContent = '불러온 시각 ' + kstTime(d.generatedAt);
+  }
+
+  $('#adm-login').addEventListener('submit', async e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const msg = $('#adm-msg');
+    const pw = $('#adm-pw');
+    msg.hidden = false;
+    if (PREVIEW) { msg.textContent = '미리보기 화면에서는 관리자 기능을 쓸 수 없습니다. 배포된 사이트에서 로그인해 주세요.'; return; }
+    if (!pw.value) { msg.textContent = '비밀번호를 입력해 주세요.'; return; }
+    const btn = form.querySelector('button');
+    btn.disabled = true;
+    msg.textContent = '확인 중입니다.';
+    try {
+      const res = await fetch('/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: pw.value }) });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.token) { admToken.set(data.token); pw.value = ''; msg.hidden = true; await admLoad(); }
+      else msg.textContent = data.error === 'not-configured' ? '관리자 비밀번호가 아직 설정되지 않았습니다. Netlify 환경 변수 ADMIN_PASSWORD를 확인해 주세요.' : '비밀번호가 맞지 않습니다.';
+    } catch (err) {
+      msg.textContent = '연결하지 못했습니다. 잠시 후 다시 시도해 주세요.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+  $('#adm-refresh').addEventListener('click', admLoad);
+  $('#adm-logout').addEventListener('click', () => { admToken.set(''); admData = null; admShow(false); $('#adm-pw').focus(); });
+  $('#adm-csv').addEventListener('click', () => {
+    if (!admData) return;
+    const cell = v => { const s = String(v ?? ''); return '"' + (/^[=+\-@]/.test(s) ? "'" + s : s).replace(/"/g, '""') + '"'; };
+    const rows = [['접수일시', '회사명', '대표자명', '연락처'], ...admData.inquiries.map(q => [kstTime(q.createdAt), q.company, q.name, q.phone])];
+    const csv = '\ufeff' + rows.map(r => r.map(cell).join(',')).join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+    a.download = '상담문의_' + new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }) + '.csv';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   });
 
   /* ================= 시작 ================= */

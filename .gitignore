@@ -1,8 +1,14 @@
 # 사이트에 필요한 파일만 올린다.
-# 예전 시안, 원본 캡처 이미지, 보관 폴더 등 나머지는 올리지 않는다.
+# 예전 시안, 원본 캡처 이미지, 보관 폴더, node_modules 등 나머지는 올리지 않는다.
 /*
 !/.gitignore
 !/brandlab/
+!/netlify/
 !/build-site.mjs
 !/netlify.toml
+!/package.json
+!/package-lock.json
 !/README.md
+
+# Local Netlify folder
+.netlify

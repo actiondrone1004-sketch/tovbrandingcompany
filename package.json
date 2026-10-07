@@ -1,0 +1,14 @@
+{
+  "name": "tovbrandingcompany",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build-site.mjs"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.3"
+  }
+}
