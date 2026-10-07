@@ -1,0 +1,22 @@
+Image sources
+
+Official business assets (used with the owner's permission):
+  founder.jpg                  dendeal.ai.kr/about.html ("김상우 대표")
+  dendeal-logo.png             cropped from dendeal.ai.kr/splash-pc.png
+  dendeal-app1.jpg / app2.jpg  dendeal.ai.kr/about.html app screenshots (resized)
+  dendeal-app-delivery.jpg     dendeal.ai.kr/hero-app-screen.png (resized)
+  dendeal-cover.jpg            composite of the DENDEAL logo and app screenshots above
+  partners/*.jpg               dendeal.ai.kr/about.html partnership photos (resized)
+  kok-logo.jpg                 kokstudy.com og:image
+  kok-course.jpg               kokstudy.com course thumbnail (resized)
+
+Stock photos (Unsplash License: free for commercial use, no attribution required):
+  dental-hero.jpg         https://unsplash.com/photos/MCSmR0mw1CU
+  dental-office.jpg       https://unsplash.com/photos/e7MJLM5VGjY
+  dental-room.jpg         https://unsplash.com/photos/Fdku_oMrDvk
+  dental-xray.jpg         https://unsplash.com/photos/EiQmC6c4chk
+  dental-equipment.jpg    https://unsplash.com/photos/u-z6s-gnYDQ
+  dental-consult.jpg      https://unsplash.com/photos/Bg81yWKZlMg
+  dental-waiting.jpg      https://unsplash.com/photos/pxOQ-P97sA8
+  case-manufacturing.jpg  https://unsplash.com/photos/eHwRLpfHSKY  (Katarzyna Zygnerska)
+  dental-platform.jpg     사용자 제공 치과 플랫폼(AI 치과비서) 화면. 치과명·이름은 OO로 가림

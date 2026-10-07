@@ -1,0 +1,7 @@
+# Netlify 배포 설정: push하면 build-site.mjs가 site/ 폴더를 만들고 그 폴더를 공개한다
+[build]
+  command = "node build-site.mjs"
+  publish = "site"
+
+[build.environment]
+  NODE_VERSION = "22"
