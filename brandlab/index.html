@@ -325,6 +325,62 @@ h1:focus { outline: none; }
 .kw { display: flex; flex-wrap: wrap; gap: 10px 0; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--rule); }
 .kw li { font-family: var(--serif-en); font-size: clamp(.95rem, .9rem + .25vw, 1.1rem); font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
 .kw li:not(:last-child)::after { content: "/"; margin-inline: 14px; color: var(--gold); }
+/* ABOUT: 김상우 스토리 (드론 → 덴딜 → 토브) */
+.sty-drone { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(20px, 3vw, 40px); align-items: center; }
+.sty-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "a a b" "a a c" "d e f"; gap: 6px; }
+.sty-photos img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.sty-photos img:nth-child(1) { grid-area: a; }
+.sty-photos img:nth-child(2) { grid-area: b; }
+.sty-photos img:nth-child(3) { grid-area: c; }
+.sty-photos img:nth-child(4) { grid-area: d; }
+.sty-photos img:nth-child(5) { grid-area: e; }
+.sty-photos img:nth-child(6) { grid-area: f; }
+.sty-body { display: grid; justify-items: start; gap: 14px; }
+.sty-no { display: inline-block; padding: 4px 12px; background: var(--navy); color: var(--gold); font-size: .75rem; font-weight: 700; letter-spacing: .08em; }
+.sty-logo { width: clamp(110px, 12vw, 150px); height: auto; }
+.sty-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; border-top: 1px solid var(--ink); }
+.sty-nums li { display: grid; gap: 4px; padding: 12px 10px 12px 0; border-bottom: 1px solid var(--rule); }
+.sty-nums li + li:not(.sty-main + li) { padding-left: 12px; border-left: 1px solid var(--rule); }
+.sty-nums .sty-main { grid-column: 1 / -1; }
+.sty-nums b { font-family: var(--serif-en); font-size: clamp(1.5rem, 1.2rem + 1vw, 2.1rem); font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; color: var(--navy); }
+.sty-nums .sty-main b { font-size: clamp(2.6rem, 2rem + 2.4vw, 3.8rem); }
+.sty-nums em { font-style: normal; color: var(--gold-deep); }
+.sty-nums span { font-size: .78rem; color: var(--muted); }
+.sty-body .chips { margin-top: 0; }
+.sty-body .src { margin-top: -6px; }
+.sty-arrow { display: grid; place-items: center; margin-block: 18px; }
+.sty-arrow span { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--gold); color: var(--navy); transform: rotate(90deg); }
+.sty-arrow .i { width: 17px; height: 17px; stroke-width: 1.8; }
+.sty-next { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sty-next > li { display: grid; justify-items: start; align-content: start; gap: 14px; padding: clamp(18px, 2.4vw, 28px); background: var(--dd-bg); border: 1px solid var(--rule); }
+.sty-next .sty-tov { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.sty-tov .sty-no { background: var(--gold); color: var(--navy); }
+.sty-tov .chips li { border-color: var(--rule-dark); background: transparent; color: var(--white); }
+.sty-tov .tlink { color: var(--gold); }
+.sty-dd { width: 120px; height: auto; }
+.sty-name { font-family: var(--serif-ko); font-size: clamp(1.2rem, 1.05rem + .6vw, 1.6rem); font-weight: 500; }
+.sty-nums-2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 900px) { .sty-drone { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .sty-photos { gap: 4px; }
+  .sty-body { gap: 10px; }
+  .sty-logo { width: 96px; }
+  .sty-nums b { font-size: 1.3rem; }
+  .sty-nums .sty-main b { font-size: 2.6rem; }
+  .sty-nums span { font-size: .66rem; }
+  .sty-nums li { padding: 10px 6px 10px 0; }
+  .sty-nums li + li:not(.sty-main + li) { padding-left: 8px; }
+  .sty-arrow { margin-block: 12px; }
+  .sty-arrow span { width: 32px; height: 32px; }
+  .sty-next { gap: 8px; }
+  .sty-next > li { gap: 10px; padding: 14px; }
+  .sty-no { padding: 3px 8px; font-size: .66rem; }
+  .sty-dd { width: 84px; }
+  .sty-name { font-size: 1.05rem; }
+  .sty-next .chips li { padding: 3px 7px; font-size: .68rem; }
+  .sty-next .tlink { font-size: .75rem; }
+}
+
 /* ABOUT: 회사 이름 토브(טוֹב) */
 .tov { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .tov-mark { display: grid; justify-items: center; gap: 14px; padding: clamp(28px, 4vw, 52px) 0; background: var(--navy); }
@@ -483,7 +539,10 @@ h1:focus { outline: none; }
 .wide .cd-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .cd-shots img { width: 100%; height: auto; }
 .phones .cd-shots img { border-radius: 10px; }
-.cd-gallery.grid { background: var(--white); }
+.cd-gallery.grid, .cd-gallery.grid3 { background: var(--white); }
+.grid3 .cd-shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid3 .cd-shots img { aspect-ratio: 4 / 3; object-fit: cover; }
+.grid3 .cd-logo img { width: clamp(110px, 12vw, 150px); }
 .single .cd-shots { max-width: 760px; margin-inline: auto; }
 .grid .cd-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid .cd-shots img { aspect-ratio: 4 / 3; object-fit: cover; }
@@ -1369,7 +1428,7 @@ h1:focus { outline: none; }
         <div class="about-info">
           <h2 class="about-name">김상우</h2>
           <p class="about-title">Founder / Entrepreneur / Brand Growth Strategist</p>
-          <p class="about-aff">덴탈서비스 주식회사 CEO · 트리거뉴스 칼럼니스트</p>
+          <p class="about-aff">덴탈서비스 주식회사 CEO · 前 한국드론항공과학(액션드론) 대표 · 트리거뉴스 칼럼니스트</p>
         </div>
           <div class="career about-career">
             <div>
@@ -1383,7 +1442,7 @@ h1:focus { outline: none; }
                 <li><span class="cv-y">2017</span><span>교통안전공단 드론안전정책자문단 자문위원</span></li>
                 <li><span class="cv-y">2017</span><span>한국서비스산업진흥원 서비스기반 4차산업 100인</span></li>
                 <li><span class="cv-y">2016 –</span><span>덴탈서비스 주식회사 CEO</span></li>
-                <li><span class="cv-y">2016 – 2018</span><span>한국드론항공과학 대표이사</span></li>
+                <li><span class="cv-y">2016 – 2018</span><span>한국드론항공과학 대표이사 · 액션드론</span></li>
               </ol>
             </div>
             <div>
@@ -1393,6 +1452,51 @@ h1:focus { outline: none; }
               </ol>
             </div>
           </div>
+      </div>
+    </section>
+
+    <!-- 김상우 스토리: 드론 교육 → 덴탈 플랫폼 → 브랜딩 -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="shead-row"><div class="shead"><h2 class="h2">드론 교육에서 시작해<br>치과 산업까지</h2></div></div>
+        <article class="sty-drone">
+          <div class="sty-photos">
+            <img src="img/drone-lecture.jpg" alt="학교 강당 드론 강의" loading="lazy">
+            <img src="img/drone-festival.jpg" alt="광명 스피돔 어린이날 페스티벌 드론 체험" loading="lazy">
+            <img src="img/drone-fest-tent.jpg" alt="지역 축제 드론 비행 체험 부스" loading="lazy">
+            <img src="img/drone-school.jpg" alt="학교 체육관 드론 비행 수업" loading="lazy">
+            <img src="img/drone-camp.jpg" alt="액션드론 캠프 수업" loading="lazy">
+            <img src="img/drone-crowd.jpg" alt="지역 축제 드론 체험 행사" loading="lazy">
+          </div>
+          <div class="sty-body">
+            <span class="sty-no">01 · 드론 교육</span>
+            <img class="sty-logo" src="img/actiondrone-logo.png" alt="액션드론 ActionDrone">
+            <ul class="sty-nums">
+              <li class="sty-main"><b>5만<em>+</em></b><span>누적 교육 인원</span></li>
+              <li><b>200<em>+</em></b><span>학교 체험학습</span></li>
+              <li><b>100<em>+</em></b><span>기업 · 기관 행사</span></li>
+              <li><b>30<em>+</em></b><span>지역 드론 축제</span></li>
+            </ul>
+            <ul class="chips"><li>초 · 중 · 고</li><li>기관 · 기업</li><li>드론 페스티벌</li><li class="chip-key">드론 안전 정책 자문</li></ul>
+            <p class="src">액션드론 자료 기준 · 학교 · 행사 수는 2018년</p>
+            <a class="tlink" href="#work-actiondrone">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </article>
+        <div class="sty-arrow" aria-hidden="true"><span><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></span></div>
+        <ol class="sty-next">
+          <li>
+            <span class="sty-no">02 · 덴탈 플랫폼</span>
+            <img class="sty-dd" src="img/dendeal-logo.png" alt="Den.deal">
+            <ul class="sty-nums sty-nums-2"><li><b>3,500<em>+</em></b><span>협력 치과</span></li><li><b>35<em>%</em></b><span>수도권 점유율</span></li></ul>
+            <a class="tlink" href="#work-dendeal">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </li>
+          <li class="sty-tov">
+            <span class="sty-no">03 · 브랜딩</span>
+            <b class="sty-name">토브 브랜딩 컴퍼니</b>
+            <ul class="chips"><li>치과</li><li>기공소</li><li>덴탈 기업</li></ul>
+            <a class="tlink" href="#work">Work<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -2161,7 +2265,19 @@ h1:focus { outline: none; }
       strategy: '기업 브랜드와 대표 브랜딩을 함께 세우고, 제품 포지셔닝을 영업 현장에서 쓰는 자료로 연결한다.',
       execution: ['Corporate Brand', 'Product Positioning', 'Founder Branding', 'Website', 'B2B Marketing', 'Sales Support'],
       results: ['기업 브랜드 체계 정리', '제품 포지셔닝 정립', '대표 브랜딩 콘텐츠 구축', 'B2B 영업 지원 자료 구축'] },
-    { slug: 'real-estate', no: '04', cat: 'etc', name: 'KOK 부동산학원', project: '이주왕 KOK 부동산학원', img: 'img/kok-logo.jpg', alt: 'KOK 부동산학원 로고',
+    { slug: 'actiondrone', no: '04', cat: 'etc', name: 'ACTION DRONE', project: '한국드론항공과학 · 액션드론', img: 'img/drone-lecture.jpg', alt: '학교 강당 드론 강의', logo: 'img/actiondrone-logo.png',
+      gallery: { type: 'grid3', items: [['img/drone-festival.jpg', '광명 스피돔 어린이날 페스티벌 드론 체험'], ['img/drone-fest-tent.jpg', '지역 축제 드론 비행 체험 부스'], ['img/drone-booth.jpg', '액션드론 드론 체험 부스'], ['img/drone-school.jpg', '학교 체육관 드론 비행 수업'], ['img/drone-camp.jpg', '액션드론 캠프 수업'], ['img/drone-crowd.jpg', '지역 축제 드론 체험 행사']] },
+      industry: 'Drone / Education / Festival', role: 'Founder & CEO / Education Program / Event / Platform',
+      execution: ['Education Program', 'School Partnership', 'Drone Festival', 'Corporate Event', 'Instructor Training', 'Platform'],
+      metrics: [['5만+', '누적 교육 인원'], ['200+', '학교 체험학습 (2018)'], ['100+', '기업 · 기관 행사 · 교육 (2018)']],
+      metricsSource: '액션드론 자료 기준 · 교육 인원은 대표 제공',
+      results: ['전국 초 · 중 · 고 드론 교육', '어린이날 · 지역 축제 드론 페스티벌', '기업 · 기관 임직원 · 자녀 교육', '드론 안전 정책 자문'],
+      extra: [
+        { h: 'Programs', p: '드론 파일럿 · 항공 촬영 · 코딩 드론 · 드론 개발 · 드론 레이싱 · 드론 캠프' },
+        { h: 'Festivals', p: '광명 스피돔 어린이날 페스티벌 · 안산 · 포천 · 청평 어린이날 행사 · 춘천 의병마을 · 수원월드컵경기장' },
+        { h: 'Policy', p: '교통안전공단 드론안전정책자문단 자문위원 (2017)' }
+      ] },
+    { slug: 'real-estate', no: '05', cat: 'etc', name: 'KOK 부동산학원', project: '이주왕 KOK 부동산학원', img: 'img/kok-logo.jpg', alt: 'KOK 부동산학원 로고',
       gallery: { type: 'wide', items: [['img/kok-logo.jpg', 'KOK 부동산학원 로고'], ['img/kok-course.jpg', 'KOK 부동산학원 강의 썸네일']] },
       link: 'https://www.kokstudy.com/', linkLabel: 'kokstudy.com',
       industry: 'Real Estate / Brand / Lead Generation', role: 'Business Positioning / Website / Growth',

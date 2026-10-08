@@ -9,6 +9,8 @@ Official business assets (used with the owner's permission):
   partners/*.jpg               dendeal.ai.kr/about.html partnership photos (resized)
   kok-logo.jpg                 kokstudy.com og:image
   kok-course.jpg               kokstudy.com course thumbnail (resized)
+  actiondrone-logo.png         액션드론 로고 (대표 제공)
+  drone-*.jpg                  액션드론 · 한국드론항공과학 교육 · 행사 현장 사진 (대표 제공, 리사이즈 · 메타데이터 제거)
 
 Stock photos (Unsplash License: free for commercial use, no attribution required):
   dental-hero.jpg         https://unsplash.com/photos/MCSmR0mw1CU
