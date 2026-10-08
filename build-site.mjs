@@ -26,12 +26,12 @@ const head = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="치과 · 기공소 · 덴탈 제조 · 유통 기업을 위한 브랜드 컨설팅. 좋은 덴탈 기업이 제대로 보이도록 만듭니다.">
+<meta name="description" content="스타트업 · 중소기업을 위한 사업화 컨설팅. 사업기획 · 개발 · 마케팅 · 매출 · 투자까지, 사업을 직접 만들어 본 창업자가 함께합니다.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="토브 브랜딩 컴퍼니">
 <meta property="og:title" content="토브 브랜딩 컴퍼니">
-<meta property="og:description" content="좋은 덴탈 기업이 제대로 보이도록 만듭니다.">
+<meta property="og:description" content="좋은 사업이 제대로 성장하도록 만듭니다.">
 <meta name="theme-color" content="#071A2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 `;

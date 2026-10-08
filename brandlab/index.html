@@ -151,11 +151,10 @@ h1:focus { outline: none; }
 
 /* ---------- 홈 히어로 ---------- */
 .hero { position: relative; isolation: isolate; overflow: hidden; padding-block: calc(var(--hdr-h) + clamp(64px, 9vw, 120px)) clamp(72px, 9vw, 120px); }
-.hero-bg { position: absolute; inset: 0; z-index: -2; background: url("img/dental-hero.jpg") 62% 50% / cover no-repeat; }
-.hero::before {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(90deg, rgba(7, 26, 45, .97) 0%, rgba(7, 26, 45, .86) 42%, rgba(7, 26, 45, .52) 100%), linear-gradient(0deg, rgba(7, 26, 45, 1) 0%, rgba(7, 26, 45, 0) 42%);
-}
+.hero-bg { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: radial-gradient(ellipse 55% 75% at 82% 45%, rgba(185, 154, 99, .16), rgba(185, 154, 99, 0) 70%), var(--navy); }
+.hero-mark { position: absolute; right: 5%; top: 50%; transform: translateY(-46%); font-family: "Noto Serif Hebrew", var(--serif-ko); font-size: clamp(9rem, 5rem + 17vw, 24rem); font-weight: 500; line-height: 1; color: rgba(185, 154, 99, .14); user-select: none; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(7, 26, 45, .7) 0%, rgba(7, 26, 45, 0) 45%); }
+.hero-kw { margin-top: 22px; font-size: clamp(.85rem, .8rem + .3vw, 1rem); font-weight: 500; letter-spacing: .14em; color: var(--gold); }
 .hero-title { margin-top: 0; font-family: var(--serif-ko); font-weight: 500; font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3.3rem); line-height: 1.3; letter-spacing: -.04em; }
 .hero-sub { margin-top: 32px; max-width: 31em; font-size: clamp(1.0625rem, 1rem + .35vw, 1.25rem); line-height: 1.9; color: var(--on-dark-2); }
 .hero .btns { margin-top: 36px; }
@@ -491,7 +490,7 @@ h1:focus { outline: none; }
 .case-info .tlink { margin-top: 28px; }
 
 /* WORK: 치과 · 기공소 · 제조유통 구분 */
-.segs { display: grid; grid-template-columns: 1.5fr 1fr; gap: 12px; }
+.segs { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; }
 .seg { display: grid; gap: 8px; align-content: start; width: 100%; height: 100%; padding: clamp(18px, 2.4vw, 28px); border: 1px solid var(--rule); background: var(--paper); color: var(--ink); text-align: left; font: inherit; cursor: pointer; transition: border-color .25s ease; }
 .seg:hover { border-color: var(--ink); }
 .seg.main { background: var(--navy); border-color: var(--navy); color: var(--white); }
@@ -1150,6 +1149,8 @@ h1:focus { outline: none; }
   .pair-ind { font-size: .7rem; }
   .pair-item .tlink { display: none; }
   .segs { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .segs li:first-child { grid-column: 1 / -1; }
+  .hero-mark { right: -8%; font-size: 10rem; }
   .seg { gap: 4px; padding: 14px; }
   .seg b { font-size: 1.15rem; }
   .seg-tags { font-size: .7rem; }
@@ -1297,7 +1298,7 @@ h1:focus { outline: none; }
       <a href="#work" data-nav="work">WORK</a>
       <a href="#contact" data-nav="contact">CONTACT</a>
     </nav>
-    <a class="hdr-cta" href="#diagnosis">BRAND DIAGNOSIS</a>
+    <a class="hdr-cta" href="#diagnosis">BUSINESS DIAGNOSIS</a>
     <button class="burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mnav"><svg class="i" aria-hidden="true"><use href="#i-menu"></use></svg></button>
   </div>
 </header>
@@ -1314,7 +1315,7 @@ h1:focus { outline: none; }
     <a href="#work" data-nav="work">Work<span>프로젝트</span></a>
     <a href="#contact" data-nav="contact">Contact<span>문의</span></a>
   </nav>
-  <a class="btn btn-gold" href="#diagnosis">브랜드 진단 받기</a>
+  <a class="btn btn-gold" href="#diagnosis">사업 진단 받기</a>
 </div>
 
 <main id="main">
@@ -1322,11 +1323,12 @@ h1:focus { outline: none; }
   <!-- ===================== HOME ===================== -->
   <section class="page" data-route="home">
     <header class="hero dark">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true"><span class="hero-mark" lang="he" dir="rtl">טוֹב</span></div>
       <div class="wrap">
-        <h1 class="hero-title" tabindex="-1">좋은 덴탈 기업이<br>제대로 보이도록 만듭니다.</h1>
+        <h1 class="hero-title" tabindex="-1">좋은 사업이<br>제대로 성장하도록 만듭니다.</h1>
+        <p class="hero-kw">사업기획 · 개발 · 마케팅 · 매출 · 투자</p>
         <div class="btns">
-          <a class="btn btn-gold" href="#diagnosis">브랜드 진단 받기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <a class="btn btn-gold" href="#diagnosis">사업 진단 받기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           <a class="btn btn-light" href="#work">포트폴리오 보기</a>
         </div>
       </div>
@@ -1380,14 +1382,14 @@ h1:focus { outline: none; }
     <section class="sec dark">
       <div class="wrap">
         <div class="shead">
-          <h2 class="h2">사업의 본질을 이해하는<br>5단계 브랜드 성장 전략</h2>
+          <h2 class="h2">아이디어에서 매출까지,<br>5단계 사업화</h2>
         </div>
         <ol class="method">
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-briefcase"></use></svg><span class="m-no">01</span><h3 class="m-en">Business</h3><p class="m-ko">시장 이해</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-gem"></use></svg><span class="m-no">02</span><h3 class="m-en">Brand</h3><p class="m-ko">브랜드 전략</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-shield"></use></svg><span class="m-no">03</span><h3 class="m-en">Trust</h3><p class="m-ko">신뢰 구축</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-monitor"></use></svg><span class="m-no">04</span><h3 class="m-en">Platform</h3><p class="m-ko">영업 · 온라인 채널</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-trend"></use></svg><span class="m-no">05</span><h3 class="m-en">Growth</h3><p class="m-ko">거래처 확보</p></li>
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-briefcase"></use></svg><span class="m-no">01</span><h3 class="m-en">Business</h3><p class="m-ko">사업기획</p></li>
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-monitor"></use></svg><span class="m-no">02</span><h3 class="m-en">Product</h3><p class="m-ko">서비스 · 플랫폼 개발</p></li>
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-gem"></use></svg><span class="m-no">03</span><h3 class="m-en">Brand</h3><p class="m-ko">브랜딩 · 마케팅</p></li>
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-trend"></use></svg><span class="m-no">04</span><h3 class="m-en">Sales</h3><p class="m-ko">매출 · 판로</p></li>
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-award"></use></svg><span class="m-no">05</span><h3 class="m-en">Value</h3><p class="m-ko">투자 · 기업가치</p></li>
         </ol>
       </div>
     </section>
@@ -1396,7 +1398,7 @@ h1:focus { outline: none; }
       <div class="wrap">
         <div class="shead-row">
           <div class="shead">
-            <h2 class="h2">브랜드를 만드는 것에서 끝나지 않습니다.<br>치과 고객까지 연결합니다.</h2>
+            <h2 class="h2">기획에서 끝나지 않습니다.<br>매출이 날 때까지 함께합니다.</h2>
           </div>
           <a class="tlink" href="#expertise">전체 서비스 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
         </div>
@@ -1434,10 +1436,10 @@ h1:focus { outline: none; }
   <!-- ===================== ABOUT ===================== -->
   <section class="page" data-route="about" hidden>
     <header class="phero dark">
-      <div class="phero-bg" style="background-image: url('img/dental-room.jpg');" aria-hidden="true"></div>
+      <div class="phero-bg" style="background-image: url('img/drone-lecture.jpg');" aria-hidden="true"></div>
       <div class="wrap">
         <h1 class="phero-title" tabindex="-1">About<br>Kim Sangwoo</h1>
-        <p class="phero-sub">사업을 직접 해본 사람이 브랜드를 봅니다.</p>
+        <p class="phero-sub">사업을 직접 만들어 본 사람이 사업을 봅니다.</p>
       </div>
     </header>
 
@@ -1461,6 +1463,7 @@ h1:focus { outline: none; }
                 <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업교육학회 학술이사</span></li>
                 <li><span class="cv-y">2017</span><span>교통안전공단 드론안전정책자문단 자문위원</span></li>
                 <li><span class="cv-y">2017</span><span>한국서비스산업진흥원 서비스기반 4차산업 100인</span></li>
+                <li><span class="cv-y">2017</span><span>창업진흥원 창업인턴제 사업화 선정 · 정부지원금 8,000만원</span></li>
                 <li><span class="cv-y">2016 – 2018</span><span>한국드론항공과학 대표이사 · 액션드론</span></li>
               </ol>
             </div>
@@ -1510,9 +1513,9 @@ h1:focus { outline: none; }
             <a class="tlink" href="#work-dendeal">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </li>
           <li class="sty-tov">
-            <span class="sty-no">현재 · 브랜딩</span>
+            <span class="sty-no">현재 · 사업화 컨설팅</span>
             <b class="sty-name">토브 브랜딩 컴퍼니</b>
-            <ul class="chips"><li>치과</li><li>기공소</li><li>덴탈 기업</li></ul>
+            <ul class="chips"><li>스타트업</li><li>중소기업</li><li>신사업</li></ul>
             <a class="tlink" href="#work">Work<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </li>
         </ol>
@@ -1549,16 +1552,16 @@ h1:focus { outline: none; }
     <section class="sec">
       <div class="wrap">
         <div class="shead">
-          <h2 class="h2">직접 만들고 운영한 사업에서<br>브랜드를 배웠습니다</h2>
+          <h2 class="h2">직접 만들고 운영한 사업에서<br>사업화를 배웠습니다</h2>
         </div>
         <ul class="exp">
           <li class="exp-main"><h3 class="exp-t">DENDEAL Founder &amp; CEO</h3></li>
+          <li><h3 class="exp-t">ACTION DRONE Founder &amp; CEO</h3></li>
           <li><h3 class="exp-t">Dental Platform Business</h3></li>
+          <li><h3 class="exp-t">Drone Education Business</h3></li>
           <li><h3 class="exp-t">Dental Manufacturing Business</h3></li>
           <li><h3 class="exp-t">Real Estate Business</h3></li>
-          <li><h3 class="exp-t">Brand Strategy</h3></li>
           <li><h3 class="exp-t">Marketing &amp; Customer Acquisition</h3></li>
-          <li><h3 class="exp-t">Business Development</h3></li>
         </ul>
       </div>
     </section>
@@ -1569,10 +1572,10 @@ h1:focus { outline: none; }
   <!-- ===================== EXPERTISE ===================== -->
   <section class="page" data-route="expertise" hidden>
     <header class="phero dark">
-      <div class="phero-bg" style="background-image: url('img/dental-xray.jpg');" aria-hidden="true"></div>
+      <div class="phero-bg" style="background-image: url('img/drone-workshop.jpg');" aria-hidden="true"></div>
       <div class="wrap">
         <h1 class="phero-title" tabindex="-1">Expertise</h1>
-        <p class="phero-sub">브랜드를 만드는 것에서 끝나지 않습니다.<br>치과 고객까지 연결합니다.</p>
+        <p class="phero-sub">기획에서 끝나지 않습니다.<br>매출이 날 때까지 함께합니다.</p>
       </div>
     </header>
 
@@ -1602,7 +1605,7 @@ h1:focus { outline: none; }
   <!-- ===================== WORK ===================== -->
   <section class="page" data-route="work" hidden>
     <header class="phero dark">
-      <div class="phero-bg" style="background-image: url('img/dental-equipment.jpg');" aria-hidden="true"></div>
+      <div class="phero-bg" style="background-image: url('img/drone-festival-aerial.jpg');" aria-hidden="true"></div>
       <div class="wrap">
         <h1 class="phero-title sm" tabindex="-1">Real Business.<br>Real Experience.<br>Real Brand Strategy.</h1>
       </div>
@@ -1869,10 +1872,10 @@ h1:focus { outline: none; }
   <!-- ===================== 제조 · 유통 브랜딩 프로그램 (실제 사례) ===================== -->
   <section class="page" data-route="mfg" hidden>
     <header class="phero dark">
-      <div class="phero-bg" style="background-image: url('img/case-manufacturing.jpg');" aria-hidden="true"></div>
+      <div class="phero-bg" style="background-image: url('img/dendeal-cover.jpg');" aria-hidden="true"></div>
       <div class="wrap">
-        <h1 class="phero-title sm" tabindex="-1">Dental Business<br>Program</h1>
-        <p class="phero-sub">좋은 제품이 치과와 기공소에<br>제대로 닿도록 만드는 4단계</p>
+        <h1 class="phero-title sm" tabindex="-1">Business Building<br>Program</h1>
+        <p class="phero-sub">아이디어가 매출이 되는 4단계,<br>덴딜의 실제 사례로</p>
       </div>
     </header>
 
@@ -1896,7 +1899,7 @@ h1:focus { outline: none; }
         <div class="shead-row"><div class="shead"><h2 class="h2">영업 인력만큼만 크는 판로는<br>한계가 분명합니다</h2></div></div>
         <figure class="pg-fig panel panel-white">
           <div class="ba">
-            <svg class="pg-svg ba-svg" viewBox="0 0 460 380" role="img" aria-label="Before: 제품을 영업 사원이 치과 한 곳씩 설명하는 구조">
+            <svg class="pg-svg ba-svg" viewBox="0 0 460 380" role="img" aria-label="Before: 제품을 영업 사원이 고객 한 곳씩 설명하는 구조">
               <defs><marker id="ar-ink-mb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="mk-ink"/></marker></defs>
               <text x="40" y="44" class="t-lbl">BEFORE</text>
               <text x="40" y="70" class="t-sub">영업에만 의존하는 회사</text>
@@ -1908,12 +1911,12 @@ h1:focus { outline: none; }
               <line x1="310" y1="195" x2="356" y2="137" class="ln" marker-end="url(#ar-ink-mb)"/>
               <line x1="310" y1="195" x2="356" y2="197" class="ln" marker-end="url(#ar-ink-mb)"/>
               <line x1="310" y1="195" x2="356" y2="257" class="ln" marker-end="url(#ar-ink-mb)"/>
-              <rect x="360" y="120" width="70" height="34" rx="4" class="box"/><text x="395" y="142" text-anchor="middle" class="t-sm">치과</text>
-              <rect x="360" y="180" width="70" height="34" rx="4" class="box"/><text x="395" y="202" text-anchor="middle" class="t-sm">치과</text>
-              <rect x="360" y="240" width="70" height="34" rx="4" class="box"/><text x="395" y="262" text-anchor="middle" class="t-sm">치과</text>
+              <rect x="360" y="120" width="70" height="34" rx="4" class="box"/><text x="395" y="142" text-anchor="middle" class="t-sm">고객</text>
+              <rect x="360" y="180" width="70" height="34" rx="4" class="box"/><text x="395" y="202" text-anchor="middle" class="t-sm">고객</text>
+              <rect x="360" y="240" width="70" height="34" rx="4" class="box"/><text x="395" y="262" text-anchor="middle" class="t-sm">고객</text>
               <text x="430" y="320" text-anchor="end" class="t-sub">인력만큼만 커지는 판로</text>
             </svg>
-            <svg class="pg-svg ba-svg" viewBox="0 0 460 380" role="img" aria-label="After: 브랜드와 온라인몰이 제품을 설명해 치과와 기공소로 판로가 넓어지고 재주문이 돌아오는 구조">
+            <svg class="pg-svg ba-svg" viewBox="0 0 460 380" role="img" aria-label="After: 브랜드와 온라인몰이 제품을 설명해 고객과 거래처로 판로가 넓어지고 재주문이 돌아오는 구조">
               <defs>
                 <marker id="ar-ink-ma" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="mk-ink"/></marker>
                 <marker id="ar-gold-ma" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="mk-gold"/></marker>
@@ -1930,11 +1933,11 @@ h1:focus { outline: none; }
               <line x1="302" y1="195" x2="350" y2="211" class="ln-gold" marker-end="url(#ar-gold-ma)"/>
               <line x1="302" y1="195" x2="350" y2="259" class="ln-gold" marker-end="url(#ar-gold-ma)"/>
               <line x1="302" y1="195" x2="350" y2="307" class="ln-gold" marker-end="url(#ar-gold-ma)"/>
-              <rect x="354" y="100" width="76" height="30" rx="4" class="box"/><text x="392" y="120" text-anchor="middle" class="t-sm">치과</text>
-              <rect x="354" y="148" width="76" height="30" rx="4" class="box"/><text x="392" y="168" text-anchor="middle" class="t-sm">기공소</text>
-              <rect x="354" y="196" width="76" height="30" rx="4" class="box"/><text x="392" y="216" text-anchor="middle" class="t-sm">치과</text>
-              <rect x="354" y="244" width="76" height="30" rx="4" class="box"/><text x="392" y="264" text-anchor="middle" class="t-sm">치과</text>
-              <rect x="354" y="292" width="76" height="30" rx="4" class="box"/><text x="392" y="312" text-anchor="middle" class="t-sm">기공소</text>
+              <rect x="354" y="100" width="76" height="30" rx="4" class="box"/><text x="392" y="120" text-anchor="middle" class="t-sm">고객</text>
+              <rect x="354" y="148" width="76" height="30" rx="4" class="box"/><text x="392" y="168" text-anchor="middle" class="t-sm">거래처</text>
+              <rect x="354" y="196" width="76" height="30" rx="4" class="box"/><text x="392" y="216" text-anchor="middle" class="t-sm">고객</text>
+              <rect x="354" y="244" width="76" height="30" rx="4" class="box"/><text x="392" y="264" text-anchor="middle" class="t-sm">고객</text>
+              <rect x="354" y="292" width="76" height="30" rx="4" class="box"/><text x="392" y="312" text-anchor="middle" class="t-sm">거래처</text>
               <path d="M392 326 C 320 372, 140 372, 82 236" class="ln-gold" marker-end="url(#ar-gold-ma)"/>
               <text x="236" y="338" text-anchor="middle" class="t-sm t-goldd">재주문</text>
             </svg>
@@ -1962,7 +1965,7 @@ h1:focus { outline: none; }
             </div>
             <div class="chap-text">
               <span class="chap-no">1차</span>
-              <h3>브랜드 · 제품 전략</h3>
+              <h3>사업 · 제품 전략</h3>
               <ul class="chips"><li>포지셔닝</li><li>제품 USP</li><li>라인업 정리</li><li>신뢰 근거</li></ul>
               <p class="chap-case"><b>실제 사례 · 덴딜</b>배송 · 재료 구매 · 제조 중개 통합 플랫폼</p>
             </div>
@@ -2014,7 +2017,7 @@ h1:focus { outline: none; }
             </div>
             <div class="chap-text">
               <span class="chap-no">3차</span>
-              <h3>치과 · 기공소 판로 확산</h3>
+              <h3>판로 확산 · 제휴</h3>
               <ul class="chips"><li>온라인 채널</li><li>전시회 · 세미나</li><li>영업 자료</li><li>제휴 파트너</li></ul>
               <ul class="chap-stats"><li><b>3,500<em>+</em></b><span>협력 치과</span></li><li><b>300<em>+</em></b><span>협력 기공소</span></li><li><b>10<em>+</em></b><span>기업 · 기관 협약</span></li></ul>
               <p class="chap-case"><b>실제 사례 · 덴딜 제휴</b>카카오모빌리티 · 현대그린푸드 · 올어버트먼트 · APS인터내셔널 · 세일글로발 · 덴티스 · 리뉴메디칼</p>
@@ -2071,9 +2074,9 @@ h1:focus { outline: none; }
 
     <section class="sec-m">
       <div class="wrap pg-cta">
-        <h2 class="h2">우리 제품도 이렇게<br>알릴 수 있을까요?</h2>
+        <h2 class="h2">우리 사업도 이렇게<br>키울 수 있을까요?</h2>
         <div class="btns">
-          <a class="btn btn-navy" href="#contact">제조 · 유통 브랜딩 상담<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <a class="btn btn-navy" href="#contact">사업화 상담<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           <a class="btn btn-ink" href="#work">WORK로 돌아가기</a>
         </div>
       </div>
@@ -2083,10 +2086,10 @@ h1:focus { outline: none; }
   <!-- ===================== CONTACT ===================== -->
   <section class="page" data-route="contact" hidden>
     <header class="phero dark">
-      <div class="phero-bg" style="background-image: url('img/dental-consult.jpg');" aria-hidden="true"></div>
+      <div class="phero-bg" style="background-image: url('img/drone-expo.jpg');" aria-hidden="true"></div>
       <div class="wrap">
-        <h1 class="phero-title sm" tabindex="-1">Let's Build<br>Your Brand.</h1>
-        <p class="phero-sub">좋은 덴탈 기업을,<br>더 멀리 더 크게.</p>
+        <h1 class="phero-title sm" tabindex="-1">Let's Build<br>Your Business.</h1>
+        <p class="phero-sub">좋은 사업을,<br>더 멀리 더 크게.</p>
       </div>
     </header>
 
@@ -2099,7 +2102,7 @@ h1:focus { outline: none; }
             <li><span>03</span><b>진단 미팅</b></li>
           </ol>
           <div class="side-diag dark">
-            <a class="tlink" href="#diagnosis">브랜드 진단 받기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <a class="tlink" href="#diagnosis">사업 진단 받기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </div>
         </aside>
 
@@ -2120,17 +2123,17 @@ h1:focus { outline: none; }
     </section>
   </section>
 
-  <!-- ===================== BRAND DIAGNOSIS ===================== -->
+  <!-- ===================== BUSINESS DIAGNOSIS ===================== -->
   <section class="page" data-route="diagnosis" hidden>
     <header class="phero dark">
       <div class="wrap">
-        <h1 class="phero-title sm" tabindex="-1">Brand<br>Diagnosis</h1>
-        <p class="phero-sub">우리 회사의 브랜드는 지금<br>어느 단계에 있습니까?</p>
+        <h1 class="phero-title sm" tabindex="-1">Business<br>Diagnosis</h1>
+        <p class="phero-sub">우리 사업은 지금<br>어느 단계에 있습니까?</p>
       </div>
     </header>
     <section class="sec-m">
       <div class="wrap dg">
-        <form class="dg-qs" id="dg-form" aria-label="브랜드 진단 문항"></form>
+        <form class="dg-qs" id="dg-form" aria-label="사업 진단 문항"></form>
         <aside class="dg-aside"><div class="dg-card dark" id="dg-card" aria-live="polite"></div></aside>
       </div>
     </section>
@@ -2188,9 +2191,9 @@ h1:focus { outline: none; }
     <div class="ftr-top">
       <div>
         <a class="logo" href="#home"><span class="logo-1">토브 브랜딩 컴퍼니</span><span class="logo-2">TOV BRANDING COMPANY</span></a>
-        <p class="ftr-tag">치과 시장을 이해하는 브랜드 컨설팅.</p>
+        <p class="ftr-tag">사업을 만들어 본 사람의 사업화 컨설팅.</p>
       </div>
-      <a class="ftr-big" href="#contact">Let's build your brand.<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+      <a class="ftr-big" href="#contact">Let's build your business.<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
     </div>
     <div class="ftr-cols">
       <div>
@@ -2205,7 +2208,7 @@ h1:focus { outline: none; }
         </ul>
       </div>
       <div>
-        <p class="ftr-h">Brand Diagnosis</p>
+        <p class="ftr-h">Business Diagnosis</p>
         <a class="tlink" href="#diagnosis">진단 시작<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
       </div>
     </div>
@@ -2220,46 +2223,28 @@ h1:focus { outline: none; }
 (function () {
   /* ================= 데이터 ================= */
   const SERVICES = [
-    { slug: 'brand-diagnosis', no: '01', en: 'Brand Diagnosis', ko: '덴탈 브랜드 진단', icon: 'compass',
-      oneliner: '우리 회사와 제품이 시장에서 어디에 서 있는지 찾습니다.',
-      problem: '원인을 모른 채 카탈로그와 광고만 바꿉니다.',
-      approach: '제품, 덴탈 시장, 경쟁사, 치과 · 기공소 고객을 분석해 막힌 지점을 찾습니다.',
-      tasks: ['제품 · 사업 분석', '덴탈 시장 분석', '경쟁사 분석', '치과 · 기공소 고객 분석', 'Brand Value Score'],
-      outcomes: ['우선순위 확정', '마케팅 · 영업 예산 판단 기준'] },
-    { slug: 'brand-strategy', no: '02', en: 'Brand Strategy', ko: '브랜드 · 제품 전략', icon: 'gem',
-      oneliner: '제품의 강점을 원장님과 기공사가 이해하는 말로 바꿉니다.',
-      problem: '제품이 좋아도 경쟁 제품과 무엇이 다른지 설명하지 못합니다.',
-      approach: '포지셔닝과 제품 USP를 정하고, 치과 고객의 언어로 메시지를 정리합니다.',
-      tasks: ['Positioning', '제품 USP', 'Brand Message', '제품 라인업 정리', 'Value Proposition'],
-      outcomes: ['한 문장으로 설명되는 회사와 제품', '홈페이지 · 카탈로그 · 영업 메시지 통일'] },
-    { slug: 'founder-branding', no: '03', en: 'Founder Branding', ko: '대표 브랜딩', icon: 'user',
-      oneliner: '대표의 전문성과 철학을 업계의 신뢰로 만듭니다.',
-      problem: '대표의 전문성과 회사의 철학이 업계에 보이지 않습니다.',
-      approach: '대표의 이력과 관점을 정리해 언론, 콘텐츠, 세미나로 꾸준히 보여줍니다.',
-      tasks: ['대표 프로필', 'Founder Story', '전문성 콘텐츠', '언론 · 인터뷰', 'Thought Leadership'],
-      outcomes: ['대표 중심의 신뢰 구축', '거래 · 제휴 · 투자 미팅의 설득력'] },
-    { slug: 'website-commerce', no: '04', en: 'Website & Commerce', ko: '홈페이지 · 온라인몰', icon: 'monitor',
-      oneliner: '치과가 제품을 이해하고, 비교하고, 문의하는 구조를 설계합니다.',
-      problem: '홈페이지와 제품 페이지가 영업에 도움이 되지 않습니다.',
-      approach: '제품 정보, 자료실, 견적 · 샘플 문의, 주문 동선을 치과 고객 입장에서 설계합니다.',
-      tasks: ['기업 홈페이지', '제품 상세 페이지', '카탈로그 · 자료실', '견적 · 샘플 문의 동선', '온라인몰'],
-      outcomes: ['제품이 보이는 홈페이지', '문의 · 주문 전환 흐름'] },
-    { slug: 'content-pr', no: '05', en: 'Content & PR', ko: '콘텐츠 · PR', icon: 'mega',
-      oneliner: '제품과 회사가 하는 일을 꾸준히 기록하고 알립니다.',
-      problem: '검색해도 찾을 수 없고, 믿을 근거가 없습니다.',
-      approach: '의료기기 광고 심의 기준을 지키면서 제품 정보, 사용 사례, 회사 소식을 쌓습니다.',
-      tasks: ['제품 콘텐츠', '사용 사례 (Case Study)', '세미나 · 학회 콘텐츠', '보도자료', 'SNS'],
-      outcomes: ['검색 노출', '신뢰 근거 확보'] },
-    { slug: 'b2b-growth', no: '06', en: 'B2B Growth', ko: 'B2B 영업 · 마케팅', icon: 'trend',
-      oneliner: '브랜드를 새 거래처와 재주문으로 연결합니다.',
-      problem: '제품이 좋아도 새 거래처가 늘지 않습니다.',
-      approach: '온라인 유입, 전시회 · 세미나, 영업 자료, 거래처 관리를 하나로 연결합니다.',
-      tasks: ['치과 · 기공소 리드 발굴', '영업 자료 · 제안서', '전시회 · 세미나', '검색 · 광고', '거래처 CRM'],
-      outcomes: ['새 거래처 유입 경로 확인', '영업 · 마케팅 비용 관리'] }
+    { slug: 'business-diagnosis', no: '01', en: 'Business Diagnosis', ko: '사업 진단', icon: 'compass',
+      tasks: ['시장 · 경쟁 분석', '고객 · 수익 구조 점검', '사업 단계 진단', '우선순위 로드맵', 'Business Score'],
+      outcomes: ['지금 해야 할 일의 우선순위', '예산 · 인력 판단 기준'] },
+    { slug: 'business-planning', no: '02', en: 'Business Planning', ko: '사업기획 · 사업화', icon: 'briefcase',
+      tasks: ['비즈니스 모델 설계', '수익 모델 · 가격 전략', '사업계획서', '정부지원사업 준비', '신사업 기획'],
+      outcomes: ['한 장으로 설명되는 사업', '실행 가능한 사업화 일정'] },
+    { slug: 'product-platform', no: '03', en: 'Product & Platform', ko: '서비스 · 플랫폼 개발', icon: 'monitor',
+      tasks: ['MVP 기획', '앱 · 웹 플랫폼 기획', '개발사 선정 · 관리', '운영 시스템 설계', '홈페이지 · 온라인몰'],
+      outcomes: ['빠르게 검증하는 첫 제품', '개발 비용 · 일정 관리'] },
+    { slug: 'brand-marketing', no: '04', en: 'Brand & Marketing', ko: '브랜딩 · 마케팅', icon: 'gem',
+      tasks: ['포지셔닝 · 브랜드 메시지', '대표 브랜딩', '콘텐츠 · PR', '검색 · SNS 광고', '행사 · 교육 프로그램'],
+      outcomes: ['고객이 먼저 찾는 브랜드', '마케팅 비용 대비 효과 관리'] },
+    { slug: 'sales-growth', no: '05', en: 'Sales & Growth', ko: '매출 · 판로 확대', icon: 'trend',
+      tasks: ['B2B 영업 구조', '제휴 · 파트너십', '판로 · 채널 확대', '고객 관리 · 재구매', '영업 자료 · 제안서'],
+      outcomes: ['반복되는 매출 구조', '새 거래처 유입 경로'] },
+    { slug: 'funding-value', no: '06', en: 'Funding & Value', ko: '투자 · 기업가치', icon: 'award',
+      tasks: ['IR 자료 · 투자 전략', '정부지원 · R&D 과제', '벤처 · 특허 · 인증', '기술 임치 · 지식재산', '기업가치 스토리'],
+      outcomes: ['투자 · 지원 심사의 설득력', '기업가치를 보여주는 근거'] }
   ];
 
   const ALL_CASES = [
-    { slug: 'dendeal', no: '01', cat: 'mfg', name: 'DENDEAL', img: 'img/dendeal-cover.jpg', alt: '덴딜 로고와 앱 화면', logo: 'img/dendeal-logo.png',
+    { slug: 'dendeal', no: '01', cat: 'platform', name: 'DENDEAL', img: 'img/dendeal-cover.jpg', alt: '덴딜 로고와 앱 화면', logo: 'img/dendeal-logo.png',
       gallery: { type: 'phones', items: [['img/dendeal-app1.jpg', '덴딜 앱 주문목록 화면'], ['img/dendeal-app-delivery.jpg', '덴딜 앱 기공물 배송 화면'], ['img/dendeal-app2.jpg', '덴딜 앱 제조중개 화면']] },
       industry: 'Dental / Platform / B2B', role: 'Founder & CEO / Brand Strategy / Platform / Growth',
       summary: '덴탈 시장을 대상으로 사업 모델과 브랜드를 구축하고, 고객이 서비스를 이해하고 접근할 수 있도록 브랜드·플랫폼·마케팅 구조를 개발한 프로젝트입니다.',
@@ -2277,14 +2262,7 @@ h1:focus { outline: none; }
         { h: 'Certification', p: '벤처기업 인증 · DENDEAL 상표등록 · 기술 임치 2건' }
       ],
       link: 'https://dendeal.ai.kr/', linkLabel: 'dendeal.ai.kr', pressLink: true },
-    { slug: 'dental-manufacturing', no: '03', cat: 'mfg', name: 'Dental Manufacturing', img: 'img/case-manufacturing.jpg', alt: '장갑 낀 손에 들린 임플란트와 크라운',
-      industry: 'Dental / Manufacturing / B2B', role: 'Corporate Brand / Founder Branding / B2B Marketing',
-      summary: '덴탈 제조 기업의 기업 브랜드와 제품 포지셔닝을 세우고, 대표 브랜딩과 B2B 마케팅으로 영업을 지원한 프로젝트입니다.',
-      challenge: '기술력이 있어도 제품의 차이가 잘 보이지 않는 B2B 제조 시장에서 신뢰를 얻는 것.',
-      strategy: '기업 브랜드와 대표 브랜딩을 함께 세우고, 제품 포지셔닝을 영업 현장에서 쓰는 자료로 연결한다.',
-      execution: ['Corporate Brand', 'Product Positioning', 'Founder Branding', 'Website', 'B2B Marketing', 'Sales Support'],
-      results: ['기업 브랜드 체계 정리', '제품 포지셔닝 정립', '대표 브랜딩 콘텐츠 구축', 'B2B 영업 지원 자료 구축'] },
-    { slug: 'actiondrone', no: '04', cat: 'etc', name: 'ACTION DRONE', project: '한국드론항공과학 · 액션드론', img: 'img/drone-xwing.jpg', alt: 'X-Wing 주니어 1기 창단식', logo: 'img/actiondrone-logo.png',
+    { slug: 'actiondrone', no: '02', cat: 'edu', name: 'ACTION DRONE', project: '한국드론항공과학 · 액션드론', img: 'img/drone-xwing.jpg', alt: 'X-Wing 주니어 1기 창단식', logo: 'img/actiondrone-logo.png',
       gallery: { type: 'groups', groups: [
         { h: '기관 · 기업', items: [['img/drone-mou.jpg', '평생학습 4.0 드론학과 MOU'], ['img/drone-xwing.jpg', 'X-Wing 주니어 1기 창단식'], ['img/drone-workshop.jpg', '2018 건설신기술 활용촉진 워크숍 강연'], ['img/drone-expo.jpg', '2018 경기도 건설신기술 박람회'], ['img/drone-corp-camp.jpg', '기업 임직원 자녀 겨울캠프'], ['img/drone-welfare.jpg', '화성시 여울림종합사회복지관']] },
         { h: '학교', items: [['img/drone-lecture.jpg', '초등학교 강당 강연'], ['img/drone-aerial.jpg', '드론으로 촬영한 단체사진'], ['img/drone-school-fly.jpg', '드론 기초비행 체험'], ['img/drone-gym.jpg', 'VR · 드론 체험 존'], ['img/drone-school-logo.jpg', '초등학교 드론 수업'], ['img/drone-junior-cup.jpg', '액션드론 주니어 드론대회']] },
@@ -2300,7 +2278,7 @@ h1:focus { outline: none; }
         { h: 'Festivals', p: '광명 스피돔 어린이날 페스티벌 · 안산 · 포천 · 청평 어린이날 행사 · 춘천 의병마을 · 수원월드컵경기장' },
         { h: 'Policy', p: '교통안전공단 드론안전정책자문단 자문위원 (2017)' }
       ] },
-    { slug: 'real-estate', no: '05', cat: 'etc', name: 'KOK 부동산학원', project: '이주왕 KOK 부동산학원', img: 'img/kok-logo.jpg', alt: 'KOK 부동산학원 로고',
+    { slug: 'real-estate', no: '03', cat: 'edu', name: 'KOK 부동산학원', project: '이주왕 KOK 부동산학원', img: 'img/kok-logo.jpg', alt: 'KOK 부동산학원 로고',
       gallery: { type: 'wide', items: [['img/kok-logo.jpg', 'KOK 부동산학원 로고'], ['img/kok-course.jpg', 'KOK 부동산학원 강의 썸네일']] },
       link: 'https://www.kokstudy.com/', linkLabel: 'kokstudy.com',
       industry: 'Real Estate / Brand / Lead Generation', role: 'Business Positioning / Website / Growth',
@@ -2308,16 +2286,23 @@ h1:focus { outline: none; }
       challenge: '비슷한 서비스가 많은 시장에서, 고객이 이 회사를 먼저 찾고 믿고 상담하게 만드는 것.',
       strategy: '사업의 전문 영역을 분명히 하고, 검색에서 발견되어 상담으로 이어지는 흐름을 하나로 설계한다.',
       execution: ['Business Positioning', 'Website Strategy', 'Content', 'Search Marketing', 'Customer Acquisition', 'Consultation Funnel'],
-      results: ['사업 포지셔닝 정리', '검색 기반 고객 유입 구조 설계', '콘텐츠 운영 체계 구축', '상담 전환 퍼널 구축'] }
+      results: ['사업 포지셔닝 정리', '검색 기반 고객 유입 구조 설계', '콘텐츠 운영 체계 구축', '상담 전환 퍼널 구축'] },
+    { slug: 'dental-manufacturing', no: '04', cat: 'dental', name: 'Dental Manufacturing', img: 'img/case-manufacturing.jpg', alt: '장갑 낀 손에 들린 임플란트와 크라운',
+      industry: 'Dental / Manufacturing / B2B', role: 'Corporate Brand / Founder Branding / B2B Marketing',
+      summary: '덴탈 제조 기업의 기업 브랜드와 제품 포지셔닝을 세우고, 대표 브랜딩과 B2B 마케팅으로 영업을 지원한 프로젝트입니다.',
+      challenge: '기술력이 있어도 제품의 차이가 잘 보이지 않는 B2B 제조 시장에서 신뢰를 얻는 것.',
+      strategy: '기업 브랜드와 대표 브랜딩을 함께 세우고, 제품 포지셔닝을 영업 현장에서 쓰는 자료로 연결한다.',
+      execution: ['Corporate Brand', 'Product Positioning', 'Founder Branding', 'Website', 'B2B Marketing', 'Sales Support'],
+      results: ['기업 브랜드 체계 정리', '제품 포지셔닝 정립', '대표 브랜딩 콘텐츠 구축', 'B2B 영업 지원 자료 구축'] }
   ];
   /* hidden: true 인 사례는 사이트에 보이지 않는다 (데이터는 보관) */
   const CASES = ALL_CASES.filter(c => !c.hidden);
 
-  /* WORK 분야: 위 타일은 각 분야의 자세히 보기 페이지로 이동. 치과·기공소는 업체명을 공개하지 않는다 */
+  /* WORK 분야: 위 타일은 각 분야의 대표 페이지로 이동. 치과 · 기공소는 업체명을 공개하지 않는다 */
   const WORK_CATS = [
-    { key: 'dental', ko: '치과 & 기공소', en: 'Dental Clinic & Lab', main: true, link: '#dental-program', tags: '원장 · 치과 브랜딩 · 치과 전용 플랫폼 · 구환자 관리' },
-    { key: 'mfg', ko: '제조 · 유통', en: 'Manufacturing & Distribution', link: '#mfg-program', tags: '브랜드 · 제품 전략 · B2B 영업 · 온라인몰' },
-    { key: 'etc', ko: '기타', en: 'Others' }
+    { key: 'platform', ko: '플랫폼 · 스타트업', en: 'Platform & Startup', main: true, link: '#mfg-program', tags: '사업기획 · 플랫폼 개발 · 제휴 · 인증 · 판로' },
+    { key: 'edu', ko: '교육 · 서비스', en: 'Education & Service', link: '#work-actiondrone', tags: '교육 사업 · 행사 · 학교 · 기관 판로' },
+    { key: 'dental', ko: '덴탈 · 헬스케어', en: 'Dental & Healthcare', link: '#dental-program', tags: '치과 · 기공소 브랜딩 · 덴탈 제조 · 유통' }
   ];
 
   const PRESS = [
@@ -2341,23 +2326,23 @@ h1:focus { outline: none; }
   ];
 
   const DIAG = [
-    { ko: '사업 경쟁력', en: 'Business', q: '우리 제품이 경쟁 제품보다 나은 점을 한 문장으로 설명할 수 있다.', svc: 'brand-diagnosis' },
-    { ko: '고객 이해', en: 'Customer', q: '주요 고객(치과 · 기공소)이 누구이고, 왜 우리를 선택하는지 알고 있다.', svc: 'brand-diagnosis' },
-    { ko: '브랜드 전략', en: 'Brand Strategy', q: '포지셔닝과 핵심 메시지가 문서로 정리되어 있다.', svc: 'brand-strategy' },
-    { ko: '대표 브랜드', en: 'Founder Brand', q: '대표의 전문성과 이력이 업계에 알려져 있다.', svc: 'founder-branding' },
-    { ko: '제품 경쟁력', en: 'Product', q: '제품의 장점이 원장님과 기공사의 언어로 설명되어 있다.', svc: 'brand-strategy' },
-    { ko: '영업 자료', en: 'Sales Material', q: '카탈로그, 제안서, 사용 사례 같은 영업 자료가 정리되어 있다.', svc: 'b2b-growth' },
-    { ko: '홈페이지', en: 'Website', q: '홈페이지와 제품 페이지가 문의 · 견적 · 주문으로 이어진다.', svc: 'website-commerce' },
-    { ko: '검색 · 콘텐츠', en: 'Search & Content', q: '제품명이나 관련 키워드를 검색하면 우리 회사가 보인다.', svc: 'content-pr' },
-    { ko: '신뢰 근거', en: 'Proof', q: '인증, 사용 사례, 거래처, 언론 보도 같은 신뢰 근거를 보여주고 있다.', svc: 'content-pr' },
-    { ko: '영업 · CRM', en: 'Sales & CRM', q: '문의부터 첫 거래, 재주문까지 거래처를 관리하는 체계가 있다.', svc: 'b2b-growth' }
+    { ko: '사업 모델', en: 'Business Model', q: '우리 사업이 누구에게 무엇으로 돈을 버는지 한 문장으로 설명할 수 있다.', svc: 'business-planning' },
+    { ko: '고객 이해', en: 'Customer', q: '핵심 고객이 누구이고, 왜 우리를 선택하는지 알고 있다.', svc: 'business-diagnosis' },
+    { ko: '시장 · 경쟁', en: 'Market', q: '시장 규모와 경쟁사 대비 강점을 숫자와 근거로 말할 수 있다.', svc: 'business-diagnosis' },
+    { ko: '제품 · 서비스', en: 'Product', q: '고객이 쓰는 제품이나 서비스가 준비되어 있고, 개선 계획이 있다.', svc: 'product-platform' },
+    { ko: '온라인 · 플랫폼', en: 'Platform', q: '홈페이지나 앱에서 문의 · 주문 · 결제까지 이어진다.', svc: 'product-platform' },
+    { ko: '브랜드', en: 'Brand', q: '회사와 제품의 차별점이 홈페이지 · 자료 · 영업 현장에서 같은 말로 전달된다.', svc: 'brand-marketing' },
+    { ko: '마케팅', en: 'Marketing', q: '새 고객이 들어오는 경로를 알고, 비용 대비 효과를 확인하고 있다.', svc: 'brand-marketing' },
+    { ko: '매출 구조', en: 'Revenue', q: '재구매나 계약 갱신처럼 반복되는 매출 구조가 있다.', svc: 'sales-growth' },
+    { ko: '영업 · 제휴', en: 'Sales', q: '영업 자료, 제휴처, 판로 확대 계획이 정리되어 있다.', svc: 'sales-growth' },
+    { ko: '투자 · 지원', en: 'Funding', q: '투자 유치나 정부지원사업에 쓸 사업계획서와 근거 자료가 준비되어 있다.', svc: 'funding-value' }
   ];
   const SCALE = ['전혀 아니다', '아니다', '보통이다', '그렇다', '매우 그렇다'];
   const STAGES = [
-    { min: 80, name: '확장 단계', range: '80–100', desc: '브랜드가 잘 작동하고 있습니다. 콘텐츠와 그로스로 영향력을 넓힐 때입니다.' },
-    { min: 60, name: '성장 준비 단계', range: '60–79', desc: '브랜드의 뼈대가 있습니다. 고객 접점과 고객 획득 구조를 다듬으면 성장으로 이어집니다.' },
-    { min: 40, name: '정리 단계', range: '40–59', desc: '기본 요소는 있지만 메시지와 신뢰 근거가 흩어져 있습니다. 브랜드 전략을 하나로 정리할 때입니다.' },
-    { min: 0, name: '기반 정비 단계', range: '0–39', desc: '사업의 강점이 아직 브랜드로 정리되지 않았습니다. 진단과 전략부터 시작하는 것이 좋습니다.' }
+    { min: 80, name: '확장 단계', range: '80–100', desc: '사업이 잘 작동하고 있습니다. 판로를 넓히고 기업가치를 키울 때입니다.' },
+    { min: 60, name: '성장 준비 단계', range: '60–79', desc: '사업의 뼈대가 있습니다. 마케팅과 매출 구조를 다듬으면 성장으로 이어집니다.' },
+    { min: 40, name: '정리 단계', range: '40–59', desc: '기본 요소는 있지만 제품 · 고객 · 메시지가 흩어져 있습니다. 사업 전략을 하나로 정리할 때입니다.' },
+    { min: 0, name: '기반 정비 단계', range: '0–39', desc: '강점이 아직 사업 구조로 정리되지 않았습니다. 진단과 사업기획부터 시작하는 것이 좋습니다.' }
   ];
   const EXAMPLE = [4, 3, 2, 2, 3, 4, 2, 1, 2, 2];
 
@@ -2369,7 +2354,7 @@ h1:focus { outline: none; }
   const svcBy = slug => SERVICES.find(s => s.slug === slug);
   const caseBy = slug => CASES.find(c => c.slug === slug);
 
-  /* Brand Value Score: 문항 1~5점 → 0~10점, 10문항 합계 100점 */
+  /* Business Score: 문항 1~5점 → 0~10점, 10문항 합계 100점 */
   const itemScore = v => (v ? (v - 1) / 4 * 10 : 0);
   const scoreOf = ans => Math.round(ans.reduce((s, v) => s + itemScore(v), 0));
   const stageOf = score => STAGES.find(s => score >= s.min);
@@ -2381,13 +2366,13 @@ h1:focus { outline: none; }
   /* ================= 조각 ================= */
   const ctaBand = () => `
     <section class="cta-band dark">
-      <div class="cta-bg" style="background-image:url('img/dental-waiting.jpg')" aria-hidden="true"></div>
+      <div class="cta-bg" style="background-image:url('img/drone-xwing.jpg')" aria-hidden="true"></div>
       <div class="wrap cta-in">
         <div>
-          <h2 class="h2">우리 회사의 브랜드는 지금<br>어느 단계에 있습니까?</h2>
+          <h2 class="h2">우리 사업은 지금<br>어느 단계에 있습니까?</h2>
         </div>
         <div class="btns">
-          <a class="btn btn-gold" href="#diagnosis">브랜드 진단 시작${ic('arrow')}</a>
+          <a class="btn btn-gold" href="#diagnosis">사업 진단 시작${ic('arrow')}</a>
           <a class="btn btn-light" href="#contact">상담 신청하기</a>
         </div>
       </div>
@@ -2487,7 +2472,7 @@ h1:focus { outline: none; }
               <p>${s.ko} 서비스가 필요하신가요?</p>
               <div class="btns">
                 <a class="btn btn-navy" href="#contact">상담 신청하기${ic('arrow')}</a>
-                <a class="btn btn-ink" href="#diagnosis">브랜드 진단 받기</a>
+                <a class="btn btn-ink" href="#diagnosis">사업 진단 받기</a>
               </div>
             </div>
           </div>
@@ -2548,7 +2533,7 @@ h1:focus { outline: none; }
       ${ctaBand()}`;
   }
 
-  /* ================= 브랜드 진단 ================= */
+  /* ================= 사업 진단 ================= */
   function renderDiagQuestions() {
     $('#dg-form').innerHTML =
       `<div class="dg-legend"><span>각 문장이 우리 회사에 얼마나 해당하나요?</span><span>1 전혀 아니다 · 5 매우 그렇다</span></div>` +
@@ -2568,7 +2553,7 @@ h1:focus { outline: none; }
     const score = scoreOf(state.answers);
     const st = done ? stageOf(score) : null;
     $('#dg-card').innerHTML = `
-      <p class="dg-label">Brand Value Score</p>
+      <p class="dg-label">Business Score</p>
       <p class="dg-score"><b>${done ? score : '—'}</b><span>/100</span></p>
       <div class="dg-prog" role="progressbar" aria-label="응답 진행률" aria-valuemin="0" aria-valuemax="${DIAG.length}" aria-valuenow="${answered}"><i style="width:${answered / DIAG.length * 100}%"></i></div>
       <p class="dg-count">${answered} / ${DIAG.length} 응답</p>
@@ -2772,7 +2757,7 @@ h1:focus { outline: none; }
   const num = n => Number(n || 0).toLocaleString('ko-KR');
   const kstTime = iso => new Date(iso).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
   const mmdd = date => date.slice(5).replace('-', '.');
-  const PAGE_LABEL = { home: '홈', about: '소개', expertise: '서비스', work: '프로젝트', press: '보도', contact: '상담 신청', diagnosis: '브랜드 진단', 'dental-program': '치과 & 기공소 자세히 보기', 'mfg-program': '제조 · 유통 자세히 보기' };
+  const PAGE_LABEL = { home: '홈', about: '소개', expertise: '서비스', work: '프로젝트', press: '보도', contact: '상담 신청', diagnosis: '사업 진단', 'dental-program': '치과 & 기공소 자세히 보기', 'mfg-program': '사업화 프로그램' };
   const pageLabel = k => {
     if (PAGE_LABEL[k]) return PAGE_LABEL[k];
     if (k.indexOf('expertise-') === 0 && svcBy(k.slice(10))) return '서비스 · ' + svcBy(k.slice(10)).en;
