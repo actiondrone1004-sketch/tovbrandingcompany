@@ -22,3 +22,4 @@ Stock photos (Unsplash License: free for commercial use, no attribution required
   dental-waiting.jpg      https://unsplash.com/photos/pxOQ-P97sA8
   case-manufacturing.jpg  https://unsplash.com/photos/eHwRLpfHSKY  (Katarzyna Zygnerska)
   dental-platform.jpg     사용자 제공 치과 플랫폼(AI 치과비서) 화면. 치과명·이름은 OO로 가림
+  actiondrone-cover.jpg        액션드론 로고를 4:3 흰 배경에 배치한 대표 이미지
