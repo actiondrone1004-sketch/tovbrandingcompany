@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>토브 브랜딩 컴퍼니</title>
+<title>토브 파트너스</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600&display=swap">
@@ -151,9 +151,21 @@ h1:focus { outline: none; }
 
 /* ---------- 홈 히어로 ---------- */
 .hero { position: relative; isolation: isolate; overflow: hidden; padding-block: calc(var(--hdr-h) + clamp(64px, 9vw, 120px)) clamp(72px, 9vw, 120px); }
-.hero-bg { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: radial-gradient(ellipse 55% 75% at 82% 45%, rgba(185, 154, 99, .16), rgba(185, 154, 99, 0) 70%), var(--navy); }
-.hero-mark { position: absolute; right: 5%; top: 50%; transform: translateY(-46%); font-family: "Noto Serif Hebrew", var(--serif-ko); font-size: clamp(9rem, 5rem + 17vw, 24rem); font-weight: 500; line-height: 1; color: rgba(185, 154, 99, .14); user-select: none; }
-.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(7, 26, 45, .7) 0%, rgba(7, 26, 45, 0) 45%); }
+.hero-bg { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: radial-gradient(ellipse 50% 70% at 78% 50%, rgba(185, 154, 99, .14), rgba(185, 154, 99, 0) 70%), radial-gradient(ellipse 60% 80% at 100% 0%, rgba(58, 110, 165, .22), rgba(58, 110, 165, 0) 60%), var(--navy); }
+.hero-net { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-net .grid path { stroke: rgba(255, 255, 255, .045); stroke-width: 1; }
+.hero-net .edges line { stroke: rgba(185, 154, 99, .28); stroke-width: 1; }
+.hero-net .nodes circle { fill: rgba(207, 181, 133, .55); }
+.hero-net .nodes .hub { fill: var(--gold); }
+.hero-net .nodes .ring { fill: none; stroke: rgba(185, 154, 99, .4); stroke-width: 1; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 26, 45, .92) 0%, rgba(7, 26, 45, .55) 45%, rgba(7, 26, 45, 0) 75%), linear-gradient(0deg, rgba(7, 26, 45, .9) 0%, rgba(7, 26, 45, 0) 30%); }
+.hero-phones { position: absolute; z-index: 0; top: 50%; right: max(var(--gut), calc((100vw - var(--wrap)) / 2 + var(--gut))); display: flex; align-items: center; transform: translateY(-42%); pointer-events: none; }
+.hero-phones img { width: clamp(120px, 10.5vw, 168px); aspect-ratio: 9 / 19.5; object-fit: cover; object-position: top; border: 5px solid #0E2236; border-radius: 22px; background: var(--white); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .6); }
+.hero-phones img:nth-child(1) { transform: translateX(28%) rotate(-7deg) scale(.88); opacity: .9; }
+.hero-phones img:nth-child(2) { position: relative; z-index: 1; box-shadow: 0 0 0 2px var(--gold), 0 36px 70px -20px rgba(0, 0, 0, .7); }
+.hero-phones img:nth-child(3) { transform: translateX(-28%) rotate(7deg) scale(.88); opacity: .9; }
+.hero .wrap { position: relative; z-index: 1; }
+@media (max-width: 1000px) { .hero-phones { display: none; } }
 .hero-kw { margin-top: 22px; font-size: clamp(.85rem, .8rem + .3vw, 1rem); font-weight: 500; letter-spacing: .14em; color: var(--gold); }
 .hero-title { margin-top: 0; font-family: var(--serif-ko); font-weight: 500; font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3.3rem); line-height: 1.3; letter-spacing: -.04em; }
 .hero-sub { margin-top: 32px; max-width: 31em; font-size: clamp(1.0625rem, 1rem + .35vw, 1.25rem); line-height: 1.9; color: var(--on-dark-2); }
@@ -1181,7 +1193,6 @@ h1:focus { outline: none; }
   .pair-ind { font-size: .7rem; }
   .pair-item .tlink { display: none; }
   .segs { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .hero-mark { right: -8%; font-size: 10rem; }
   .seg { gap: 4px; padding: 14px; }
   .seg b { font-size: 1.15rem; }
   .seg-tags { font-size: .7rem; }
@@ -1315,7 +1326,7 @@ h1:focus { outline: none; }
 
 <header class="hdr" id="hdr">
   <div class="wrap hdr-in">
-    <a class="logo" href="#home" aria-label="토브 브랜딩 컴퍼니 홈"><span class="logo-1">토브 브랜딩 컴퍼니</span><span class="logo-2">TOV BRANDING COMPANY</span></a>
+    <a class="logo" href="#home" aria-label="토브 파트너스 홈"><span class="logo-1">토브 파트너스</span><span class="logo-2">TOV PARTNERS</span></a>
     <nav class="menu" aria-label="주요 메뉴">
       <a href="#home" data-nav="home">HOME</a>
       <a href="#about" data-nav="about">ABOUT</a>
@@ -1330,7 +1341,7 @@ h1:focus { outline: none; }
 
 <div class="mnav" id="mnav" hidden>
   <div class="mnav-top">
-    <a class="logo" href="#home"><span class="logo-1">토브 브랜딩 컴퍼니</span><span class="logo-2">TOV BRANDING COMPANY</span></a>
+    <a class="logo" href="#home"><span class="logo-1">토브 파트너스</span><span class="logo-2">TOV PARTNERS</span></a>
     <button class="mnav-close" type="button" aria-label="메뉴 닫기"><svg class="i" aria-hidden="true"><use href="#i-close"></use></svg></button>
   </div>
   <nav class="mnav-links" aria-label="모바일 메뉴">
@@ -1348,7 +1359,12 @@ h1:focus { outline: none; }
   <!-- ===================== HOME ===================== -->
   <section class="page" data-route="home">
     <header class="hero dark">
-      <div class="hero-bg" aria-hidden="true"><span class="hero-mark" lang="he" dir="rtl">טוֹב</span></div>
+      <div class="hero-bg" aria-hidden="true"><svg class="hero-net" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice"><defs><pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none"/></pattern></defs><rect class="grid" width="1440" height="760" fill="url(#hero-grid)"/><g class="edges"><line x1="404" y1="666" x2="473" y2="652"/><line x1="404" y1="666" x2="535" y2="563"/><line x1="838" y1="183" x2="922" y2="268"/><line x1="838" y1="183" x2="969" y2="171"/><line x1="1235" y1="402" x2="1198" y2="472"/><line x1="1235" y1="402" x2="1263" y2="325"/><line x1="880" y1="551" x2="794" y2="535"/><line x1="880" y1="551" x2="924" y2="648"/><line x1="1198" y1="472" x2="1095" y2="386"/><line x1="1303" y1="205" x2="1218" y2="211"/><line x1="1303" y1="205" x2="1263" y2="325"/><line x1="1209" y1="77" x2="1218" y2="211"/><line x1="1209" y1="77" x2="1140" y2="199"/><line x1="1383" y1="589" x2="1355" y2="657"/><line x1="1383" y1="589" x2="1384" y2="508"/><line x1="642" y1="389" x2="577" y2="317"/><line x1="642" y1="389" x2="750" y2="424"/><line x1="1384" y1="508" x2="1394" y2="419"/><line x1="922" y1="268" x2="969" y2="171"/><line x1="681" y1="242" x2="779" y2="315"/><line x1="681" y1="242" x2="577" y2="317"/><line x1="1394" y1="419" x2="1371" y2="351"/><line x1="1234" y1="637" x2="1159" y2="667"/><line x1="1234" y1="637" x2="1355" y2="657"/><line x1="546" y1="226" x2="577" y2="317"/><line x1="546" y1="226" x2="446" y2="209"/><line x1="1095" y1="386" x2="1003" y2="443"/><line x1="1095" y1="386" x2="1117" y2="278"/><line x1="969" y1="171" x2="1055" y2="153"/><line x1="1373" y1="77" x2="1437" y2="190"/><line x1="1303" y1="205" x2="1373" y2="77"/><line x1="1055" y1="153" x2="1040" y2="62"/><line x1="883" y1="402" x2="1003" y2="443"/><line x1="883" y1="402" x2="750" y2="424"/><line x1="1140" y1="199" x2="1218" y2="211"/><line x1="1140" y1="199" x2="1117" y2="278"/><line x1="1371" y1="351" x2="1263" y2="325"/><line x1="1046" y1="509" x2="1003" y2="443"/><line x1="1095" y1="386" x2="1046" y2="509"/><line x1="626" y1="597" x2="662" y2="667"/><line x1="626" y1="597" x2="653" y2="508"/><line x1="683" y1="93" x2="574" y2="41"/><line x1="681" y1="242" x2="683" y2="93"/><line x1="1303" y1="205" x2="1437" y2="190"/><line x1="662" y1="667" x2="725" y2="699"/><line x1="1355" y1="657" x2="1435" y2="689"/><line x1="577" y1="317" x2="446" y2="209"/><line x1="546" y1="226" x2="574" y2="41"/><line x1="924" y1="648" x2="794" y2="535"/><line x1="1046" y1="509" x2="1159" y2="667"/><line x1="473" y1="652" x2="535" y2="563"/><line x1="626" y1="597" x2="725" y2="699"/><line x1="750" y1="424" x2="779" y2="315"/><line x1="626" y1="597" x2="535" y2="563"/><line x1="969" y1="171" x2="1040" y2="62"/><line x1="642" y1="389" x2="653" y2="508"/><line x1="1383" y1="589" x2="1435" y2="689"/><line x1="750" y1="424" x2="794" y2="535"/></g><g class="nodes"><circle cx="404" cy="666" r="2.5"/><circle cx="838" cy="183" r="2.5"/><circle cx="1235" cy="402" r="2.5"/><circle class="hub" cx="880" cy="551" r="5"/><circle class="ring" cx="880" cy="551" r="14"/><circle cx="1198" cy="472" r="2.5"/><circle cx="1303" cy="205" r="2.5"/><circle cx="1209" cy="77" r="2.5"/><circle cx="1383" cy="589" r="2.5"/><circle cx="642" cy="389" r="2.5"/><circle cx="1384" cy="508" r="2.5"/><circle cx="922" cy="268" r="2.5"/><circle class="hub" cx="681" cy="242" r="5"/><circle class="ring" cx="681" cy="242" r="14"/><circle cx="1394" cy="419" r="2.5"/><circle cx="1234" cy="637" r="2.5"/><circle cx="546" cy="226" r="2.5"/><circle cx="1095" cy="386" r="2.5"/><circle cx="969" cy="171" r="2.5"/><circle cx="1373" cy="77" r="2.5"/><circle cx="1055" cy="153" r="2.5"/><circle class="hub" cx="883" cy="402" r="5"/><circle class="ring" cx="883" cy="402" r="14"/><circle cx="1140" cy="199" r="2.5"/><circle cx="1371" cy="351" r="2.5"/><circle cx="1046" cy="509" r="2.5"/><circle cx="1218" cy="211" r="2.5"/><circle cx="1117" cy="278" r="2.5"/><circle cx="626" cy="597" r="2.5"/><circle cx="577" cy="317" r="2.5"/><circle class="hub" cx="683" cy="93" r="5"/><circle class="ring" cx="683" cy="93" r="14"/><circle cx="1437" cy="190" r="2.5"/><circle cx="1003" cy="443" r="2.5"/><circle cx="662" cy="667" r="2.5"/><circle cx="1355" cy="657" r="2.5"/><circle cx="446" cy="209" r="2.5"/><circle cx="574" cy="41" r="2.5"/><circle cx="924" cy="648" r="2.5"/><circle cx="1159" cy="667" r="2.5"/><circle class="hub" cx="473" cy="652" r="5"/><circle class="ring" cx="473" cy="652" r="14"/><circle cx="725" cy="699" r="2.5"/><circle cx="750" cy="424" r="2.5"/><circle cx="535" cy="563" r="2.5"/><circle cx="1040" cy="62" r="2.5"/><circle cx="653" cy="508" r="2.5"/><circle cx="1435" cy="689" r="2.5"/><circle cx="1263" cy="325" r="2.5"/><circle cx="794" cy="535" r="2.5"/><circle cx="779" cy="315" r="2.5"/></g></svg></div>
+      <div class="hero-phones" aria-hidden="true">
+        <img src="img/dendeal-app1.jpg" alt="" loading="eager">
+        <img src="img/dendeal-app-delivery.jpg" alt="" loading="eager">
+        <img src="img/dendeal-app2.jpg" alt="" loading="eager">
+      </div>
       <div class="wrap">
         <h1 class="hero-title" tabindex="-1">좋은 사업이<br>제대로 성장하도록 만듭니다.</h1>
         <p class="hero-kw">사업기획 · 개발 · 마케팅 · 매출 · 투자</p>
@@ -2277,7 +2293,7 @@ h1:focus { outline: none; }
   <div class="wrap">
     <div class="ftr-top">
       <div>
-        <a class="logo" href="#home"><span class="logo-1">토브 브랜딩 컴퍼니</span><span class="logo-2">TOV BRANDING COMPANY</span></a>
+        <a class="logo" href="#home"><span class="logo-1">토브 파트너스</span><span class="logo-2">TOV PARTNERS</span></a>
         <p class="ftr-tag">사업을 만들어 본 사람의 사업화 컨설팅.</p>
       </div>
       <a class="ftr-big" href="#contact">Let's build your business.<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
@@ -2300,7 +2316,7 @@ h1:focus { outline: none; }
       </div>
     </div>
     <div class="ftr-bot">
-      <p>© 2026 토브 브랜딩 컴퍼니. All rights reserved.</p>
+      <p>© 2026 토브 파트너스. All rights reserved.</p>
       <p>Photography: Unsplash · <a class="ftr-admin" href="#admin">관리자</a></p>
     </div>
   </div>
@@ -2781,8 +2797,28 @@ h1:focus { outline: none; }
     if (a && a.getAttribute('href') === location.hash) { e.preventDefault(); route(); }
   });
 
-  /* 상담 신청: 배포된 사이트(Netlify)에서는 실제로 전송하고, 미리보기에서는 안내만 한다 */
+  /* 상담 신청: 배포된 사이트(Firebase)에서는 실제로 저장하고, 미리보기에서는 안내만 한다 */
   const PREVIEW = location.protocol === 'file:' || /(^|\.)(claude\.ai|claudeusercontent\.com)$|^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+
+  /* ================= Firebase (배포된 사이트에서만 불러온다) =================
+     설정값은 공개되어도 되는 웹 앱 식별 정보다. 데이터 보호는 firestore.rules 가 맡는다. */
+  const FB_CONFIG = null; /* @firebase-config */
+  const FB_SDK = 'https://www.gstatic.com/firebasejs/13.0.0/';
+  const ADMIN_EMAIL = 'admin@tovpartners.kr';
+  let fbReady = null;
+  function fb() {
+    if (!FB_CONFIG) return Promise.reject(new Error('firebase-not-configured'));
+    if (!fbReady) {
+      fbReady = Promise.all(['firebase-app.js', 'firebase-firestore.js', 'firebase-auth.js'].map(f => import(FB_SDK + f)))
+        .then(([appMod, fs, au]) => {
+          const app = appMod.initializeApp(FB_CONFIG);
+          return { fs, au, db: fs.getFirestore(app), auth: au.getAuth(app) };
+        });
+      fbReady.catch(() => { fbReady = null; });
+    }
+    return fbReady;
+  }
+  const kstDate = (d = new Date()) => d.toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
   $('#cform').addEventListener('submit', async e => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -2797,18 +2833,22 @@ h1:focus { outline: none; }
     msg.className = 'fmsg full';
     if (PREVIEW) { msg.textContent = '미리보기 화면에서는 신청 내용이 전송되지 않습니다.'; return; }
 
+    const done = '상담 신청이 접수되었습니다. 검토 후 연락드리겠습니다.';
+    if ($('#c-bot').value) { form.reset(); msg.textContent = done; return; }   // 스팸 방지 칸이 채워지면 저장하지 않는다
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     msg.textContent = '전송 중입니다.';
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ company: $('#c-company').value, name: $('#c-name').value, phone: $('#c-phone').value, agree: $('#c-agree').checked, bot: $('#c-bot').value })
+      const { fs, db } = await fb();
+      await fs.addDoc(fs.collection(db, 'inquiries'), {
+        company: $('#c-company').value.trim().slice(0, 100),
+        name: $('#c-name').value.trim().slice(0, 50),
+        phone: $('#c-phone').value.trim().slice(0, 30),
+        agree: true,
+        createdAt: fs.serverTimestamp()
       });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
       form.reset();
-      msg.textContent = '상담 신청이 접수되었습니다. 검토 후 연락드리겠습니다.';
+      msg.textContent = done;
     } catch (err) {
       msg.className = 'fmsg full err';
       msg.textContent = '전송하지 못했습니다. 잠시 후 다시 시도해 주세요.';
@@ -2825,18 +2865,15 @@ h1:focus { outline: none; }
       const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
       if (localStorage.getItem('tov-visit') !== today) { localStorage.setItem('tov-visit', today); isNew = true; }
     } catch (err) { /* 저장할 수 없는 브라우저는 방문자 수에서 빠진다 */ }
-    const body = JSON.stringify({ page: key, isNew });
-    try {
-      if (!(navigator.sendBeacon && navigator.sendBeacon('/api/track', body))) fetch('/api/track', { method: 'POST', body, keepalive: true });
-    } catch (err) { /* 집계 실패는 무시 */ }
+    if (!/^[a-z0-9-]{1,60}$/.test(key)) return;
+    const date = kstDate();
+    fb().then(({ fs, db }) => Promise.all([
+      fs.setDoc(fs.doc(db, 'daily', date), { date, views: fs.increment(1), visitors: fs.increment(isNew ? 1 : 0) }, { merge: true }),
+      fs.setDoc(fs.doc(db, 'pageviews', date + '_' + key), { date, page: key, n: fs.increment(1) }, { merge: true })
+    ])).catch(() => { /* 집계 실패는 무시 */ });
   }
 
   /* ================= 관리자 ================= */
-  const ADM_KEY = 'tov-admin-token';
-  const admToken = {
-    get() { try { return sessionStorage.getItem(ADM_KEY) || ''; } catch (err) { return ''; } },
-    set(v) { try { if (v) sessionStorage.setItem(ADM_KEY, v); else sessionStorage.removeItem(ADM_KEY); } catch (err) { /* 저장 불가 */ } }
-  };
   let admData = null;
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = n => Number(n || 0).toLocaleString('ko-KR');
@@ -2851,15 +2888,41 @@ h1:focus { outline: none; }
   };
 
   function admShow(dash) { $('#adm-login').hidden = dash; $('#adm-dash').hidden = !dash; }
-  function admEnter() { if (admToken.get()) admLoad(); else admShow(false); }
+  async function admEnter() {
+    if (PREVIEW || !FB_CONFIG) { admShow(false); return; }
+    try {
+      const { auth } = await fb();
+      await auth.authStateReady();
+      if (auth.currentUser) admLoad(); else admShow(false);
+    } catch (err) { admShow(false); }
+  }
 
   async function admLoad() {
     const msg = $('#adm-msg');
     try {
-      const res = await fetch('/api/admin/data', { headers: { Authorization: 'Bearer ' + admToken.get() }, cache: 'no-store' });
-      if (res.status === 401) { admToken.set(''); admShow(false); return; }
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      admData = await res.json();
+      const { fs, db, au, auth } = await fb();
+      const days = Array.from({ length: 30 }, (_, i) => kstDate(new Date(Date.now() - (29 - i) * 864e5)));
+      const [inqSnap, daySnap, pvSnap] = await Promise.all([
+        fs.getDocs(fs.query(fs.collection(db, 'inquiries'), fs.orderBy('createdAt', 'desc'), fs.limit(2000))),
+        fs.getDocs(fs.query(fs.collection(db, 'daily'), fs.where('date', '>=', days[0]))),
+        fs.getDocs(fs.query(fs.collection(db, 'pageviews'), fs.where('date', '>=', days[0])))
+      ]).catch(async err => {
+        if (err && err.code === 'permission-denied') { await au.signOut(auth); admShow(false); return null; }
+        throw err;
+      });
+      if (!inqSnap) return;
+      const inquiries = inqSnap.docs.map(d => {
+        const v = d.data();
+        return { id: d.id, company: v.company, name: v.name, phone: v.phone, createdAt: (v.createdAt && v.createdAt.toDate ? v.createdAt.toDate() : new Date()).toISOString() };
+      });
+      const byDay = {};
+      daySnap.forEach(d => { byDay[d.id] = d.data(); });
+      const inqByDay = {};
+      inquiries.forEach(q => { const k = kstDate(new Date(q.createdAt)); inqByDay[k] = (inqByDay[k] || 0) + 1; });
+      const daily = days.map(date => ({ date, views: (byDay[date] && byDay[date].views) || 0, visitors: (byDay[date] && byDay[date].visitors) || 0, inquiries: inqByDay[date] || 0 }));
+      const pages = {};
+      pvSnap.forEach(d => { const v = d.data(); pages[v.page] = (pages[v.page] || 0) + (v.n || 0); });
+      admData = { generatedAt: new Date().toISOString(), daily, pages: Object.entries(pages).sort((a, b) => b[1] - a[1]).slice(0, 10), inquiries };
       admRender(admData);
       msg.hidden = true;
       admShow(true);
@@ -2917,18 +2980,24 @@ h1:focus { outline: none; }
     btn.disabled = true;
     msg.textContent = '확인 중입니다.';
     try {
-      const res = await fetch('/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: pw.value }) });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && data.token) { admToken.set(data.token); pw.value = ''; msg.hidden = true; await admLoad(); }
-      else msg.textContent = data.error === 'not-configured' ? '관리자 비밀번호가 아직 설정되지 않았습니다. Netlify 환경 변수 ADMIN_PASSWORD를 확인해 주세요.' : '비밀번호가 맞지 않습니다.';
+      const { au, auth } = await fb();
+      await au.setPersistence(auth, au.browserSessionPersistence);
+      await au.signInWithEmailAndPassword(auth, ADMIN_EMAIL, pw.value);
+      pw.value = '';
+      msg.hidden = true;
+      await admLoad();
     } catch (err) {
-      msg.textContent = '연결하지 못했습니다. 잠시 후 다시 시도해 주세요.';
+      const c = (err && err.code) || '';
+      msg.textContent = c === 'auth/too-many-requests' ? '시도가 많아 잠시 막혔습니다. 잠시 후 다시 시도해 주세요.'
+        : (c === 'auth/operation-not-allowed' || (err && err.message === 'firebase-not-configured')) ? '관리자 로그인이 아직 설정되지 않았습니다.'
+        : /^auth\/(invalid-credential|wrong-password|user-not-found|invalid-login-credentials|invalid-email)$/.test(c) ? '비밀번호가 맞지 않습니다.'
+        : '연결하지 못했습니다. 잠시 후 다시 시도해 주세요.';
     } finally {
       btn.disabled = false;
     }
   });
   $('#adm-refresh').addEventListener('click', admLoad);
-  $('#adm-logout').addEventListener('click', () => { admToken.set(''); admData = null; admShow(false); $('#adm-pw').focus(); });
+  $('#adm-logout').addEventListener('click', () => { fb().then(({ au, auth }) => au.signOut(auth)).catch(() => {}); admData = null; admShow(false); $('#adm-pw').focus(); });
   $('#adm-csv').addEventListener('click', () => {
     if (!admData) return;
     const cell = v => { const s = String(v ?? ''); return '"' + (/^[=+\-@]/.test(s) ? "'" + s : s).replace(/"/g, '""') + '"'; };

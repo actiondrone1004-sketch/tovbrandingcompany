@@ -29,8 +29,8 @@ const head = `<!doctype html>
 <meta name="description" content="스타트업 · 중소기업을 위한 사업화 컨설팅. 사업기획 · 개발 · 마케팅 · 매출 · 투자까지, 사업을 직접 만들어 본 창업자가 함께합니다.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:site_name" content="토브 브랜딩 컴퍼니">
-<meta property="og:title" content="토브 브랜딩 컴퍼니">
+<meta property="og:site_name" content="토브 파트너스">
+<meta property="og:title" content="토브 파트너스">
 <meta property="og:description" content="좋은 사업이 제대로 성장하도록 만듭니다.">
 <meta name="theme-color" content="#071A2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -56,17 +56,9 @@ function copyDir(from, to) {
 }
 copyDir(join(srcDir, 'img'), join(outDir, 'img'));
 
-// 5) 파비콘 · 검색 로봇 · 보안 헤더
+// 5) 파비콘 · 검색 로봇 (보안 헤더는 firebase.json 에서 설정)
 writeFileSync(join(outDir, 'favicon.svg'),
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#071A2D"/><text x="32" y="45" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#B99A63">T</text></svg>\n');
 writeFileSync(join(outDir, 'robots.txt'), 'User-agent: *\nAllow: /\n');
-writeFileSync(join(outDir, '_headers'), `/*
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: SAMEORIGIN
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-/img/*
-  Cache-Control: public, max-age=604800
-`);
 
 console.log(`site/ 완료 · 숨김 사례 제외: ${hiddenSlugs.join(', ') || '없음'}`);

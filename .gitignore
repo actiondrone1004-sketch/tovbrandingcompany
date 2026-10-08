@@ -3,12 +3,8 @@
 /*
 !/.gitignore
 !/brandlab/
-!/netlify/
 !/build-site.mjs
-!/netlify.toml
-!/package.json
-!/package-lock.json
+!/firebase.json
+!/firestore.rules
+!/.firebaserc
 !/README.md
-
-# Local Netlify folder
-.netlify
