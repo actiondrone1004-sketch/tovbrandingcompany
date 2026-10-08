@@ -169,8 +169,8 @@ h1:focus { outline: none; }
 .phero-title.sm { font-size: clamp(1.8rem, 1.4rem + 1.9vw, 3rem); line-height: 1.05; }
 .phero-sub { margin-top: 22px; max-width: 30em; font-family: var(--serif-ko); font-weight: 400; font-size: clamp(1rem, .95rem + .35vw, 1.2rem); line-height: 1.7; letter-spacing: -.02em; color: var(--on-dark-2); }
 
-/* ---------- 홈: 대표 → 덴딜(수도권 35%) → 브랜딩 분야 ---------- */
-.pflow { display: grid; grid-template-columns: minmax(0, .9fr) auto minmax(0, 1.25fr) auto minmax(0, 1fr); align-items: stretch; gap: clamp(10px, 1.4vw, 18px); }
+/* ---------- 홈: 대표 → 액션드론(5만+) → 덴딜(수도권 35%) ---------- */
+.pflow { display: grid; grid-template-columns: minmax(0, .85fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; gap: clamp(10px, 1.4vw, 18px); }
 .pf-arrow { display: grid; place-items: center; }
 .pf-arrow span { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: var(--navy); }
 .pf-arrow .i { width: 18px; height: 18px; stroke-width: 1.8; }
@@ -180,9 +180,18 @@ h1:focus { outline: none; }
 .pf-who { display: grid; gap: 3px; padding: 16px 18px 18px; }
 .pf-who b { margin-bottom: 2px; font-family: var(--serif-ko); font-size: 1.15rem; font-weight: 500; }
 .pf-who span { font-size: .78rem; color: var(--gold); }
-.pf-platform { display: grid; justify-items: center; align-content: center; gap: 16px; padding: clamp(20px, 2.6vw, 32px); background: var(--dd-bg); border: 1px solid var(--rule); }
-.pf-logo { width: 118px; height: auto; }
-.pf-ring { position: relative; width: min(100%, 210px); aspect-ratio: 1; }
+.pf-card { display: grid; justify-items: center; align-content: start; gap: 14px; padding: clamp(18px, 2.4vw, 28px); border: 1px solid var(--rule); text-align: center; }
+.pf-drone { background: var(--white); }
+.pf-platform { background: var(--dd-bg); }
+.pf-yr { padding: 4px 12px; background: var(--navy); color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .08em; }
+.pf-lg { display: grid; place-items: center; height: 64px; }
+.pf-lg img { max-width: 130px; max-height: 64px; width: auto; height: auto; }
+.pf-big, .pf-ring { width: min(100%, 200px); aspect-ratio: 1; }
+.pf-big { display: grid; place-content: center; justify-items: center; gap: 6px; border-radius: 50%; background: var(--navy); }
+.pf-big b { font-family: var(--serif-en); font-size: clamp(2.6rem, 2rem + 2vw, 3.6rem); font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; color: var(--white); }
+.pf-big em { font-size: .55em; font-style: normal; color: var(--gold); }
+.pf-big span { font-size: .8125rem; font-weight: 700; color: var(--gold); }
+.pf-ring { position: relative; }
 .pf-ring svg { display: block; width: 100%; height: 100%; }
 .ring-track { fill: none; stroke: var(--rule); stroke-width: 11; }
 .ring-val { fill: none; stroke: var(--gold); stroke-width: 11; }
@@ -196,46 +205,34 @@ h1:focus { outline: none; }
 .pf-nums li + li { border-left: 1px solid var(--rule); }
 .pf-nums b { white-space: nowrap; font-family: var(--serif-en); font-size: clamp(1.2rem, 1rem + .8vw, 1.6rem); font-weight: 500; line-height: 1.1; font-variant-numeric: lining-nums; color: var(--navy); }
 .pf-nums span { font-size: .72rem; color: var(--muted); }
-.pf-platform .src { margin-top: -6px; }
-.pf-targets { display: grid; grid-template-rows: auto repeat(3, minmax(0, 1fr)); background: var(--navy); color: var(--white); }
-.pf-h { padding: 14px 20px; border-bottom: 1px solid var(--rule-dark); font-size: .8125rem; font-weight: 700; letter-spacing: .08em; color: var(--gold); }
-.pf-t { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 16px 20px; transition: background .2s ease; }
-.pf-t + .pf-t { border-top: 1px solid var(--rule-dark); }
-.pf-t:hover { background: rgba(255, 255, 255, .06); }
-.pf-t .i { width: 30px; height: 30px; color: var(--gold); stroke-width: 1.2; }
-.pf-t b { font-family: var(--serif-ko); font-size: clamp(1.05rem, .95rem + .4vw, 1.3rem); font-weight: 500; }
-.pf-t small { display: block; margin-top: 2px; font-family: var(--sans); font-size: .72rem; color: var(--on-dark-2); }
-.pf-t .pf-go { width: 16px; height: 16px; color: var(--on-dark-2); stroke-width: 1.5; }
+.pf-card .src { margin-top: -6px; }
 @media (max-width: 900px) {
-  .pflow { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); grid-template-areas: "f p" "a a" "t t"; gap: 10px; }
-  .pf-founder { grid-area: f; }
-  .pf-platform { grid-area: p; gap: 10px; padding: 14px 10px; }
-  .pf-arrow-1 { display: none; }
-  .pf-arrow-2 { grid-area: a; }
-  .pf-arrow-2 span { width: 32px; height: 32px; transform: rotate(90deg); }
-  .pf-targets { grid-area: t; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto; }
-  .pf-h { grid-column: 1 / -1; padding: 10px 14px; font-size: .75rem; }
-  .pf-t { grid-template-columns: 1fr; justify-items: center; gap: 6px; padding: 14px 6px; text-align: center; }
-  .pf-t + .pf-t { border-top: 0; border-left: 1px solid var(--rule-dark); }
-  .pf-t .pf-go { display: none; }
+  .pflow { grid-template-columns: minmax(0, .8fr) minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+  .pf-arrow { display: none; }
+  .pf-card { padding: 16px 10px; }
 }
 @media (max-width: 640px) {
-  .pf-arrow .i { width: 15px; height: 15px; }
-  .pf-t .i { width: 24px; height: 24px; }
-  .pf-t b { font-size: .95rem; }
-  .pf-t small { font-size: .62rem; }
+  .pflow { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-areas: "f d" "f n"; }
+  .pf-founder { grid-area: f; }
+  .pf-drone { grid-area: d; }
+  .pf-platform { grid-area: n; }
+  .pf-card { gap: 8px; padding: 12px 8px; }
+  .pf-yr { padding: 2px 8px; font-size: .62rem; }
+  .pf-lg { height: 40px; }
+  .pf-lg img { max-width: 84px; max-height: 40px; }
+  .pf-big, .pf-ring { width: min(100%, 112px); }
+  .pf-big, .ring-c { gap: 3px; }
+  .pf-big b, .ring-c b { font-size: 1.9rem; }
+  .pf-big span, .ring-c span { font-size: .6rem; }
+  .pf-nums li { padding-top: 6px; }
+  .pf-nums b { font-size: .9rem; }
+  .pf-nums span { font-size: .56rem; }
+  .pf-card .src { font-size: .6rem; }
+  .pf-card .tlink { font-size: .66rem; }
   .pf-photo { min-height: 160px; }
   .pf-who { padding: 10px 12px 12px; }
   .pf-who b { font-size: 1rem; }
   .pf-who span { font-size: .66rem; }
-  .pf-logo { width: 84px; }
-  .pf-ring { width: min(100%, 150px); }
-  .ring-c { gap: 3px; }
-  .ring-c b { font-size: 2.2rem; }
-  .ring-c span { font-size: .66rem; }
-  .pf-nums li { padding-top: 8px; }
-  .pf-nums b { font-size: .95rem; }
-  .pf-nums span { font-size: .58rem; }
 }
 
 /* ---------- 홈: 메서드 ---------- */
@@ -1282,8 +1279,6 @@ h1:focus { outline: none; }
   <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
   <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
   <symbol id="i-mega" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
-  <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M7.5 3C5 3 3.5 5 3.5 7.6c0 2.3.9 3.9 1.5 6 .6 2.2.9 7.4 2.8 7.4 1.6 0 1.7-4.4 2.7-5.9.4-.6.9-.9 1.5-.9s1.1.3 1.5.9c1 1.5 1.1 5.9 2.7 5.9 1.9 0 2.2-5.2 2.8-7.4.6-2.1 1.5-3.7 1.5-6C20.5 5 19 3 16.5 3 14.8 3 13.6 3.9 12 3.9S9.2 3 7.5 3z"/></symbol>
-  <symbol id="i-lab" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v6.2L4.6 18.6A1.6 1.6 0 0 0 6 21h12a1.6 1.6 0 0 0 1.4-2.4L14 9.2V3"/><path d="M7.2 15h9.6"/></symbol>
   <defs><linearGradient id="ig-grad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs>
   <symbol id="logo-naver" viewBox="0 0 48 48"><rect width="48" height="48" rx="10" fill="#03C75A"/><path d="M15 13h6.5l5.5 9.2V13H33v22h-6.5L21 25.8V35h-6z" fill="#fff"/></symbol>
   <symbol id="logo-google" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></symbol>
@@ -1341,17 +1336,31 @@ h1:focus { outline: none; }
     <section class="sec">
       <div class="wrap">
         <div class="shead-row">
-          <div class="shead"><h2 class="h2">치과 산업을 직접 경영한 경험으로<br>전문적인 브랜딩을 제공합니다</h2></div>
+          <div class="shead"><h2 class="h2">브랜드 하나로 사람을 모으는 법,<br>두 번 증명했습니다</h2></div>
           <a class="tlink" href="#about">About Kim Sangwoo<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
         </div>
         <div class="pflow">
           <figure class="pf-founder">
             <div class="pf-photo"><img src="img/founder.jpg" alt="김상우 대표" loading="lazy"></div>
-            <figcaption class="pf-who"><b>김상우 대표</b><span>前 액션드론 대표</span><span>2022~ 덴딜 창업</span></figcaption>
+            <figcaption class="pf-who"><b>김상우 대표</b><span>액션드론 · 덴딜 창업자</span></figcaption>
           </figure>
           <div class="pf-arrow pf-arrow-1" aria-hidden="true"><span><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></span></div>
-          <div class="pf-platform">
-            <img class="pf-logo" src="img/dendeal-logo.png" alt="Den.deal">
+          <div class="pf-card pf-drone">
+            <span class="pf-yr">2016 · 드론 교육</span>
+            <div class="pf-lg"><img src="img/actiondrone-logo.png" alt="액션드론 ActionDrone"></div>
+            <div class="pf-big" role="img" aria-label="액션드론 누적 교육 인원 5만 명 이상"><b>5만<em>+</em></b><span>누적 교육 인원</span></div>
+            <ul class="pf-nums">
+              <li><b>200<em>+</em></b><span>학교</span></li>
+              <li><b>100<em>+</em></b><span>기업 · 기관</span></li>
+              <li><b>30<em>+</em></b><span>지역 축제</span></li>
+            </ul>
+            <p class="src">액션드론 자료 기준</p>
+            <a class="tlink" href="#work-actiondrone">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+          <div class="pf-arrow pf-arrow-2" aria-hidden="true"><span><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></span></div>
+          <div class="pf-card pf-platform">
+            <span class="pf-yr">2022 · 덴탈 플랫폼</span>
+            <div class="pf-lg"><img src="img/dendeal-logo.png" alt="Den.deal"></div>
             <div class="pf-ring" role="img" aria-label="덴딜 수도권 점유율 35%">
               <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-val" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="35 100" transform="rotate(-90 60 60)"/></svg>
               <div class="ring-c" aria-hidden="true"><b>35<em>%</em></b><span>수도권 점유율</span></div>
@@ -1362,14 +1371,8 @@ h1:focus { outline: none; }
               <li><b>200만<em>+</em></b><span>누적 접속</span></li>
             </ul>
             <p class="src">덴딜 기준</p>
+            <a class="tlink" href="#work-dendeal">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </div>
-          <div class="pf-arrow pf-arrow-2" aria-hidden="true"><span><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></span></div>
-          <nav class="pf-targets" aria-label="브랜딩 분야">
-            <p class="pf-h">전문 브랜딩</p>
-            <a class="pf-t" href="#dental-program"><svg class="i" aria-hidden="true"><use href="#i-tooth"></use></svg><b>치과</b><svg class="i pf-go" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-            <a class="pf-t" href="#dental-program"><svg class="i" aria-hidden="true"><use href="#i-lab"></use></svg><b>기공소</b><svg class="i pf-go" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-            <a class="pf-t" href="#mfg-program"><svg class="i" aria-hidden="true"><use href="#i-building"></use></svg><b>덴탈 기업<small>제조 · 유통</small></b><svg class="i pf-go" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          </nav>
         </div>
       </div>
     </section>
