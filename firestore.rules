@@ -7,7 +7,7 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     function isAdmin() {
-      return request.auth != null && request.auth.uid == 'aN3sL1lEJEMA2r4ZCQ4JskL3uXy1';
+      return request.auth != null && request.auth.uid == 'MTTpSgZNv7MdlUQGKrPpIAfd0IU2';
     }
     function str(v, min, max) {
       return v is string && v.size() >= min && v.size() <= max;

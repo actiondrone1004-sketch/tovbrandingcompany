@@ -14,7 +14,7 @@
 ## 관리자
 
 사이트 맨 아래 `관리자` 링크(또는 주소 끝에 `#admin`)에서 비밀번호를 입력한다.
-관리자 계정은 Firebase Authentication의 `admin@tovpartners.kr` (이메일/비밀번호) 하나다.
+관리자 계정은 Firebase Authentication의 `kswmiso0691@gmail.com` (이메일/비밀번호) 하나다. 보안 규칙은 이 계정의 UID로 확인한다.
 비밀번호를 바꾸려면 Firebase 콘솔 → Authentication → 사용자에서 바꾼다. 비밀번호는 저장소에 넣지 않는다.
 
 ## 수정하고 올리기
