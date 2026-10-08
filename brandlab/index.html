@@ -490,7 +490,7 @@ h1:focus { outline: none; }
 .case-info .tlink { margin-top: 28px; }
 
 /* WORK: 치과 · 기공소 · 제조유통 구분 */
-.segs { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; }
+.segs { display: grid; grid-template-columns: 1.5fr 1fr; gap: 12px; }
 .seg { display: grid; gap: 8px; align-content: start; width: 100%; height: 100%; padding: clamp(18px, 2.4vw, 28px); border: 1px solid var(--rule); background: var(--paper); color: var(--ink); text-align: left; font: inherit; cursor: pointer; transition: border-color .25s ease; }
 .seg:hover { border-color: var(--ink); }
 .seg.main { background: var(--navy); border-color: var(--navy); color: var(--white); }
@@ -1149,7 +1149,6 @@ h1:focus { outline: none; }
   .pair-ind { font-size: .7rem; }
   .pair-item .tlink { display: none; }
   .segs { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .segs li:first-child { grid-column: 1 / -1; }
   .hero-mark { right: -8%; font-size: 10rem; }
   .seg { gap: 4px; padding: 14px; }
   .seg b { font-size: 1.15rem; }
@@ -2262,7 +2261,7 @@ h1:focus { outline: none; }
         { h: 'Certification', p: '벤처기업 인증 · DENDEAL 상표등록 · 기술 임치 2건' }
       ],
       link: 'https://dendeal.ai.kr/', linkLabel: 'dendeal.ai.kr', pressLink: true },
-    { slug: 'actiondrone', no: '02', cat: 'edu', name: 'ACTION DRONE', project: '한국드론항공과학 · 액션드론', img: 'img/drone-xwing.jpg', alt: 'X-Wing 주니어 1기 창단식', logo: 'img/actiondrone-logo.png',
+    { slug: 'actiondrone', no: '02', cat: 'platform', name: 'ACTION DRONE', project: '한국드론항공과학 · 액션드론', img: 'img/drone-xwing.jpg', alt: 'X-Wing 주니어 1기 창단식', logo: 'img/actiondrone-logo.png',
       gallery: { type: 'groups', groups: [
         { h: '기관 · 기업', items: [['img/drone-mou.jpg', '평생학습 4.0 드론학과 MOU'], ['img/drone-xwing.jpg', 'X-Wing 주니어 1기 창단식'], ['img/drone-workshop.jpg', '2018 건설신기술 활용촉진 워크숍 강연'], ['img/drone-expo.jpg', '2018 경기도 건설신기술 박람회'], ['img/drone-corp-camp.jpg', '기업 임직원 자녀 겨울캠프'], ['img/drone-welfare.jpg', '화성시 여울림종합사회복지관']] },
         { h: '학교', items: [['img/drone-lecture.jpg', '초등학교 강당 강연'], ['img/drone-aerial.jpg', '드론으로 촬영한 단체사진'], ['img/drone-school-fly.jpg', '드론 기초비행 체험'], ['img/drone-gym.jpg', 'VR · 드론 체험 존'], ['img/drone-school-logo.jpg', '초등학교 드론 수업'], ['img/drone-junior-cup.jpg', '액션드론 주니어 드론대회']] },
@@ -2278,7 +2277,7 @@ h1:focus { outline: none; }
         { h: 'Festivals', p: '광명 스피돔 어린이날 페스티벌 · 안산 · 포천 · 청평 어린이날 행사 · 춘천 의병마을 · 수원월드컵경기장' },
         { h: 'Policy', p: '교통안전공단 드론안전정책자문단 자문위원 (2017)' }
       ] },
-    { slug: 'real-estate', no: '03', cat: 'edu', name: 'KOK 부동산학원', project: '이주왕 KOK 부동산학원', img: 'img/kok-logo.jpg', alt: 'KOK 부동산학원 로고',
+    { slug: 'real-estate', no: '03', cat: 'platform', name: 'KOK 부동산학원', project: '이주왕 KOK 부동산학원', img: 'img/kok-logo.jpg', alt: 'KOK 부동산학원 로고',
       gallery: { type: 'wide', items: [['img/kok-logo.jpg', 'KOK 부동산학원 로고'], ['img/kok-course.jpg', 'KOK 부동산학원 강의 썸네일']] },
       link: 'https://www.kokstudy.com/', linkLabel: 'kokstudy.com',
       industry: 'Real Estate / Brand / Lead Generation', role: 'Business Positioning / Website / Growth',
@@ -2300,8 +2299,7 @@ h1:focus { outline: none; }
 
   /* WORK 분야: 위 타일은 각 분야의 대표 페이지로 이동. 치과 · 기공소는 업체명을 공개하지 않는다 */
   const WORK_CATS = [
-    { key: 'platform', ko: '플랫폼 · 스타트업', en: 'Platform & Startup', main: true, link: '#mfg-program', tags: '사업기획 · 플랫폼 개발 · 제휴 · 인증 · 판로' },
-    { key: 'edu', ko: '교육 · 서비스', en: 'Education & Service', link: '#work-actiondrone', tags: '교육 사업 · 행사 · 학교 · 기관 판로' },
+    { key: 'platform', ko: '플랫폼 · 스타트업', en: 'Platform & Startup', main: true, link: '#mfg-program', tags: '사업기획 · 플랫폼 개발 · 교육 사업 · 제휴 · 판로' },
     { key: 'dental', ko: '덴탈 · 헬스케어', en: 'Dental & Healthcare', link: '#dental-program', tags: '치과 · 기공소 브랜딩 · 덴탈 제조 · 유통' }
   ];
 
