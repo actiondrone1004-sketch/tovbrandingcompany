@@ -158,28 +158,12 @@ h1:focus { outline: none; }
 .hero-net .edges line { stroke: rgba(185, 154, 99, .14); stroke-width: 1; }
 .hero-net .nodes circle { fill: rgba(207, 181, 133, .35); }
 .hero-net .nodes .hub { fill: rgba(207, 181, 133, .7); }
-.hero-net .nodes .ring { fill: none; stroke: rgba(185, 154, 99, .22); stroke-width: 1; }
 /* 흐린 사진: 가운데는 보이고 가장자리로 갈수록 사라진다 */
-.hero-photo { position: absolute; inset: -3%; background: url("img/drone-festival-aerial.jpg") 70% 50% / cover no-repeat; filter: blur(4px) saturate(.7); opacity: .4; -webkit-mask-image: radial-gradient(ellipse 52% 64% at 72% 50%, #000 0%, rgba(0, 0, 0, .55) 42%, transparent 74%); mask-image: radial-gradient(ellipse 52% 64% at 72% 50%, #000 0%, rgba(0, 0, 0, .55) 42%, transparent 74%); }
-/* 향기처럼 번지는 빛의 물결 */
-.hero-scent { position: absolute; left: 72%; top: 50%; width: 0; height: 0; }
-.hero-scent i { position: absolute; left: 0; top: 0; width: 44vmax; height: 44vmax; margin: -22vmax 0 0 -22vmax; border: 1px solid rgba(207, 181, 133, .22); border-radius: 50%; background: radial-gradient(circle, rgba(207, 181, 133, .14) 0%, rgba(207, 181, 133, .05) 38%, rgba(207, 181, 133, 0) 68%); opacity: 0; animation: hero-scent 10s cubic-bezier(.2, .6, .3, 1) infinite; }
-.hero-scent i:nth-child(2) { animation-delay: 2.5s; }
-.hero-scent i:nth-child(3) { animation-delay: 5s; }
-.hero-scent i:nth-child(4) { animation-delay: 7.5s; }
-@keyframes hero-scent { 0% { transform: scale(.15); opacity: 0; } 18% { opacity: 1; } 100% { transform: scale(1.7); opacity: 0; } }
-@media (prefers-reduced-motion: reduce) {
-  .hero-scent i { animation: none; opacity: .55; }
-  .hero-scent i:nth-child(1) { transform: scale(.45); }
-  .hero-scent i:nth-child(2) { transform: scale(.8); }
-  .hero-scent i:nth-child(3) { transform: scale(1.15); }
-  .hero-scent i:nth-child(4) { display: none; }
-}
+.hero-photo { position: absolute; inset: -3%; background: url("img/drone-lecture.jpg") 62% 45% / cover no-repeat; filter: blur(2px) saturate(.75); opacity: .5; -webkit-mask-image: radial-gradient(ellipse 52% 64% at 72% 50%, #000 0%, rgba(0, 0, 0, .55) 42%, transparent 74%); mask-image: radial-gradient(ellipse 52% 64% at 72% 50%, #000 0%, rgba(0, 0, 0, .55) 42%, transparent 74%); }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 26, 45, .92) 0%, rgba(7, 26, 45, .55) 45%, rgba(7, 26, 45, 0) 75%), linear-gradient(0deg, rgba(7, 26, 45, .9) 0%, rgba(7, 26, 45, 0) 30%); }
 .hero .wrap { position: relative; z-index: 1; }
 @media (max-width: 640px) {
   .hero-photo { background-position: 60% 50%; -webkit-mask-image: radial-gradient(ellipse 80% 60% at 70% 40%, #000 0%, transparent 75%); mask-image: radial-gradient(ellipse 80% 60% at 70% 40%, #000 0%, transparent 75%); }
-  .hero-scent { left: 75%; top: 38%; }
 }
 .hero-kw { margin-top: 22px; font-size: clamp(.85rem, .8rem + .3vw, 1rem); font-weight: 500; letter-spacing: .14em; color: var(--gold); }
 .hero-title { margin-top: 0; font-family: var(--serif-ko); font-weight: 500; font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3.3rem); line-height: 1.3; letter-spacing: -.04em; }
@@ -722,6 +706,14 @@ h1:focus { outline: none; }
 .adm-btns { display: flex; gap: 8px; }
 .adm-btn { padding: 8px 14px; border: 1px solid var(--ink); background: transparent; color: var(--ink); font: inherit; font-size: .78rem; font-weight: 700; cursor: pointer; }
 .adm-btn:hover { background: var(--ink); color: var(--white); }
+.adm-range { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-bottom: 12px; }
+.adm-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.adm-chips button { min-height: 36px; padding: 0 14px; border: 1px solid var(--rule); background: var(--white); color: var(--ink); font: inherit; font-size: .8125rem; font-weight: 500; cursor: pointer; }
+.adm-chips button:hover { border-color: var(--ink); }
+.adm-chips button[aria-pressed="true"] { border-color: var(--navy); background: var(--navy); color: var(--white); }
+.adm-custom { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: .8125rem; color: var(--muted); }
+.adm-custom input { min-height: 36px; padding: 0 8px; border: 1px solid var(--rule); background: var(--white); font: inherit; font-size: .8125rem; color: var(--ink); }
+.adm-period { margin-bottom: 12px; font-family: var(--serif-ko); font-size: 1rem; font-weight: 500; }
 .adm-kpi { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
 .adm-kpi li { display: grid; gap: 6px; padding: 18px 12px 18px 0; border-bottom: 1px solid var(--rule); }
 .adm-kpi li + li { padding-left: 14px; border-left: 1px solid var(--rule); }
@@ -733,11 +725,11 @@ h1:focus { outline: none; }
 .adm-card h2 { margin-bottom: 16px; font-size: .9375rem; font-weight: 700; }
 .adm-head h2 { margin-bottom: 0; }
 .adm-head { margin-bottom: 12px; }
-.adm-bars { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); grid-template-rows: 140px; align-items: end; gap: 4px; border-bottom: 1px solid var(--muted); }
+.adm-bars { display: grid; grid-template-rows: 140px; align-items: end; gap: 4px; border-bottom: 1px solid var(--muted); }
 .adm-bars span { min-height: 1px; background: var(--navy); border-radius: 3px 3px 0 0; }
 .adm-bars.inq span { background: var(--gold-deep); }
 .adm-bars span:hover { opacity: .75; }
-.adm-x { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); gap: 4px; margin-top: 6px; font-size: .62rem; color: var(--muted); white-space: nowrap; }
+.adm-x { display: grid; gap: 4px; margin-top: 6px; font-size: .62rem; color: var(--muted); white-space: nowrap; }
 .adm-sum { margin-top: 10px; font-size: .78rem; color: var(--muted); }
 .adm-sum b { color: var(--ink); }
 .adm-pages li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: .875rem; }
@@ -761,7 +753,12 @@ h1:focus { outline: none; }
   .adm-kpi li, .adm-kpi li + li { padding: 14px 10px 14px 0; border-left: 0; }
   .adm-kpi li:nth-child(even) { padding-left: 12px; border-left: 1px solid var(--rule); }
   .adm-kpi b { font-size: 1.6rem; }
-  .adm-bars { grid-template-rows: 110px; gap: 3px; }
+  .adm-bars { grid-template-rows: 110px; gap: 2px; }
+  .adm-x { gap: 2px; font-size: .55rem; }
+  .adm-range { flex-direction: column; align-items: stretch; }
+  .adm-chips { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .adm-chips button { padding: 0; }
+  .adm-custom input { flex: 1 1 0; min-width: 0; }
   .adm-table thead { display: none; }
   .adm-table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
   .adm-table td { padding: 0; border: 0; }
@@ -1374,7 +1371,7 @@ h1:focus { outline: none; }
   <!-- ===================== HOME ===================== -->
   <section class="page" data-route="home">
     <header class="hero dark">
-      <div class="hero-bg" aria-hidden="true"><div class="hero-photo"></div><div class="hero-scent"><i></i><i></i><i></i><i></i></div><svg class="hero-net" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice"><defs><pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none"/></pattern></defs><rect class="grid" width="1440" height="760" fill="url(#hero-grid)"/><g class="edges"><line x1="404" y1="666" x2="473" y2="652"/><line x1="404" y1="666" x2="535" y2="563"/><line x1="838" y1="183" x2="922" y2="268"/><line x1="838" y1="183" x2="969" y2="171"/><line x1="1235" y1="402" x2="1198" y2="472"/><line x1="1235" y1="402" x2="1263" y2="325"/><line x1="880" y1="551" x2="794" y2="535"/><line x1="880" y1="551" x2="924" y2="648"/><line x1="1198" y1="472" x2="1095" y2="386"/><line x1="1303" y1="205" x2="1218" y2="211"/><line x1="1303" y1="205" x2="1263" y2="325"/><line x1="1209" y1="77" x2="1218" y2="211"/><line x1="1209" y1="77" x2="1140" y2="199"/><line x1="1383" y1="589" x2="1355" y2="657"/><line x1="1383" y1="589" x2="1384" y2="508"/><line x1="642" y1="389" x2="577" y2="317"/><line x1="642" y1="389" x2="750" y2="424"/><line x1="1384" y1="508" x2="1394" y2="419"/><line x1="922" y1="268" x2="969" y2="171"/><line x1="681" y1="242" x2="779" y2="315"/><line x1="681" y1="242" x2="577" y2="317"/><line x1="1394" y1="419" x2="1371" y2="351"/><line x1="1234" y1="637" x2="1159" y2="667"/><line x1="1234" y1="637" x2="1355" y2="657"/><line x1="546" y1="226" x2="577" y2="317"/><line x1="546" y1="226" x2="446" y2="209"/><line x1="1095" y1="386" x2="1003" y2="443"/><line x1="1095" y1="386" x2="1117" y2="278"/><line x1="969" y1="171" x2="1055" y2="153"/><line x1="1373" y1="77" x2="1437" y2="190"/><line x1="1303" y1="205" x2="1373" y2="77"/><line x1="1055" y1="153" x2="1040" y2="62"/><line x1="883" y1="402" x2="1003" y2="443"/><line x1="883" y1="402" x2="750" y2="424"/><line x1="1140" y1="199" x2="1218" y2="211"/><line x1="1140" y1="199" x2="1117" y2="278"/><line x1="1371" y1="351" x2="1263" y2="325"/><line x1="1046" y1="509" x2="1003" y2="443"/><line x1="1095" y1="386" x2="1046" y2="509"/><line x1="626" y1="597" x2="662" y2="667"/><line x1="626" y1="597" x2="653" y2="508"/><line x1="683" y1="93" x2="574" y2="41"/><line x1="681" y1="242" x2="683" y2="93"/><line x1="1303" y1="205" x2="1437" y2="190"/><line x1="662" y1="667" x2="725" y2="699"/><line x1="1355" y1="657" x2="1435" y2="689"/><line x1="577" y1="317" x2="446" y2="209"/><line x1="546" y1="226" x2="574" y2="41"/><line x1="924" y1="648" x2="794" y2="535"/><line x1="1046" y1="509" x2="1159" y2="667"/><line x1="473" y1="652" x2="535" y2="563"/><line x1="626" y1="597" x2="725" y2="699"/><line x1="750" y1="424" x2="779" y2="315"/><line x1="626" y1="597" x2="535" y2="563"/><line x1="969" y1="171" x2="1040" y2="62"/><line x1="642" y1="389" x2="653" y2="508"/><line x1="1383" y1="589" x2="1435" y2="689"/><line x1="750" y1="424" x2="794" y2="535"/></g><g class="nodes"><circle cx="404" cy="666" r="2.5"/><circle cx="838" cy="183" r="2.5"/><circle cx="1235" cy="402" r="2.5"/><circle class="hub" cx="880" cy="551" r="5"/><circle class="ring" cx="880" cy="551" r="14"/><circle cx="1198" cy="472" r="2.5"/><circle cx="1303" cy="205" r="2.5"/><circle cx="1209" cy="77" r="2.5"/><circle cx="1383" cy="589" r="2.5"/><circle cx="642" cy="389" r="2.5"/><circle cx="1384" cy="508" r="2.5"/><circle cx="922" cy="268" r="2.5"/><circle class="hub" cx="681" cy="242" r="5"/><circle class="ring" cx="681" cy="242" r="14"/><circle cx="1394" cy="419" r="2.5"/><circle cx="1234" cy="637" r="2.5"/><circle cx="546" cy="226" r="2.5"/><circle cx="1095" cy="386" r="2.5"/><circle cx="969" cy="171" r="2.5"/><circle cx="1373" cy="77" r="2.5"/><circle cx="1055" cy="153" r="2.5"/><circle class="hub" cx="883" cy="402" r="5"/><circle class="ring" cx="883" cy="402" r="14"/><circle cx="1140" cy="199" r="2.5"/><circle cx="1371" cy="351" r="2.5"/><circle cx="1046" cy="509" r="2.5"/><circle cx="1218" cy="211" r="2.5"/><circle cx="1117" cy="278" r="2.5"/><circle cx="626" cy="597" r="2.5"/><circle cx="577" cy="317" r="2.5"/><circle class="hub" cx="683" cy="93" r="5"/><circle class="ring" cx="683" cy="93" r="14"/><circle cx="1437" cy="190" r="2.5"/><circle cx="1003" cy="443" r="2.5"/><circle cx="662" cy="667" r="2.5"/><circle cx="1355" cy="657" r="2.5"/><circle cx="446" cy="209" r="2.5"/><circle cx="574" cy="41" r="2.5"/><circle cx="924" cy="648" r="2.5"/><circle cx="1159" cy="667" r="2.5"/><circle class="hub" cx="473" cy="652" r="5"/><circle class="ring" cx="473" cy="652" r="14"/><circle cx="725" cy="699" r="2.5"/><circle cx="750" cy="424" r="2.5"/><circle cx="535" cy="563" r="2.5"/><circle cx="1040" cy="62" r="2.5"/><circle cx="653" cy="508" r="2.5"/><circle cx="1435" cy="689" r="2.5"/><circle cx="1263" cy="325" r="2.5"/><circle cx="794" cy="535" r="2.5"/><circle cx="779" cy="315" r="2.5"/></g></svg></div>
+      <div class="hero-bg" aria-hidden="true"><div class="hero-photo"></div><svg class="hero-net" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice"><defs><pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none"/></pattern></defs><rect class="grid" width="1440" height="760" fill="url(#hero-grid)"/><g class="edges"><line x1="404" y1="666" x2="473" y2="652"/><line x1="404" y1="666" x2="535" y2="563"/><line x1="838" y1="183" x2="922" y2="268"/><line x1="838" y1="183" x2="969" y2="171"/><line x1="1235" y1="402" x2="1198" y2="472"/><line x1="1235" y1="402" x2="1263" y2="325"/><line x1="880" y1="551" x2="794" y2="535"/><line x1="880" y1="551" x2="924" y2="648"/><line x1="1198" y1="472" x2="1095" y2="386"/><line x1="1303" y1="205" x2="1218" y2="211"/><line x1="1303" y1="205" x2="1263" y2="325"/><line x1="1209" y1="77" x2="1218" y2="211"/><line x1="1209" y1="77" x2="1140" y2="199"/><line x1="1383" y1="589" x2="1355" y2="657"/><line x1="1383" y1="589" x2="1384" y2="508"/><line x1="642" y1="389" x2="577" y2="317"/><line x1="642" y1="389" x2="750" y2="424"/><line x1="1384" y1="508" x2="1394" y2="419"/><line x1="922" y1="268" x2="969" y2="171"/><line x1="681" y1="242" x2="779" y2="315"/><line x1="681" y1="242" x2="577" y2="317"/><line x1="1394" y1="419" x2="1371" y2="351"/><line x1="1234" y1="637" x2="1159" y2="667"/><line x1="1234" y1="637" x2="1355" y2="657"/><line x1="546" y1="226" x2="577" y2="317"/><line x1="546" y1="226" x2="446" y2="209"/><line x1="1095" y1="386" x2="1003" y2="443"/><line x1="1095" y1="386" x2="1117" y2="278"/><line x1="969" y1="171" x2="1055" y2="153"/><line x1="1373" y1="77" x2="1437" y2="190"/><line x1="1303" y1="205" x2="1373" y2="77"/><line x1="1055" y1="153" x2="1040" y2="62"/><line x1="883" y1="402" x2="1003" y2="443"/><line x1="883" y1="402" x2="750" y2="424"/><line x1="1140" y1="199" x2="1218" y2="211"/><line x1="1140" y1="199" x2="1117" y2="278"/><line x1="1371" y1="351" x2="1263" y2="325"/><line x1="1046" y1="509" x2="1003" y2="443"/><line x1="1095" y1="386" x2="1046" y2="509"/><line x1="626" y1="597" x2="662" y2="667"/><line x1="626" y1="597" x2="653" y2="508"/><line x1="683" y1="93" x2="574" y2="41"/><line x1="681" y1="242" x2="683" y2="93"/><line x1="1303" y1="205" x2="1437" y2="190"/><line x1="662" y1="667" x2="725" y2="699"/><line x1="1355" y1="657" x2="1435" y2="689"/><line x1="577" y1="317" x2="446" y2="209"/><line x1="546" y1="226" x2="574" y2="41"/><line x1="924" y1="648" x2="794" y2="535"/><line x1="1046" y1="509" x2="1159" y2="667"/><line x1="473" y1="652" x2="535" y2="563"/><line x1="626" y1="597" x2="725" y2="699"/><line x1="750" y1="424" x2="779" y2="315"/><line x1="626" y1="597" x2="535" y2="563"/><line x1="969" y1="171" x2="1040" y2="62"/><line x1="642" y1="389" x2="653" y2="508"/><line x1="1383" y1="589" x2="1435" y2="689"/><line x1="750" y1="424" x2="794" y2="535"/></g><g class="nodes"><circle cx="404" cy="666" r="2.5"/><circle cx="838" cy="183" r="2.5"/><circle cx="1235" cy="402" r="2.5"/><circle class="hub" cx="880" cy="551" r="5"/><circle cx="1198" cy="472" r="2.5"/><circle cx="1303" cy="205" r="2.5"/><circle cx="1209" cy="77" r="2.5"/><circle cx="1383" cy="589" r="2.5"/><circle cx="642" cy="389" r="2.5"/><circle cx="1384" cy="508" r="2.5"/><circle cx="922" cy="268" r="2.5"/><circle class="hub" cx="681" cy="242" r="5"/><circle cx="1394" cy="419" r="2.5"/><circle cx="1234" cy="637" r="2.5"/><circle cx="546" cy="226" r="2.5"/><circle cx="1095" cy="386" r="2.5"/><circle cx="969" cy="171" r="2.5"/><circle cx="1373" cy="77" r="2.5"/><circle cx="1055" cy="153" r="2.5"/><circle class="hub" cx="883" cy="402" r="5"/><circle cx="1140" cy="199" r="2.5"/><circle cx="1371" cy="351" r="2.5"/><circle cx="1046" cy="509" r="2.5"/><circle cx="1218" cy="211" r="2.5"/><circle cx="1117" cy="278" r="2.5"/><circle cx="626" cy="597" r="2.5"/><circle cx="577" cy="317" r="2.5"/><circle class="hub" cx="683" cy="93" r="5"/><circle cx="1437" cy="190" r="2.5"/><circle cx="1003" cy="443" r="2.5"/><circle cx="662" cy="667" r="2.5"/><circle cx="1355" cy="657" r="2.5"/><circle cx="446" cy="209" r="2.5"/><circle cx="574" cy="41" r="2.5"/><circle cx="924" cy="648" r="2.5"/><circle cx="1159" cy="667" r="2.5"/><circle class="hub" cx="473" cy="652" r="5"/><circle cx="725" cy="699" r="2.5"/><circle cx="750" cy="424" r="2.5"/><circle cx="535" cy="563" r="2.5"/><circle cx="1040" cy="62" r="2.5"/><circle cx="653" cy="508" r="2.5"/><circle cx="1435" cy="689" r="2.5"/><circle cx="1263" cy="325" r="2.5"/><circle cx="794" cy="535" r="2.5"/><circle cx="779" cy="315" r="2.5"/></g></svg></div>
       <div class="wrap">
         <h1 class="hero-title" tabindex="-1">좋은 사업이<br>제대로 성장하도록 만듭니다.</h1>
         <p class="hero-kw">사업기획 · 개발 · 마케팅 · 매출 · 투자</p>
@@ -2275,12 +2272,26 @@ h1:focus { outline: none; }
             <p id="adm-updated"></p>
             <div class="adm-btns"><button class="adm-btn" type="button" id="adm-refresh">새로고침</button><button class="adm-btn" type="button" id="adm-logout">로그아웃</button></div>
           </div>
+          <div class="adm-range" role="group" aria-label="기간 선택">
+            <div class="adm-chips">
+              <button type="button" data-range="today">오늘</button>
+              <button type="button" data-range="7">7일</button>
+              <button type="button" data-range="30" aria-pressed="true">30일</button>
+              <button type="button" data-range="90">90일</button>
+              <button type="button" data-range="all">전체</button>
+            </div>
+            <form class="adm-custom" id="adm-custom">
+              <input type="date" id="adm-from" aria-label="시작일" required><span aria-hidden="true">~</span><input type="date" id="adm-to" aria-label="종료일" required>
+              <button type="submit" class="adm-btn">적용</button>
+            </form>
+          </div>
+          <p class="adm-period" id="adm-period"></p>
           <ul class="adm-kpi" id="adm-kpi"></ul>
           <div class="adm-grid">
-            <section class="adm-card"><h2>최근 14일 방문자</h2><div id="adm-chart-v"></div></section>
-            <section class="adm-card"><h2>최근 14일 문의</h2><div id="adm-chart-i"></div></section>
+            <section class="adm-card"><h2>방문자</h2><div id="adm-chart-v"></div></section>
+            <section class="adm-card"><h2>문의</h2><div id="adm-chart-i"></div></section>
           </div>
-          <section class="adm-card adm-gap"><h2>많이 본 페이지 · 최근 30일</h2><ol class="adm-pages" id="adm-pages"></ol></section>
+          <section class="adm-card adm-gap"><h2>많이 본 페이지</h2><ol class="adm-pages" id="adm-pages"></ol></section>
           <section class="adm-card adm-gap">
             <div class="adm-head"><h2>문의 목록 <span id="adm-count"></span></h2><button class="adm-btn" type="button" id="adm-csv">엑셀(CSV) 내려받기</button></div>
             <table class="adm-table">
@@ -2907,17 +2918,33 @@ h1:focus { outline: none; }
     } catch (err) { admShow(false); }
   }
 
+  /* 기간: today | 7 | 30 | 90 | all | custom (from · to 는 한국 날짜 YYYY-MM-DD) */
+  let admRange = { key: '30', from: '', to: '' };
+  const addDays = (ymd, n) => kstDate(new Date(new Date(ymd + 'T12:00:00+09:00').getTime() + n * 864e5));
+  const dayList = (from, to) => { const out = []; for (let d = from; d <= to && out.length < 4000; d = addDays(d, 1)) out.push(d); return out; };
+  const dotDate = ymd => ymd.replace(/-/g, '.');
+
   async function admLoad() {
     const msg = $('#adm-msg');
     try {
       const { fs, db, au, auth } = await fb();
-      const days = Array.from({ length: 30 }, (_, i) => kstDate(new Date(Date.now() - (29 - i) * 864e5)));
-      const [inqSnap, daySnap, pvSnap] = await Promise.all([
-        fs.getDocs(fs.query(fs.collection(db, 'inquiries'), fs.orderBy('createdAt', 'desc'), fs.limit(2000))),
-        fs.getDocs(fs.query(fs.collection(db, 'daily'), fs.where('date', '>=', days[0]))),
-        fs.getDocs(fs.query(fs.collection(db, 'pageviews'), fs.where('date', '>=', days[0])))
+      const today = kstDate();
+      let from = today, to = today;
+      if (admRange.key === 'custom') { from = admRange.from; to = admRange.to; }
+      else if (admRange.key === 'all') {
+        const first = await fs.getDocs(fs.query(fs.collection(db, 'daily'), fs.orderBy('date'), fs.limit(1)));
+        from = first.empty ? today : first.docs[0].data().date;
+      } else if (admRange.key !== 'today') from = addDays(today, -(Number(admRange.key) - 1));
+      if (from > to) [from, to] = [to, from];
+      const start = fs.Timestamp.fromDate(new Date(from + 'T00:00:00+09:00'));
+      const end = fs.Timestamp.fromDate(new Date(addDays(to, 1) + 'T00:00:00+09:00'));
+      const [inqSnap, daySnap, pvSnap, totalSnap] = await Promise.all([
+        fs.getDocs(fs.query(fs.collection(db, 'inquiries'), fs.where('createdAt', '>=', start), fs.where('createdAt', '<', end), fs.orderBy('createdAt', 'desc'), fs.limit(5000))),
+        fs.getDocs(fs.query(fs.collection(db, 'daily'), fs.where('date', '>=', from), fs.where('date', '<=', to))),
+        fs.getDocs(fs.query(fs.collection(db, 'pageviews'), fs.where('date', '>=', from), fs.where('date', '<=', to))),
+        fs.getCountFromServer(fs.collection(db, 'inquiries'))
       ]).catch(async err => {
-        if (err && err.code === 'permission-denied') { await au.signOut(auth); admShow(false); return null; }
+        if (err && err.code === 'permission-denied') { await au.signOut(auth); admShow(false); const m = $('#adm-msg'); m.hidden = false; m.textContent = '이 계정에는 관리자 권한이 없습니다. (permission-denied)'; return [null]; }
         throw err;
       });
       if (!inqSnap) return;
@@ -2929,52 +2956,68 @@ h1:focus { outline: none; }
       daySnap.forEach(d => { byDay[d.id] = d.data(); });
       const inqByDay = {};
       inquiries.forEach(q => { const k = kstDate(new Date(q.createdAt)); inqByDay[k] = (inqByDay[k] || 0) + 1; });
-      const daily = days.map(date => ({ date, views: (byDay[date] && byDay[date].views) || 0, visitors: (byDay[date] && byDay[date].visitors) || 0, inquiries: inqByDay[date] || 0 }));
+      const daily = dayList(from, to).map(date => ({ date, views: (byDay[date] && byDay[date].views) || 0, visitors: (byDay[date] && byDay[date].visitors) || 0, inquiries: inqByDay[date] || 0 }));
       const pages = {};
       pvSnap.forEach(d => { const v = d.data(); pages[v.page] = (pages[v.page] || 0) + (v.n || 0); });
-      admData = { generatedAt: new Date().toISOString(), daily, pages: Object.entries(pages).sort((a, b) => b[1] - a[1]).slice(0, 10), inquiries };
+      admData = { generatedAt: new Date().toISOString(), from, to, today, daily, pages: Object.entries(pages).sort((a, b) => b[1] - a[1]).slice(0, 10), inquiries, total: totalSnap.data().count };
       admRender(admData);
       msg.hidden = true;
       admShow(true);
     } catch (err) {
       admShow(false);
       msg.hidden = false;
-      msg.textContent = '데이터를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.';
+      msg.textContent = '데이터를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.' + (err && err.code ? ' (' + err.code + ')' : '');
     }
   }
 
   // 막대 그래프 (한 가지 값, 마우스를 올리면 날짜 · 값)
   function admBars(rows, key, label, cls) {
-    const max = Math.max(1, ...rows.map(r => r[key]));
-    const total = rows.reduce((s, r) => s + r[key], 0);
-    return `<div class="adm-bars ${cls}" role="img" aria-label="${label} 최근 14일 합계 ${num(total)}">${rows.map(r => `<span style="height:${(r[key] / max * 100).toFixed(1)}%" title="${mmdd(r.date)} · ${num(r[key])}"></span>`).join('')}</div>
-      <div class="adm-x" aria-hidden="true">${rows.map((r, i) => `<span>${i % 7 === 0 || i === rows.length - 1 ? mmdd(r.date) : ''}</span>`).join('')}</div>
-      <p class="adm-sum">합계 <b>${num(total)}</b> · 최고 ${num(max === 1 && !rows.some(r => r[key]) ? 0 : max)}</p>`;
+    let bars = rows.map(r => ({ label: mmdd(r.date), tip: mmdd(r.date), v: r[key] }));
+    if (rows.length > 62) {
+      bars = [];
+      for (let i = 0; i < rows.length; i += 7) {
+        const chunk = rows.slice(i, i + 7);
+        bars.push({ label: mmdd(chunk[0].date), tip: mmdd(chunk[0].date) + '–' + mmdd(chunk[chunk.length - 1].date), v: chunk.reduce((s, r) => s + r[key], 0) });
+      }
+    }
+    const n = bars.length;
+    const max = Math.max(1, ...bars.map(b => b.v));
+    const total = bars.reduce((s, b) => s + b.v, 0);
+    const step = Math.max(1, Math.ceil(n / 6));
+    const cols = `grid-template-columns:repeat(${n},minmax(0,1fr))`;
+    return `<div class="adm-bars ${cls}" style="${cols}" role="img" aria-label="${label} 기간 합계 ${num(total)}">${bars.map(b => `<span style="height:${(b.v / max * 100).toFixed(1)}%" title="${b.tip} · ${num(b.v)}"></span>`).join('')}</div>
+      <div class="adm-x" style="${cols}" aria-hidden="true">${bars.map((b, i) => `<span>${i % step === 0 || i === n - 1 ? b.label : ''}</span>`).join('')}</div>
+      <p class="adm-sum">합계 <b>${num(total)}</b> · 최고 ${num(bars.some(b => b.v) ? max : 0)}${rows.length > 62 ? ' · 주 단위' : ''}</p>`;
   }
 
   function admRender(d) {
     const sum = (rows, k) => rows.reduce((s, r) => s + r[k], 0);
-    const today = d.daily[d.daily.length - 1];
+    const days = d.daily.length;
+    const todayRow = d.daily.find(r => r.date === d.today);
     const kpi = [
-      [today.visitors, '오늘 방문자'],
-      [sum(d.daily.slice(-7), 'visitors'), '최근 7일 방문자'],
-      [sum(d.daily, 'visitors'), '최근 30일 방문자'],
-      [sum(d.daily, 'views'), '최근 30일 페이지뷰'],
-      [sum(d.daily, 'inquiries'), '최근 30일 문의'],
-      [d.inquiries.length, '전체 문의']
+      [sum(d.daily, 'visitors'), '방문자'],
+      [sum(d.daily, 'views'), '페이지뷰'],
+      [sum(d.daily, 'inquiries'), '문의'],
+      [Math.round(sum(d.daily, 'visitors') / Math.max(1, days) * 10) / 10, '하루 평균 방문자'],
+      [todayRow ? todayRow.visitors : 0, '오늘 방문자'],
+      [d.total, '전체 문의 (누적)']
     ];
     $('#adm-kpi').innerHTML = kpi.map(([v, l]) => `<li><b>${num(v)}</b><span>${l}</span></li>`).join('');
-    const d14 = d.daily.slice(-14);
-    $('#adm-chart-v').innerHTML = admBars(d14, 'visitors', '방문자', '');
-    $('#adm-chart-i').innerHTML = admBars(d14, 'inquiries', '문의', 'inq');
+    $('#adm-chart-v').innerHTML = admBars(d.daily, 'visitors', '방문자', '');
+    $('#adm-chart-i').innerHTML = admBars(d.daily, 'inquiries', '문의', 'inq');
+    $('#adm-period').textContent = (d.from === d.to ? dotDate(d.from) : dotDate(d.from) + ' – ' + dotDate(d.to)) + ' · ' + num(days) + '일';
+    $('#adm-from').value = d.from;
+    $('#adm-to').value = d.to;
+    $('#adm-from').max = $('#adm-to').max = d.today;
+    $$('.adm-chips [data-range]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.range === admRange.key)));
     const pmax = Math.max(1, ...d.pages.map(p => p[1]));
     $('#adm-pages').innerHTML = d.pages.length
       ? d.pages.map(([k, n]) => `<li><span>${esc(pageLabel(k))}</span><b>${num(n)}</b><i><em style="width:${(n / pmax * 100).toFixed(1)}%"></em></i></li>`).join('')
-      : '<li class="adm-empty">아직 집계된 방문이 없습니다.</li>';
+      : '<li class="adm-empty">이 기간에 집계된 방문이 없습니다.</li>';
     $('#adm-count').textContent = num(d.inquiries.length) + '건';
     $('#adm-rows').innerHTML = d.inquiries.length
       ? d.inquiries.map(q => `<tr><td class="t-date">${esc(kstTime(q.createdAt))}</td><td class="t-co">${esc(q.company)}</td><td>${esc(q.name)}</td><td><a href="tel:${esc(q.phone.replace(/[^0-9+]/g, ''))}">${esc(q.phone)}</a></td></tr>`).join('')
-      : '<tr><td colspan="4" class="adm-empty">아직 접수된 문의가 없습니다.</td></tr>';
+      : '<tr><td colspan="4" class="adm-empty">이 기간에 접수된 문의가 없습니다.</td></tr>';
     $('#adm-updated').textContent = '불러온 시각 ' + kstTime(d.generatedAt);
   }
 
@@ -3001,12 +3044,20 @@ h1:focus { outline: none; }
       msg.textContent = c === 'auth/too-many-requests' ? '시도가 많아 잠시 막혔습니다. 잠시 후 다시 시도해 주세요.'
         : (c === 'auth/operation-not-allowed' || c === 'auth/configuration-not-found' || (err && err.message === 'firebase-not-configured')) ? '관리자 로그인이 아직 설정되지 않았습니다.'
         : /^auth\/(invalid-credential|wrong-password|user-not-found|invalid-login-credentials|invalid-email)$/.test(c) ? '비밀번호가 맞지 않습니다.'
-        : '연결하지 못했습니다. 잠시 후 다시 시도해 주세요.';
+        : '연결하지 못했습니다. 잠시 후 다시 시도해 주세요.' + (c ? ' (' + c + ')' : '');
     } finally {
       btn.disabled = false;
     }
   });
   $('#adm-refresh').addEventListener('click', admLoad);
+  $$('.adm-chips [data-range]').forEach(b => b.addEventListener('click', () => { admRange = { key: b.dataset.range, from: '', to: '' }; admLoad(); }));
+  $('#adm-custom').addEventListener('submit', e => {
+    e.preventDefault();
+    const from = $('#adm-from').value, to = $('#adm-to').value;
+    if (!from || !to) return;
+    admRange = { key: 'custom', from: from <= to ? from : to, to: from <= to ? to : from };
+    admLoad();
+  });
   $('#adm-logout').addEventListener('click', () => { fb().then(({ au, auth }) => au.signOut(auth)).catch(() => {}); admData = null; admShow(false); $('#adm-pw').focus(); });
   $('#adm-csv').addEventListener('click', () => {
     if (!admData) return;
@@ -3015,7 +3066,7 @@ h1:focus { outline: none; }
     const csv = '\ufeff' + rows.map(r => r.map(cell).join(',')).join('\r\n');
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
-    a.download = '상담문의_' + new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }) + '.csv';
+    a.download = '상담문의_' + admData.from + '_' + admData.to + '.csv';
     document.body.appendChild(a);
     a.click();
     a.remove();
