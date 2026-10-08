@@ -305,11 +305,6 @@ h1:focus { outline: none; }
 .cta-in .lead { margin-top: 22px; }
 
 /* ---------- ABOUT ---------- */
-.about-intro { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(48px, 7vw, 128px); align-items: start; }
-.about-intro { grid-template-areas: "pic info" "pic career"; grid-template-rows: auto 1fr; row-gap: 0; }
-.about-intro > .portrait { grid-area: pic; }
-.about-info { grid-area: info; }
-.about-intro > .about-career { grid-area: career; }
 @media (max-width: 900px) { .about-intro { grid-template-areas: "pic" "info" "career"; grid-template-rows: none; } }
 .portrait { position: relative; aspect-ratio: 4 / 5; max-width: 100%; display: grid; place-items: center; overflow: hidden; background: var(--navy); }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
@@ -322,7 +317,6 @@ h1:focus { outline: none; }
 .kw li { font-family: var(--serif-en); font-size: clamp(.95rem, .9rem + .25vw, 1.1rem); font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
 .kw li:not(:last-child)::after { content: "/"; margin-inline: 14px; color: var(--gold); }
 /* ABOUT: 김상우 스토리 (드론 → 덴딜 → 토브) */
-.sty-drone { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(20px, 3vw, 40px); align-items: center; }
 .sty-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "a a b" "a a c" "d e f"; gap: 6px; }
 .sty-photos figure { position: relative; min-width: 0; overflow: hidden; }
 .sty-photos img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .4s ease; }
@@ -334,51 +328,98 @@ h1:focus { outline: none; }
 .sty-photos figure:nth-child(4) { grid-area: d; }
 .sty-photos figure:nth-child(5) { grid-area: e; }
 .sty-photos figure:nth-child(6) { grid-area: f; }
-.sty-body { display: grid; justify-items: start; gap: 14px; }
-.sty-no { display: inline-block; padding: 4px 12px; background: var(--navy); color: var(--gold); font-size: .75rem; font-weight: 700; letter-spacing: .08em; }
-.sty-logo { width: clamp(110px, 12vw, 150px); height: auto; }
-.sty-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; border-top: 1px solid var(--ink); }
-.sty-nums li { display: grid; gap: 4px; padding: 12px 10px 12px 0; border-bottom: 1px solid var(--rule); }
-.sty-nums li + li:not(.sty-main + li) { padding-left: 12px; border-left: 1px solid var(--rule); }
-.sty-nums .sty-main { grid-column: 1 / -1; }
-.sty-nums b { font-family: var(--serif-en); font-size: clamp(1.5rem, 1.2rem + 1vw, 2.1rem); font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; color: var(--navy); }
-.sty-nums .sty-main b { font-size: clamp(2.6rem, 2rem + 2.4vw, 3.8rem); }
-.sty-nums em { font-style: normal; color: var(--gold-deep); }
-.sty-nums span { font-size: .78rem; color: var(--muted); }
-.sty-body .chips { margin-top: 0; }
-.sty-body .src { margin-top: -6px; }
-.sty-arrow { display: grid; place-items: center; margin-block: 18px; }
-.sty-arrow span { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--gold); color: var(--navy); transform: rotate(90deg); }
-.sty-arrow .i { width: 17px; height: 17px; stroke-width: 1.8; }
-.sty-next { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.sty-next > li { display: grid; justify-items: start; align-content: start; gap: 14px; padding: clamp(18px, 2.4vw, 28px); background: var(--dd-bg); border: 1px solid var(--rule); }
-.sty-next .sty-tov { background: var(--navy); border-color: var(--navy); color: var(--white); }
-.sty-tov .sty-no { background: var(--gold); color: var(--navy); }
-.sty-tov .chips li { border-color: var(--rule-dark); background: transparent; color: var(--white); }
-.sty-tov .tlink { color: var(--gold); }
-.sty-dd { width: 120px; height: auto; }
-.sty-name { font-family: var(--serif-ko); font-size: clamp(1.2rem, 1.05rem + .6vw, 1.6rem); font-weight: 500; }
-.sty-nums-2 { grid-template-columns: 1fr 1fr; }
-@media (max-width: 900px) { .sty-drone { grid-template-columns: 1fr; } }
 @media (max-width: 640px) {
   .sty-photos { gap: 4px; }
   .sty-photos figcaption { padding: 2px 6px; font-size: .58rem; }
-  .sty-body { gap: 10px; }
-  .sty-logo { width: 96px; }
-  .sty-nums b { font-size: 1.3rem; }
-  .sty-nums .sty-main b { font-size: 2.6rem; }
-  .sty-nums span { font-size: .66rem; }
-  .sty-nums li { padding: 10px 6px 10px 0; }
-  .sty-nums li + li:not(.sty-main + li) { padding-left: 8px; }
-  .sty-arrow { margin-block: 12px; }
-  .sty-arrow span { width: 32px; height: 32px; }
-  .sty-next { gap: 8px; }
-  .sty-next > li { gap: 10px; padding: 14px; }
-  .sty-no { padding: 3px 8px; font-size: .66rem; }
-  .sty-dd { width: 84px; }
-  .sty-name { font-size: 1.05rem; }
-  .sty-next .chips li { padding: 3px 7px; font-size: .68rem; }
-  .sty-next .tlink { font-size: .75rem; }
+}
+
+/* ABOUT: 성과 중심 대표 소개 */
+.ab-intro { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); grid-template-areas: "pic info" "pic kpi" "pic aff"; grid-template-rows: auto auto 1fr; column-gap: clamp(32px, 6vw, 96px); align-items: start; }
+.ab-intro > .portrait { grid-area: pic; }
+.ab-info { grid-area: info; }
+.ab-line { margin-top: 20px; font-family: var(--serif-ko); font-size: clamp(1.2rem, 1rem + .8vw, 1.7rem); font-weight: 500; line-height: 1.45; letter-spacing: -.03em; }
+.ab-kpi { grid-area: kpi; display: grid; grid-template-columns: 1fr 1fr; margin-top: clamp(24px, 3vw, 36px); border-top: 1px solid var(--ink); }
+.ab-kpi li { display: grid; gap: 4px; align-content: start; padding: 18px 14px 18px 0; border-bottom: 1px solid var(--rule); }
+.ab-kpi li:nth-child(even) { padding-left: 18px; border-left: 1px solid var(--rule); }
+.ab-kpi b { font-family: var(--serif-en); font-size: clamp(2rem, 1.6rem + 1.6vw, 3rem); font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; color: var(--navy); }
+.ab-kpi em { font-size: .5em; font-style: normal; color: var(--gold-deep); }
+.ab-kpi span { font-size: .875rem; font-weight: 700; }
+.ab-kpi small { font-size: .72rem; color: var(--muted); }
+.ab-aff { grid-area: aff; margin-top: 18px; }
+/* 스토리 · 지금 */
+.ab-logo { height: 38px; width: auto; margin-top: 14px; }
+.ab-logo-ad { height: 56px; }
+.ab-tov { aspect-ratio: 16 / 10; place-content: center; }
+.ab-means { margin-top: 18px; }
+.ab-means li { font-size: clamp(1rem, .9rem + .4vw, 1.3rem); }
+.ab-proj { display: grid; gap: 8px; margin-top: 18px; }
+.ab-proj li { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 12px; row-gap: 2px; align-items: center; padding: 12px 14px; background: var(--paper); border: 1px solid var(--rule); }
+.ab-proj b { font-size: .9375rem; }
+.ab-proj small { grid-column: 2; font-size: .78rem; color: var(--muted); }
+.ab-live { grid-row: span 2; padding: 3px 8px; background: var(--gold); color: var(--navy); font-size: .68rem; font-weight: 700; }
+.badge.badge-live { background: var(--gold); color: var(--navy); font-weight: 700; }
+/* 같은 방법, 두 번의 결과 */
+.ab-table-wrap { overflow-x: auto; }
+.ab-table { width: 100%; border-collapse: collapse; border-top: 1px solid var(--ink); }
+.ab-table thead th { padding: 18px 16px; border-bottom: 1px solid var(--ink); text-align: left; vertical-align: bottom; }
+.ab-table thead img { display: block; height: 34px; width: auto; margin-bottom: 8px; }
+.ab-table thead th:nth-child(2) img { height: 48px; }
+.ab-table thead span { font-size: .75rem; font-weight: 700; color: var(--gold-deep); }
+.ab-table tbody th { width: 22%; padding: 18px 16px 18px 0; font-family: var(--serif-ko); font-size: clamp(1rem, .95rem + .3vw, 1.2rem); font-weight: 500; text-align: left; white-space: nowrap; }
+.ab-table tbody th i { display: inline-block; width: 2em; font-family: var(--serif-en); font-size: .8em; font-style: normal; color: var(--gold-deep); }
+.ab-table td { padding: 18px 16px; border-left: 1px solid var(--rule); font-size: .9375rem; }
+.ab-table tbody tr { border-bottom: 1px solid var(--rule); }
+.ab-hl td b { font-family: var(--serif-ko); font-size: clamp(1rem, .95rem + .3vw, 1.2rem); font-weight: 500; color: var(--navy); }
+.ab-hl { background: var(--white); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* 경력 */
+.ab-career { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+/* 대상별 문의 */
+.ab-aud { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: clamp(32px, 4vw, 56px); }
+.ab-aud li { display: grid; gap: 12px; align-content: start; padding: clamp(20px, 2.6vw, 32px); border: 1px solid var(--rule-dark); }
+.ab-aud-k { font-size: .68rem; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+.ab-aud b { font-family: var(--serif-ko); font-size: clamp(1.15rem, 1rem + .5vw, 1.45rem); font-weight: 500; }
+.ab-q { font-size: .9375rem; line-height: 1.6; color: var(--on-dark-2); }
+.ab-a { padding-top: 12px; border-top: 1px solid var(--rule-dark); font-family: var(--serif-ko); font-size: clamp(1rem, .95rem + .3vw, 1.15rem); line-height: 1.5; color: var(--white); }
+.ab-aud .tlink { justify-self: start; color: var(--gold); }
+.ab-final { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; margin-top: clamp(40px, 5vw, 64px); padding-top: clamp(28px, 3vw, 40px); border-top: 1px solid var(--rule-dark); }
+.ab-final-h { font-family: var(--serif-ko); font-size: clamp(1.35rem, 1.1rem + 1vw, 2rem); font-weight: 500; line-height: 1.4; letter-spacing: -.03em; }
+@media (max-width: 900px) {
+  .ab-aud { grid-template-columns: 1fr; }
+  .ab-aud li { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 16px; }
+  .ab-aud-k, .ab-aud b, .ab-aud .tlink { grid-column: 1 / -1; }
+  .ab-a { padding-top: 0; padding-left: 16px; border-top: 0; border-left: 1px solid var(--rule-dark); }
+  .ab-career { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .ab-intro { grid-template-columns: 40% minmax(0, 1fr); grid-template-areas: "pic info" "kpi kpi" "aff aff"; grid-template-rows: auto; column-gap: 16px; align-items: center; }
+  .ab-line { margin-top: 10px; font-size: 1.05rem; }
+  .ab-kpi { margin-top: 20px; }
+  .ab-kpi li { padding: 12px 8px 12px 0; }
+  .ab-kpi li:nth-child(even) { padding-left: 12px; }
+  .ab-kpi b { font-size: 1.7rem; }
+  .ab-kpi span { font-size: .75rem; }
+  .ab-kpi small { font-size: .62rem; }
+  .ab-aff { margin-top: 12px; }
+  .ab-logo { height: 28px; margin-top: 8px; }
+  .ab-logo-ad { height: 40px; }
+  .ab-proj li { padding: 10px; }
+  .ab-proj b { font-size: .8125rem; }
+  .ab-proj small { font-size: .68rem; }
+  .ab-table thead th { padding: 12px 6px; }
+  .ab-table thead img { height: 24px; }
+  .ab-table thead th:nth-child(2) img { height: 34px; }
+  .ab-table thead span { font-size: .6rem; }
+  .ab-table tbody th { padding: 12px 6px 12px 0; font-size: .8rem; white-space: normal; }
+  .ab-table tbody th i { display: block; width: auto; }
+  .ab-table td { padding: 12px 6px; font-size: .72rem; }
+  .ab-hl td b { font-size: .8rem; }
+  .ab-aud li { gap: 8px; padding: 14px; }
+  .ab-aud b { font-size: 1.05rem; }
+  .ab-q, .ab-a { font-size: .8rem; }
+  .ab-final-h { font-size: 1.2rem; }
+  .ab-final .btns { width: 100%; }
+  .ab-final .btn { flex: 1 1 0; }
 }
 
 /* ABOUT: 회사 이름 토브(טוֹב) */
@@ -406,13 +447,6 @@ h1:focus { outline: none; }
 .philo-lead { font-family: var(--serif-ko); font-size: 1.05rem; color: var(--gold); }
 .philo-list { margin-top: 18px; border-top: 1px solid var(--rule-dark); }
 .philo-list li { padding-block: 16px; border-bottom: 1px solid var(--rule-dark); font-family: var(--serif-ko); font-size: clamp(1.05rem, .98rem + .3vw, 1.25rem); line-height: 1.5; letter-spacing: -.03em; }
-.exp { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(20px, 2.4vw, 36px); margin-top: clamp(48px, 6vw, 80px); }
-.exp li { display: grid; gap: 8px; align-content: start; padding: 22px 0 32px; border-top: 1px solid var(--ink); }
-.exp li.exp-main { grid-column: span 2; }
-.exp-k { font-size: .68rem; font-weight: 500; letter-spacing: .22em; color: var(--gold-deep); }
-.exp-t { font-family: var(--serif-en); font-size: clamp(1.15rem, 1.05rem + .4vw, 1.4rem); font-weight: 500; line-height: 1.1; }
-.exp-main .exp-t { font-size: clamp(1.4rem, 1.2rem + .8vw, 1.9rem); }
-.exp-d { font-size: .9375rem; line-height: 1.8; color: var(--muted); }
 .story { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 120px); }
 .about-aff { margin-top: 14px; font-size: .9375rem; color: var(--muted); }
 .career { display: grid; gap: clamp(40px, 5vw, 56px); min-width: 0; }
@@ -804,8 +838,6 @@ h1:focus { outline: none; }
   .hdr-cta { margin-left: auto; }
 }
 @media (max-width: 1000px) {
-  .exp { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .exp li.exp-main { grid-column: 1 / -1; }
 }
 @media (max-width: 960px) {
   .ins-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1188,7 +1220,6 @@ h1:focus { outline: none; }
   .gal-cap span { display: none; }
 
   /* ABOUT: 사진 옆에 이름, 아래에 경력 */
-  .about-intro { grid-template-columns: 40% minmax(0, 1fr); grid-template-areas: "pic info" "career career"; column-gap: 16px; align-items: center; }
   .portrait { max-width: none; }
   .about-name { font-size: 1.5rem; }
   .about-title { font-size: .8rem; }
@@ -1199,11 +1230,6 @@ h1:focus { outline: none; }
   .cv-y { font-size: .9rem; }
   .philo-h { font-size: 1.5rem; }
   .philo-list li { padding-block: 10px; font-size: .95rem; }
-  .exp { grid-template-columns: 1fr 1fr; column-gap: 12px; margin-top: 24px; }
-  .exp li { padding: 12px 0 14px; }
-  .exp li.exp-main { grid-column: 1 / -1; }
-  .exp-t { font-size: .95rem; }
-  .exp-main .exp-t { font-size: 1.2rem; }
 
   /* 사례 · 서비스 상세 */
   .cd-meta { grid-template-columns: 1fr; gap: 0; }
@@ -1438,100 +1464,115 @@ h1:focus { outline: none; }
       <div class="phero-bg" style="background-image: url('img/drone-lecture.jpg');" aria-hidden="true"></div>
       <div class="wrap">
         <h1 class="phero-title" tabindex="-1">About<br>Kim Sangwoo</h1>
-        <p class="phero-sub">사업을 직접 만들어 본 사람이 사업을 봅니다.</p>
+        <p class="phero-sub">드론에서 치과까지,<br>두 번의 창업으로 증명한 방법</p>
       </div>
     </header>
 
+    <!-- 1. 대표 소개: 사진 + 핵심 성과 -->
     <section class="sec">
-      <div class="wrap about-intro">
+      <div class="wrap ab-intro">
         <figure class="portrait"><img src="img/founder.jpg" alt="김상우 대표"></figure>
-        <div class="about-info">
+        <div class="ab-info">
           <h2 class="about-name">김상우</h2>
           <p class="about-title">Founder / Entrepreneur / Brand Growth Strategist</p>
-          <p class="about-aff">덴탈서비스 주식회사 CEO · 前 한국드론항공과학(액션드론) 대표 · 트리거뉴스 칼럼니스트</p>
+          <p class="ab-line">사람이 모이는 사업을<br>두 번 만든 창업자</p>
         </div>
-          <div class="career about-career">
-            <div>
-              <h3 class="cv-h">경력</h3>
-              <ol class="cv">
-                <li><span class="cv-y">2024</span><span>법무부 법무보호위원 경기지부협의회 위원</span></li>
-                <li><span class="cv-y">2023 –</span><span>트리거뉴스 청년창업분야 칼럼니스트</span></li>
-                <li><span class="cv-y">2022 –</span><span>덴탈서비스 주식회사 CEO · 덴딜 창업</span></li>
-                <li><span class="cv-y">2019</span><span>사단법인 희망조약돌 자문위원</span></li>
-                <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업멘토위원</span></li>
-                <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업교육학회 학술이사</span></li>
-                <li><span class="cv-y">2017</span><span>교통안전공단 드론안전정책자문단 자문위원</span></li>
-                <li><span class="cv-y">2017</span><span>한국서비스산업진흥원 서비스기반 4차산업 100인</span></li>
-                <li><span class="cv-y">2017</span><span>창업진흥원 창업인턴제 사업화 선정 · 정부지원금 8,000만원</span></li>
-                <li><span class="cv-y">2016 – 2018</span><span>한국드론항공과학 대표이사 · 액션드론</span></li>
-              </ol>
-            </div>
-            <div>
-              <h3 class="cv-h">수상</h3>
-              <ol class="cv">
-                <li><span class="cv-y">2019</span><span>국회국토교통위원회 스마트시티 SOC-ICT 우수기업</span></li>
-              </ol>
-            </div>
-          </div>
+        <ul class="ab-kpi">
+          <li><b>5만<em>+</em></b><span>누적 교육 인원</span><small>액션드론</small></li>
+          <li><b>3,500<em>+</em></b><span>협력 치과</span><small>덴딜</small></li>
+          <li><b>35<em>%</em></b><span>수도권 점유율</span><small>덴딜</small></li>
+          <li><b>8,000<em>만원</em></b><span>정부지원 사업화 선정</span><small>창업진흥원 · 2017</small></li>
+        </ul>
+        <p class="about-aff ab-aff">덴탈서비스 주식회사 CEO · 前 한국드론항공과학(액션드론) 대표 · 트리거뉴스 칼럼니스트</p>
       </div>
     </section>
 
-    <!-- 김상우 스토리: 드론 교육 → 덴탈 플랫폼 → 브랜딩 -->
-    <section class="sec">
+    <!-- 2. 스토리: 두 번의 창업, 그리고 지금 -->
+    <section class="sec bg-white">
       <div class="wrap">
-        <div class="shead-row"><div class="shead"><h2 class="h2">드론 교육에서 시작해<br>치과 산업까지</h2></div></div>
-        <article class="sty-drone">
-          <div class="sty-photos">
-            <figure><img src="img/drone-lecture.jpg" alt="초등학교 강당 드론 강연" loading="lazy"><figcaption>학교 강연</figcaption></figure>
-            <figure><img src="img/drone-mou.jpg" alt="평생학습 4.0 드론학과 MOU 체결" loading="lazy"><figcaption>드론학과 MOU</figcaption></figure>
-            <figure><img src="img/drone-xwing.jpg" alt="X-Wing 주니어 1기 창단식" loading="lazy"><figcaption>주니어 창단식</figcaption></figure>
-            <figure><img src="img/drone-aerial.jpg" alt="드론으로 촬영한 학생 단체사진" loading="lazy"><figcaption>드론 항공 촬영</figcaption></figure>
-            <figure><img src="img/drone-festival-aerial.jpg" alt="광명 스피돔 어린이날 페스티벌 전경" loading="lazy"><figcaption>어린이날 페스티벌</figcaption></figure>
-            <figure><img src="img/drone-expo.jpg" alt="2018 경기도 건설신기술 박람회 액션드론 부스" loading="lazy"><figcaption>건설신기술 박람회</figcaption></figure>
-          </div>
-          <div class="sty-body">
-            <span class="sty-no">2016 · 드론 교육</span>
-            <img class="sty-logo" src="img/actiondrone-logo.png" alt="액션드론 ActionDrone">
-            <ul class="sty-nums">
-              <li class="sty-main"><b>5만<em>+</em></b><span>누적 교육 인원</span></li>
-              <li><b>200<em>+</em></b><span>학교 체험학습</span></li>
-              <li><b>100<em>+</em></b><span>기업 · 기관 행사</span></li>
-              <li><b>30<em>+</em></b><span>지역 드론 축제</span></li>
-            </ul>
-            <ul class="chips"><li>초 · 중 · 고</li><li>기관 · 기업</li><li>드론 페스티벌</li><li class="chip-key">드론 안전 정책 자문</li></ul>
-            <p class="src">액션드론 자료 기준 · 학교 · 행사 수는 2018년</p>
-            <a class="tlink" href="#work-actiondrone">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          </div>
-        </article>
-        <div class="sty-arrow" aria-hidden="true"><span><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></span></div>
-        <ol class="sty-next">
-          <li>
-            <span class="sty-no">2022 · 덴딜 창업</span>
-            <img class="sty-dd" src="img/dendeal-logo.png" alt="Den.deal">
-            <ul class="sty-nums sty-nums-2"><li><b>3,500<em>+</em></b><span>협력 치과</span></li><li><b>35<em>%</em></b><span>수도권 점유율</span></li></ul>
-            <a class="tlink" href="#work-dendeal">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        <div class="shead-row"><div class="shead"><h2 class="h2">두 번의 창업,<br>하나의 방법</h2></div></div>
+        <ol class="chapters ab-chapters">
+          <li class="chap">
+            <div class="chap-visual">
+              <div class="sty-photos">
+                <figure><img src="img/drone-lecture.jpg" alt="초등학교 강당 드론 강연" loading="lazy"><figcaption>학교 강연</figcaption></figure>
+                <figure><img src="img/drone-mou.jpg" alt="평생학습 4.0 드론학과 MOU 체결" loading="lazy"><figcaption>드론학과 MOU</figcaption></figure>
+                <figure><img src="img/drone-xwing.jpg" alt="X-Wing 주니어 1기 창단식" loading="lazy"><figcaption>주니어 창단식</figcaption></figure>
+                <figure><img src="img/drone-aerial.jpg" alt="드론으로 촬영한 학생 단체사진" loading="lazy"><figcaption>드론 항공 촬영</figcaption></figure>
+                <figure><img src="img/drone-festival-aerial.jpg" alt="광명 스피돔 어린이날 페스티벌 전경" loading="lazy"><figcaption>어린이날 페스티벌</figcaption></figure>
+                <figure><img src="img/drone-expo.jpg" alt="2018 경기도 건설신기술 박람회 액션드론 부스" loading="lazy"><figcaption>건설신기술 박람회</figcaption></figure>
+              </div>
+            </div>
+            <div class="chap-text">
+              <span class="chap-no">2016 · 첫 번째 창업</span>
+              <h3>드론 하나로<br>5만 명을 모았습니다</h3>
+              <img class="ab-logo ab-logo-ad" src="img/actiondrone-logo.png" alt="액션드론 ActionDrone">
+              <ul class="chap-stats"><li><b>5만<em>+</em></b><span>누적 교육 인원</span></li><li><b>200<em>+</em></b><span>학교</span></li><li><b>100<em>+</em></b><span>기업 · 기관</span></li></ul>
+              <ul class="chips"><li>초 · 중 · 고</li><li>지역 축제 30+</li><li class="chip-key">창업진흥원 사업화 선정</li><li class="chip-key">드론 안전 정책 자문</li></ul>
+              <p class="src">액션드론 자료 기준 · 학교 · 기관 수는 2018년</p>
+              <a class="tlink" href="#work-actiondrone">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
           </li>
-          <li class="sty-tov">
-            <span class="sty-no">현재 · 사업화 컨설팅</span>
-            <b class="sty-name">토브 브랜딩 컴퍼니</b>
-            <ul class="chips"><li>스타트업</li><li>중소기업</li><li>신사업</li></ul>
-            <a class="tlink" href="#work">Work<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+
+          <li class="chap">
+            <div class="chap-visual">
+              <div class="phone-row">
+                <img src="img/dendeal-app1.jpg" alt="덴딜 앱 주문목록 화면" loading="lazy">
+                <img src="img/dendeal-app-delivery.jpg" alt="덴딜 앱 기공물 배송 화면" loading="lazy">
+                <img src="img/dendeal-app2.jpg" alt="덴딜 앱 제조중개 화면" loading="lazy">
+              </div>
+            </div>
+            <div class="chap-text">
+              <span class="chap-no">2022 · 두 번째 창업</span>
+              <h3>치과와 기공소를 하나로,<br>3,500곳을 연결했습니다</h3>
+              <img class="ab-logo" src="img/dendeal-logo.png" alt="Den.deal">
+              <ul class="chap-stats"><li><b>3,500<em>+</em></b><span>협력 치과</span></li><li><b>35<em>%</em></b><span>수도권 점유율</span></li><li><b>200만<em>+</em></b><span>누적 접속</span></li></ul>
+              <ul class="chips"><li>기공소 300+</li><li>기업 제휴 7곳</li><li class="chip-key">벤처기업 인증</li><li class="chip-key">기술 임치 2건</li></ul>
+              <p class="src">덴딜 기준</p>
+              <a class="tlink" href="#work-dendeal">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </li>
+
+          <li class="chap ab-now">
+            <div class="chap-visual">
+              <div class="tov-mark ab-tov" aria-hidden="true"><span class="tov-word" lang="he" dir="rtl">טוֹב</span><span class="tov-en">TOV</span></div>
+            </div>
+            <div class="chap-text">
+              <span class="chap-no">지금 · 세 번째 시작</span>
+              <h3>이제 그 방법으로,<br>다른 사업을 키웁니다</h3>
+              <ul class="tov-means ab-means"><li>좋다</li><li>선하다</li><li>아름답다</li><li>유익하다</li></ul>
+              <p class="src">토브(טוֹב) · 히브리어</p>
+              <ul class="ab-proj">
+                <li><span class="ab-live">진행 중</span><b>KOK 부동산 경매 교육 플랫폼</b><small>공인중개사 1,000여 곳을 하나로</small></li>
+                <li><span class="ab-live">진행 중</span><b>치과 · 기공소 · 덴탈 기업</b><small>브랜딩 · 사업화</small></li>
+              </ul>
+              <a class="tlink" href="#work">Work<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- 회사 이름: 토브(טוֹב) -->
-    <section class="sec-m bg-white">
-      <div class="wrap tov">
-        <div class="tov-mark" aria-hidden="true"><span class="tov-word" lang="he" dir="rtl">טוֹב</span><span class="tov-en">TOV</span></div>
-        <div>
-          <h2 class="h2">‘토브<span class="tov-he" lang="he">(טוֹב)</span>’는 히브리어로</h2>
-          <ul class="tov-means"><li>좋다</li><li>선하다</li><li>아름답다</li><li>유익하다</li></ul>
+    <!-- 3. 같은 방법, 두 번의 결과 -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="shead-row"><div class="shead"><h2 class="h2">같은 방법,<br>두 번의 결과</h2></div></div>
+        <div class="ab-table-wrap">
+          <table class="ab-table">
+            <thead><tr><th scope="col"><span class="sr-only">단계</span></th><th scope="col"><img src="img/actiondrone-logo.png" alt="액션드론"><span>2016 · 드론 교육</span></th><th scope="col"><img src="img/dendeal-logo.png" alt="덴딜"><span>2022 · 덴탈 플랫폼</span></th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><i>01</i>사업기획</th><td>학교 · 기관 체험 교육 모델</td><td>배송 · 재료 구매 · 제조 중개 통합 모델</td></tr>
+              <tr><th scope="row"><i>02</i>개발</th><td>교육 커리큘럼 · 드론 교구 · 강사 과정</td><td>덴딜 앱 · 덴딜몰 · 덴톡 메신저</td></tr>
+              <tr><th scope="row"><i>03</i>브랜딩 · 마케팅</th><td>드론 페스티벌 · 지역 축제 · SNS</td><td>언론 보도 · 파트너 감사장 · 협력 네트워크</td></tr>
+              <tr class="ab-hl"><th scope="row"><i>04</i>매출 · 판로</th><td><b>학교 200+ · 기업 · 기관 100+</b></td><td><b>협력 치과 3,500+ · 기공소 300+</b></td></tr>
+              <tr class="ab-hl"><th scope="row"><i>05</i>투자 · 기업가치</th><td><b>정부지원 8,000만원</b></td><td><b>벤처기업 인증 · 기술 임치 2건</b></td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
+    <!-- 4. 철학 -->
     <section class="sec dark">
       <div class="wrap philo-in">
         <div>
@@ -1548,24 +1589,71 @@ h1:focus { outline: none; }
       </div>
     </section>
 
-    <section class="sec">
+    <!-- 5. 경력 · 수상 -->
+    <section class="sec-m">
       <div class="wrap">
-        <div class="shead">
-          <h2 class="h2">직접 만들고 운영한 사업에서<br>사업화를 배웠습니다</h2>
+        <div class="career ab-career">
+          <div>
+            <h3 class="cv-h">경력</h3>
+            <ol class="cv">
+              <li><span class="cv-y">2024</span><span>법무부 법무보호위원 경기지부협의회 위원</span></li>
+              <li><span class="cv-y">2023 –</span><span>트리거뉴스 청년창업분야 칼럼니스트</span></li>
+              <li><span class="cv-y">2022 –</span><span>덴탈서비스 주식회사 CEO · 덴딜 창업</span></li>
+              <li><span class="cv-y">2019</span><span>사단법인 희망조약돌 자문위원</span></li>
+              <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업멘토위원</span></li>
+              <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업교육학회 학술이사</span></li>
+              <li><span class="cv-y">2017</span><span>교통안전공단 드론안전정책자문단 자문위원</span></li>
+              <li><span class="cv-y">2017</span><span>한국서비스산업진흥원 서비스기반 4차산업 100인</span></li>
+              <li><span class="cv-y">2017</span><span>창업진흥원 창업인턴제 사업화 선정 · 정부지원금 8,000만원</span></li>
+              <li><span class="cv-y">2016 – 2018</span><span>한국드론항공과학 대표이사 · 액션드론</span></li>
+            </ol>
+          </div>
+          <div>
+            <h3 class="cv-h">수상</h3>
+            <ol class="cv">
+              <li><span class="cv-y">2019</span><span>국회국토교통위원회 스마트시티 SOC-ICT 우수기업</span></li>
+            </ol>
+          </div>
         </div>
-        <ul class="exp">
-          <li class="exp-main"><h3 class="exp-t">DENDEAL Founder &amp; CEO</h3></li>
-          <li><h3 class="exp-t">ACTION DRONE Founder &amp; CEO</h3></li>
-          <li><h3 class="exp-t">Dental Platform Business</h3></li>
-          <li><h3 class="exp-t">Drone Education Business</h3></li>
-          <li><h3 class="exp-t">Dental Manufacturing Business</h3></li>
-          <li><h3 class="exp-t">Real Estate Business</h3></li>
-          <li><h3 class="exp-t">Marketing &amp; Customer Acquisition</h3></li>
-        </ul>
       </div>
     </section>
 
-    <div class="js-cta"></div>
+    <!-- 6. 대상별 문의 -->
+    <section class="sec dark ab-cta">
+      <div class="wrap">
+        <div class="shead"><h2 class="h2">다음 성장이 필요한 곳이라면,<br>어디든 함께합니다</h2></div>
+        <ul class="ab-aud">
+          <li>
+            <span class="ab-aud-k">Startup</span>
+            <b>스타트업</b>
+            <p class="ab-q">“아이디어는 있는데,<br>사업이 되지 않습니다.”</p>
+            <p class="ab-a">기획부터 첫 매출까지<br>함께 만듭니다.</p>
+            <a class="tlink" href="#contact">사업화 상담<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </li>
+          <li>
+            <span class="ab-aud-k">Company</span>
+            <b>기존 기업 · 중소기업</b>
+            <p class="ab-q">“매출이 멈췄거나,<br>신사업이 필요합니다.”</p>
+            <p class="ab-a">다시 성장하는 구조를<br>설계합니다.</p>
+            <a class="tlink" href="#contact">성장 상담<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </li>
+          <li>
+            <span class="ab-aud-k">Dental</span>
+            <b>치과 · 기공소 · 덴탈 기업</b>
+            <p class="ab-q">“치과 시장은<br>아는 사람과 해야 합니다.”</p>
+            <p class="ab-a">치과 3,500곳을 연결한<br>경험으로 함께합니다.</p>
+            <a class="tlink" href="#contact">덴탈 상담<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </li>
+        </ul>
+        <div class="ab-final">
+          <p class="ab-final-h">사람이 모이는 사업,<br>이번엔 당신의 차례입니다.</p>
+          <div class="btns">
+            <a class="btn btn-gold" href="#contact">상담 신청하기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <a class="btn btn-light" href="#diagnosis">사업 진단 받기</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
 
   <!-- ===================== EXPERTISE ===================== -->
@@ -2277,15 +2365,14 @@ h1:focus { outline: none; }
         { h: 'Festivals', p: '광명 스피돔 어린이날 페스티벌 · 안산 · 포천 · 청평 어린이날 행사 · 춘천 의병마을 · 수원월드컵경기장' },
         { h: 'Policy', p: '교통안전공단 드론안전정책자문단 자문위원 (2017)' }
       ] },
-    { slug: 'real-estate', no: '03', cat: 'platform', name: 'KOK 부동산학원', project: '이주왕 KOK 부동산학원', img: 'img/kok-logo.jpg', alt: 'KOK 부동산학원 로고',
+    { slug: 'real-estate', no: '03', cat: 'platform', name: 'KOK 부동산학원', project: '이주왕 KOK 부동산학원 · 경매 교육 플랫폼', status: '진행 중', img: 'img/kok-logo.jpg', alt: 'KOK 부동산학원 로고',
       gallery: { type: 'wide', items: [['img/kok-logo.jpg', 'KOK 부동산학원 로고'], ['img/kok-course.jpg', 'KOK 부동산학원 강의 썸네일']] },
       link: 'https://www.kokstudy.com/', linkLabel: 'kokstudy.com',
-      industry: 'Real Estate / Brand / Lead Generation', role: 'Business Positioning / Website / Growth',
-      summary: '부동산 사업의 포지셔닝을 정리하고, 검색과 콘텐츠로 고객이 찾아와 상담으로 이어지는 구조를 만든 프로젝트입니다.',
-      challenge: '비슷한 서비스가 많은 시장에서, 고객이 이 회사를 먼저 찾고 믿고 상담하게 만드는 것.',
-      strategy: '사업의 전문 영역을 분명히 하고, 검색에서 발견되어 상담으로 이어지는 흐름을 하나로 설계한다.',
-      execution: ['Business Positioning', 'Website Strategy', 'Content', 'Search Marketing', 'Customer Acquisition', 'Consultation Funnel'],
-      results: ['사업 포지셔닝 정리', '검색 기반 고객 유입 구조 설계', '콘텐츠 운영 체계 구축', '상담 전환 퍼널 구축'] },
+      industry: 'Real Estate / Education Platform', role: 'Platform Planning / Business Development / Brand',
+      execution: ['Platform Planning', 'Business Model', 'Partner Network', 'Education Content', 'Brand'],
+      metrics: [['1,000여 곳', '연결할 공인중개사']],
+      metricsSource: '기획 진행 중 · 대표 제공',
+      results: ['공인중개사 1,000여 곳을 하나로 잇는 경매 교육 플랫폼 기획', '부동산 경매 교육 브랜드 · 강의 콘텐츠'] },
     { slug: 'dental-manufacturing', no: '04', cat: 'dental', name: 'Dental Manufacturing', img: 'img/case-manufacturing.jpg', alt: '장갑 낀 손에 들린 임플란트와 크라운',
       industry: 'Dental / Manufacturing / B2B', role: 'Corporate Brand / Founder Branding / B2B Marketing',
       summary: '덴탈 제조 기업의 기업 브랜드와 제품 포지셔닝을 세우고, 대표 브랜딩과 B2B 마케팅으로 영업을 지원한 프로젝트입니다.',
@@ -2429,7 +2516,7 @@ h1:focus { outline: none; }
       const body = list.length
         ? `<div class="case-grid">${list.map(c => `
             <article class="case-card">
-              ${c.collab ? '<span class="badge">덴딜 협업</span>' : ''}
+              ${c.collab ? '<span class="badge">덴딜 협업</span>' : ''}${c.status ? `<span class="badge badge-live">${c.status}</span>` : ''}
               <a class="case-img" href="#work-${c.slug}"><img src="${c.img}" alt="${c.alt}" loading="lazy"></a>
               <h3 class="case-name">${c.name}</h3>
               <p class="case-ind">${c.industry}</p>
@@ -2507,7 +2594,7 @@ h1:focus { outline: none; }
         ${c.gallery ? '' : `<div class="phero-bg" style="background-image:url('${c.img}')" aria-hidden="true"></div>`}
         <div class="wrap">
           <h1 class="phero-title sm" tabindex="-1">${c.name}</h1>
-          <p class="phero-sub">${c.industry}</p>
+          <p class="phero-sub">${c.industry}${c.status ? ` · ${c.status}` : ''}</p>
         </div>
       </header>
       <section class="sec-m">
