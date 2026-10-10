@@ -383,7 +383,8 @@ h1:focus { outline: none; }
 .ab-hl td b { font-family: var(--serif-ko); font-size: clamp(1rem, .95rem + .3vw, 1.2rem); font-weight: 500; color: var(--navy); }
 .ab-hl { background: var(--white); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-/* 경력 */
+/* 경력 · 수상 (프로필 바로 아래) */
+.ab-cv { margin-top: clamp(48px, 6vw, 80px); }
 .ab-career { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
 /* 대상별 문의 */
 .ab-aud { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: clamp(32px, 4vw, 56px); }
@@ -412,6 +413,7 @@ h1:focus { outline: none; }
   .ab-kpi span { font-size: .75rem; }
   .ab-kpi small { font-size: .62rem; }
   .ab-aff { margin-top: 12px; }
+  .ab-cv { margin-top: 36px; }
   .ab-logo { height: 28px; margin-top: 8px; }
   .ab-logo-ad { height: 40px; }
   .ab-proj li { padding: 10px; }
@@ -607,7 +609,7 @@ h1:focus { outline: none; }
 .cd-logo.cd-logo-text img { width: 44px; height: 44px; }
 .cd-links { display: flex; flex-wrap: wrap; gap: 16px 32px; margin-top: 36px; }
 
-/* ---------- PRESS · PARTNERSHIP (홈 보도 목록 · 덴딜 사례) ---------- */
+/* ---------- PRESS · PARTNERSHIP (덴딜 사례) ---------- */
 .news { border-top: 1px solid var(--ink); }
 .news-item { display: grid; grid-template-columns: 168px minmax(0, 1fr) 32px; grid-template-rows: auto auto; column-gap: clamp(20px, 3vw, 40px); row-gap: 8px; align-items: center; padding-block: 22px; border-bottom: 1px solid var(--rule); }
 .news-img { grid-row: 1 / span 2; aspect-ratio: 16 / 10; overflow: hidden; background: var(--paper-2); }
@@ -1452,18 +1454,6 @@ h1:focus { outline: none; }
       </div>
     </section>
 
-    <section class="sec">
-      <div class="wrap">
-        <div class="shead-row">
-          <div class="shead">
-            <h2 class="h2">보도</h2>
-          </div>
-          <a class="tlink" href="#press">전체 보도 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-        </div>
-        <ul class="news" id="home-news"></ul>
-      </div>
-    </section>
-
     <div class="js-cta"></div>
   </section>
 
@@ -1477,7 +1467,7 @@ h1:focus { outline: none; }
       </div>
     </header>
 
-    <!-- 1. 대표 소개: 사진 + 핵심 성과 -->
+    <!-- 1. 대표 소개: 사진 + 핵심 성과 + 경력 · 수상 -->
     <section class="sec">
       <div class="wrap ab-intro">
         <figure class="portrait"><img src="img/founder.jpg" alt="김상우 대표"></figure>
@@ -1493,6 +1483,32 @@ h1:focus { outline: none; }
           <li><b>8,000<em>만원</em></b><span>정부지원 사업화 선정</span><small>창업진흥원 · 2017</small></li>
         </ul>
         <p class="about-aff ab-aff">덴탈서비스 주식회사 CEO · 前 한국드론항공과학(액션드론) 대표 · 트리거뉴스 칼럼니스트</p>
+      </div>
+      <!-- 경력 · 수상: 프로필 바로 아래 -->
+      <div class="wrap ab-cv">
+        <div class="career ab-career">
+          <div>
+            <h3 class="cv-h">경력</h3>
+            <ol class="cv">
+              <li><span class="cv-y">2024</span><span>법무부 법무보호위원 경기지부협의회 위원</span></li>
+              <li><span class="cv-y">2023 –</span><span>트리거뉴스 청년창업분야 칼럼니스트</span></li>
+              <li><span class="cv-y">2022 –</span><span>덴탈서비스 주식회사 CEO · 덴딜 창업</span></li>
+              <li><span class="cv-y">2019</span><span>사단법인 희망조약돌 자문위원</span></li>
+              <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업멘토위원</span></li>
+              <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업교육학회 학술이사</span></li>
+              <li><span class="cv-y">2017</span><span>교통안전공단 드론안전정책자문단 자문위원</span></li>
+              <li><span class="cv-y">2017</span><span>한국서비스산업진흥원 서비스기반 4차산업 100인</span></li>
+              <li><span class="cv-y">2017</span><span>창업진흥원 창업인턴제 사업화 선정 · 정부지원금 8,000만원</span></li>
+              <li><span class="cv-y">2016 – 2018</span><span>한국드론항공과학 대표이사 · 액션드론</span></li>
+            </ol>
+          </div>
+          <div>
+            <h3 class="cv-h">수상</h3>
+            <ol class="cv">
+              <li><span class="cv-y">2019</span><span>국회국토교통위원회 스마트시티 SOC-ICT 우수기업</span></li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1598,36 +1614,7 @@ h1:focus { outline: none; }
       </div>
     </section>
 
-    <!-- 5. 경력 · 수상 -->
-    <section class="sec-m">
-      <div class="wrap">
-        <div class="career ab-career">
-          <div>
-            <h3 class="cv-h">경력</h3>
-            <ol class="cv">
-              <li><span class="cv-y">2024</span><span>법무부 법무보호위원 경기지부협의회 위원</span></li>
-              <li><span class="cv-y">2023 –</span><span>트리거뉴스 청년창업분야 칼럼니스트</span></li>
-              <li><span class="cv-y">2022 –</span><span>덴탈서비스 주식회사 CEO · 덴딜 창업</span></li>
-              <li><span class="cv-y">2019</span><span>사단법인 희망조약돌 자문위원</span></li>
-              <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업멘토위원</span></li>
-              <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업교육학회 학술이사</span></li>
-              <li><span class="cv-y">2017</span><span>교통안전공단 드론안전정책자문단 자문위원</span></li>
-              <li><span class="cv-y">2017</span><span>한국서비스산업진흥원 서비스기반 4차산업 100인</span></li>
-              <li><span class="cv-y">2017</span><span>창업진흥원 창업인턴제 사업화 선정 · 정부지원금 8,000만원</span></li>
-              <li><span class="cv-y">2016 – 2018</span><span>한국드론항공과학 대표이사 · 액션드론</span></li>
-            </ol>
-          </div>
-          <div>
-            <h3 class="cv-h">수상</h3>
-            <ol class="cv">
-              <li><span class="cv-y">2019</span><span>국회국토교통위원회 스마트시티 SOC-ICT 우수기업</span></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. 대상별 문의 -->
+    <!-- 5. 대상별 문의 -->
     <section class="sec dark ab-cta">
       <div class="wrap">
         <div class="shead"><h2 class="h2">다음 성장이 필요한 곳이라면,<br>어디든 함께합니다</h2></div>
@@ -2525,7 +2512,6 @@ h1:focus { outline: none; }
       return `<div class="case-group" id="grp-${g.key}"><div class="grp-head"><h2 class="grp-t">${g.ko}</h2><span class="grp-en">${g.en}</span><span class="grp-n">${countLabel(g.key)}</span></div>${body}</div>`;
     }).join('');
 
-    $('#home-news').innerHTML = PRESS.slice(0, 3).map(newsItem).join('');
     $$('.js-cta').forEach(el => { el.outerHTML = ctaBand(); });
   }
 
