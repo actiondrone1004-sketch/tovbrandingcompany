@@ -607,12 +607,7 @@ h1:focus { outline: none; }
 .cd-logo.cd-logo-text img { width: 44px; height: 44px; }
 .cd-links { display: flex; flex-wrap: wrap; gap: 16px 32px; margin-top: 36px; }
 
-/* ---------- PRESS ---------- */
-.milestones { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
-.milestones li { display: grid; gap: 6px; padding: 24px 20px 0 0; }
-.milestones b { font-family: var(--serif-en); font-size: clamp(2.2rem, 1.8rem + 1.6vw, 3.2rem); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
-.milestones b span { margin-left: 2px; font-family: var(--sans); font-size: .4em; font-weight: 500; color: var(--gold-deep); }
-.milestones p { font-size: .875rem; color: var(--muted); }
+/* ---------- PRESS · PARTNERSHIP (홈 보도 목록 · 덴딜 사례) ---------- */
 .news { border-top: 1px solid var(--ink); }
 .news-item { display: grid; grid-template-columns: 168px minmax(0, 1fr) 32px; grid-template-rows: auto auto; column-gap: clamp(20px, 3vw, 40px); row-gap: 8px; align-items: center; padding-block: 22px; border-bottom: 1px solid var(--rule); }
 .news-img { grid-row: 1 / span 2; aspect-ratio: 16 / 10; overflow: hidden; background: var(--paper-2); }
@@ -622,11 +617,10 @@ h1:focus { outline: none; }
 .news-go { grid-column: 3; grid-row: 1 / span 2; justify-self: end; color: var(--gold-deep); }
 .news-item:hover .news-t { color: var(--gold-deep); }
 .news-item:hover .news-img img { transform: scale(1.04); }
-.press-anchor { scroll-margin-top: 72px; }
-.press-list { margin-top: clamp(40px, 5vw, 64px); }
-.gal-count { font-size: .9375rem; color: var(--muted); }
+.cd-sec[id] { scroll-margin-top: 72px; }
+.gal-count { margin-bottom: 20px; font-size: .9375rem; color: var(--muted); }
 .gal-count b { margin-inline: 4px; font-family: var(--serif-en); font-size: 1.5rem; font-weight: 500; color: var(--ink); }
-.gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 20px; }
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 20px; }
 .gal-item { display: block; width: 100%; aspect-ratio: 4 / 3; padding: 0; overflow: hidden; border: 0; background: var(--paper-2); cursor: zoom-in; }
 .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
 .gal-item:hover img { transform: scale(1.04); }
@@ -879,10 +873,6 @@ h1:focus { outline: none; }
   .cd-meta, .cd-extra, .weak { grid-template-columns: 1fr; }
   .ftr-top { grid-template-columns: 1fr; }
   .ftr-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 900px) {
-  .milestones { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
-  .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
   .gallery, .wide .cd-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1226,12 +1216,8 @@ h1:focus { outline: none; }
   .case-info .tlink { display: none; }
 
   /* 보도 · 파트너십 */
-  .milestones { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 0; }
-  .milestones li { gap: 2px; padding: 14px 6px 0 0; }
-  .milestones b { font-size: 1.15rem; }
-  .milestones b span { font-size: .55em; }
-  .milestones p { font-size: .65rem; line-height: 1.4; }
-  .press-list { margin-top: 28px; }
+  .gal-count { margin-bottom: 12px; font-size: .8125rem; }
+  .gal-count b { font-size: 1.2rem; }
   .news-item { grid-template-columns: 64px minmax(0, 1fr); column-gap: 12px; padding-block: 12px; }
   .news-go { display: none; }
   .news-meta { font-size: .7rem; }
@@ -1725,31 +1711,6 @@ h1:focus { outline: none; }
     </section>
     <section class="sec">
       <div class="wrap" id="cases-list"></div>
-    </section>
-
-    <!-- 보도 (#press 링크가 이 위치로 이동) -->
-    <section class="sec-m bg-white press-anchor" id="press-sec">
-      <div class="wrap">
-        <div class="shead-row"><div class="shead"><h2 class="h2">언론 보도</h2></div></div>
-        <ul class="milestones" aria-label="덴딜 주요 지표">
-          <li><b>200<span>만+</span></b><p>덴딜 누적 접속 수</p></li>
-          <li><b>3,500<span>+</span></b><p>협력 치과</p></li>
-          <li><b>300<span>+</span></b><p>협력 기공소</p></li>
-          <li><b>10<span>+</span></b><p>기업·기관 협약</p></li>
-        </ul>
-        <p class="src">덴딜 기준</p>
-        <ul class="news press-list" id="press-news"></ul>
-      </div>
-    </section>
-
-    <section class="sec">
-      <div class="wrap">
-        <div class="shead-row">
-          <div class="shead"><h2 class="h2">파트너십</h2></div>
-          <p class="gal-count">기공소 · 치과 · 기업<b id="gal-count"></b>곳</p>
-        </div>
-        <ul class="gallery" id="gallery"></ul>
-      </div>
     </section>
 
     <div class="js-cta"></div>
@@ -2385,7 +2346,8 @@ h1:focus { outline: none; }
         { h: 'Partners', p: '카카오모빌리티 · 현대그린푸드 · 올어버트먼트 · APS인터내셔널 · 세일글로발 · 덴티스 · 리뉴메디칼' },
         { h: 'Certification', p: '벤처기업 인증 · DENDEAL 상표등록 · 기술 임치 2건' }
       ],
-      link: 'https://dendeal.ai.kr/', linkLabel: 'dendeal.ai.kr', pressLink: true },
+      link: 'https://dendeal.ai.kr/', linkLabel: 'dendeal.ai.kr',
+      press: true, partners: true },   /* 언론 보도(PRESS) · 기공소 협업 사진(PARTNERS)을 사례 안에 보여준다 */
     { slug: 'actiondrone', no: '02', cat: 'platform', name: 'ACTION DRONE', project: '한국드론항공과학 · 액션드론', img: 'img/actiondrone-cover.jpg', alt: '액션드론 로고', logo: 'img/actiondrone-logo.png',
       gallery: { type: 'groups', groups: [
         { h: '기관 · 기업', items: [['img/drone-mou.jpg', '평생학습 4.0 드론학과 MOU'], ['img/drone-xwing.jpg', 'X-Wing 주니어 1기 창단식'], ['img/drone-workshop.jpg', '2018 건설신기술 활용촉진 워크숍 강연'], ['img/drone-expo.jpg', '2018 경기도 건설신기술 박람회'], ['img/drone-corp-camp.jpg', '기업 임직원 자녀 겨울캠프'], ['img/drone-welfare.jpg', '화성시 여울림종합사회복지관']] },
@@ -2515,6 +2477,7 @@ h1:focus { outline: none; }
   const numsList = c => (c.metrics ? `<ul class="nums">${c.metrics.map(m => `<li><b>${m[0]}</b><span>${m[1]}</span></li>`).join('')}</ul><p class="src">${c.metricsSource}</p>` : '');
 
   const newsItem = a => `<li><a class="news-item" href="${a.url}" target="_blank" rel="noopener"><span class="news-img"><img src="${a.img}" alt="" loading="lazy"${a.pos ? ` style="object-position:${a.pos}"` : ''}></span><span class="news-meta">${a.outlet}${a.date ? ` · ${a.date}` : ''}</span><b class="news-t">${a.title}</b><span class="news-go">${ic('out')}</span></a></li>`;
+  const galItem = ([id, name, kind]) => `<li><button type="button" class="gal-item" data-lb="img/partners/${id}.jpg" data-cap="${name} · ${kind}" aria-label="${name} ${kind} 사진 크게 보기"><img src="img/partners/${id}.jpg" alt="${name} ${kind} 사진" loading="lazy"></button><p class="gal-cap"><b>${name}</b><span>${kind}</span></p></li>`;
 
   /* ================= 렌더 ================= */
   function renderStatic() {
@@ -2563,9 +2526,6 @@ h1:focus { outline: none; }
     }).join('');
 
     $('#home-news').innerHTML = PRESS.slice(0, 3).map(newsItem).join('');
-    $('#press-news').innerHTML = PRESS.map(newsItem).join('');
-    $('#gallery').innerHTML = PARTNERS.map(([id, name, kind]) => `<li><button type="button" class="gal-item" data-lb="img/partners/${id}.jpg" data-cap="${name} · ${kind}" aria-label="${name} ${kind} 사진 크게 보기"><img src="img/partners/${id}.jpg" alt="${name} ${kind} 사진" loading="lazy"></button><p class="gal-cap"><b>${name}</b><span>${kind}</span></p></li>`).join('');
-    $('#gal-count').textContent = PARTNERS.length;
     $$('.js-cta').forEach(el => { el.outerHTML = ctaBand(); });
   }
 
@@ -2618,13 +2578,15 @@ h1:focus { outline: none; }
     const i = CASES.indexOf(c);
     const next = CASES[(i + 1) % CASES.length];
     let n = 0;
-    const sec = (k, body) => `<div class="cd-sec"><p class="cd-k"><span>${pad(++n)}</span>${k}</p><div class="cd-v">${body}</div></div>`;
+    const sec = (k, body, id) => `<div class="cd-sec"${id ? ` id="${id}"` : ''}><p class="cd-k"><span>${pad(++n)}</span>${k}</p><div class="cd-v">${body}</div></div>`;
     const exec = sec('Execution', `<ol class="exec">${c.execution.map((x, k) => `<li><span>${pad(k + 1)}</span>${x}</li>`).join('')}</ol>`);
     const result = sec('Result',
       (c.metrics ? numsList(c) : '') +
       `<ul class="cd-results">${c.results.map(r => `<li>${ic('check')}<span>${r}</span></li>`).join('')}</ul>` +
       (c.extra ? `<div class="cd-extra">${c.extra.map(x => `<div><h4>${x.h}</h4><p>${x.p}</p></div>`).join('')}</div>` : '') +
-      (c.link || c.pressLink ? `<div class="cd-links">${c.link ? `<a class="tlink" href="${c.link}" target="_blank" rel="noopener">${c.linkLabel}${ic('out')}</a>` : ''}${c.pressLink ? `<a class="tlink" href="#press">관련 보도${ic('arrow')}</a>` : ''}</div>` : ''));
+      (c.link ? `<div class="cd-links"><a class="tlink" href="${c.link}" target="_blank" rel="noopener">${c.linkLabel}${ic('out')}</a></div>` : ''));
+    const press = c.press ? sec('Press', `<ul class="news">${PRESS.map(newsItem).join('')}</ul>`, 'press-sec') : '';
+    const partners = c.partners ? sec('Partnership', `<p class="gal-count">기공소 · 치과 · 기업<b>${PARTNERS.length}</b>곳</p><ul class="gallery">${PARTNERS.map(galItem).join('')}</ul>`) : '';
 
     $('#pg-case').innerHTML = `
       <header class="phero dark cd-cover">
@@ -2644,6 +2606,8 @@ h1:focus { outline: none; }
           ${caseVisual(c)}
           ${exec}
           ${result}
+          ${press}
+          ${partners}
         </div>
       </section>
       <div class="wrap">
@@ -2727,7 +2691,7 @@ h1:focus { outline: none; }
     const h = decodeURIComponent(location.hash.slice(1));
     if (h.indexOf('expertise-') === 0 && svcBy(h.slice(10))) return { page: 'service', slug: h.slice(10), nav: 'expertise' };
     if (h.indexOf('work-') === 0 && caseBy(h.slice(5))) return { page: 'case', slug: h.slice(5), nav: 'work' };
-    if (h === 'press') return { page: 'work', nav: 'work', anchor: 'press-sec' };   // 보도는 WORK 페이지 안에 있다
+    if (h === 'press' && caseBy('dendeal')) return { page: 'case', slug: 'dendeal', nav: 'work', anchor: 'press-sec' };   // 보도는 덴딜 사례 안에 있다
     if (h === 'dental-program') return { page: 'program', nav: 'work' };
     if (h === 'mfg-program') return { page: 'mfg', nav: 'work' };
     if (h === 'admin') return { page: 'admin', nav: '' };
