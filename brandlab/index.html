@@ -1037,6 +1037,78 @@ h1:focus { outline: none; }
 .collage .c-main { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 1px solid var(--rule); }
 .collage .c-phone { position: absolute; right: 0; bottom: 0; width: 30%; border: 5px solid var(--ink); border-radius: 14px; background: var(--white); box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .5); }
 .collage-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; font-size: .75rem; color: var(--muted); }
+/* 치과 골든타임 */
+.gt { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.gt li { position: relative; display: grid; gap: 12px; align-content: start; padding: 30px clamp(14px, 2vw, 28px) 0 0; }
+.gt li + li { padding-left: clamp(14px, 2vw, 28px); border-left: 1px solid var(--rule); }
+.gt li::before { content: ""; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; background: var(--gold); transform: rotate(45deg); }
+.gt li + li::before { left: clamp(14px, 2vw, 28px); }
+.gt-no { font-size: .7rem; font-weight: 700; letter-spacing: .18em; color: var(--gold-deep); }
+.gt-t { font-family: var(--serif-ko); font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); font-weight: 500; line-height: 1.3; }
+.gt-miss, .gt-win { display: grid; gap: 4px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: .9375rem; line-height: 1.6; }
+.gt-miss b, .gt-win b { font-size: .7rem; font-weight: 700; letter-spacing: .06em; }
+.gt-miss { color: var(--muted); }
+.gt-miss b { color: var(--error); }
+.gt-win { font-weight: 500; }
+.gt-win b { color: var(--gold-deep); }
+.gt-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; max-width: 30em; margin-top: 18px; }
+.gt-vs div { display: grid; gap: 4px; align-content: start; padding: 12px 14px; border: 1px solid var(--rule); background: var(--white); }
+.gt-vs dt { font-size: .7rem; font-weight: 700; letter-spacing: .06em; color: var(--error); }
+.gt-vs dd { margin: 0; font-size: .875rem; line-height: 1.55; color: var(--muted); }
+.gt-vs .win { background: var(--navy); border-color: var(--navy); }
+.gt-vs .win dt { color: var(--gold); }
+.gt-vs .win dd { font-weight: 500; color: var(--white); }
+.gt-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(28px, 4vw, 48px); border-top: 1px solid var(--gold-line); }
+.gt-facts li { display: grid; gap: 8px; align-content: start; padding: clamp(20px, 2.6vw, 32px) clamp(14px, 2vw, 24px) 6px 0; }
+.gt-facts li + li { padding-left: clamp(14px, 2vw, 24px); border-left: 1px solid var(--rule-dark); }
+.gt-facts b { font-family: var(--serif-ko); font-size: clamp(1.9rem, 1.4rem + 2vw, 3rem); font-weight: 500; line-height: 1.1; letter-spacing: -.03em; color: var(--gold); }
+.gt-facts strong { font-size: .9375rem; font-weight: 500; }
+.gt-facts span { font-size: .8125rem; line-height: 1.6; color: var(--on-dark-2); }
+.gt-facts em { margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--rule-dark); font-style: normal; font-size: .78rem; font-weight: 500; color: var(--gold-light); }
+.dark .src { color: var(--on-dark-3); }
+.dark .src a { text-decoration: underline; text-underline-offset: 3px; }
+.gt-facts + .src { margin-top: 24px; }
+.gt-check { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; border-top: 1px solid var(--ink); }
+.gt-check label { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 14px; align-items: center; padding-block: 16px; border-bottom: 1px solid var(--rule); font-size: 1rem; cursor: pointer; }
+.gt-check input { appearance: none; -webkit-appearance: none; display: grid; place-content: center; width: 22px; height: 22px; margin: 0; border: 1px solid var(--ink); background: var(--white); cursor: pointer; }
+.gt-check input:checked { background: var(--navy); border-color: var(--navy); }
+.gt-check input:checked::after { content: ""; width: 10px; height: 5px; border-left: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: translateY(-1px) rotate(-45deg); }
+.gt-check input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.gt-check label:has(input:checked) span { font-weight: 500; }
+.gt-check-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 28px; }
+.gt-count { font-family: var(--serif-ko); font-size: clamp(1.05rem, .95rem + .4vw, 1.3rem); }
+.gt-count b { margin-right: 4px; font-family: var(--serif-en); font-size: 1.8em; font-weight: 500; line-height: 1; color: var(--gold-deep); }
+.gt-offer { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: end; gap: 24px clamp(32px, 5vw, 72px); }
+.gt-plan { display: grid; gap: 4px; padding-left: 20px; border-left: 2px solid var(--gold); }
+.gt-plan span { font-size: .72rem; letter-spacing: .14em; color: var(--gold-deep); }
+.gt-plan b { font-family: var(--serif-ko); font-size: 1.25rem; font-weight: 500; }
+.gt-plan p { font-size: .875rem; color: var(--muted); }
+.gt-plan .tlink { justify-self: start; margin-top: 8px; }
+@media (max-width: 900px) {
+  .gt { grid-template-columns: 1fr 1fr; row-gap: 28px; }
+  .gt li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .gt li:nth-child(3)::before { left: 0; }
+  .gt-facts { grid-template-columns: 1fr 1fr; }
+  .gt-facts li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .gt-facts li:nth-child(n+3) { border-top: 1px solid var(--rule-dark); }
+  .gt-offer { grid-template-columns: 1fr; align-items: start; }
+}
+@media (max-width: 640px) {
+  .gt li { gap: 8px; padding-top: 22px; }
+  .gt-t { font-size: 1.1rem; }
+  .gt-miss, .gt-win { padding-top: 8px; font-size: .78rem; }
+  .gt-no { font-size: .6rem; letter-spacing: .12em; }
+  .gt-vs { margin-top: 12px; }
+  .gt-vs div { padding: 10px; }
+  .gt-vs dd { font-size: .78rem; }
+  .gt-facts b { font-size: 1.7rem; }
+  .gt-facts strong { font-size: .85rem; }
+  .gt-facts span, .gt-facts em { font-size: .72rem; }
+  .gt-check { grid-template-columns: 1fr; }
+  .gt-check label { gap: 12px; padding-block: 12px; font-size: .875rem; }
+  .gt-check-foot .btn { width: 100%; }
+  .chap-no { font-size: .66rem; letter-spacing: .08em; }
+}
 .chap-case { margin-top: 18px; padding-left: 12px; border-left: 2px solid var(--gold); font-size: .875rem; line-height: 1.75; color: var(--ink); }
 .chap-case b { display: block; margin-bottom: 2px; font-size: .75rem; letter-spacing: .04em; color: var(--gold-deep); }
 .brand-card { display: grid; gap: clamp(14px, 3cqw, 22px); justify-items: start; padding: clamp(20px, 6cqw, 44px); background: var(--dd-bg); border: 1px solid var(--rule); }
@@ -1681,7 +1753,7 @@ h1:focus { outline: none; }
             <h2 class="ind-ko">치과 · 의료</h2>
             <ul class="ind-list"><li>신규 사업 기획</li><li>수익모델 검토</li><li>브랜드 · 마케팅 방향</li><li>환자 유입 실행</li><li>치과 전용 플랫폼</li></ul>
             <p class="src">의료광고 · 개인정보 · 보험 청구는 관련 법령과 자격을 갖춘 전문가 검토를 거쳐 진행합니다.</p>
-            <a class="tlink" href="#dental-program">Dental Brand Program<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <a class="tlink" href="#dental-program">Dental Golden Time<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </li>
           <li class="ind">
             <span class="ind-no">02</span>
@@ -1728,21 +1800,34 @@ h1:focus { outline: none; }
     <header class="phero dark">
       <div class="phero-bg" style="background-image: url('img/dental-consult.jpg');" aria-hidden="true"></div>
       <div class="wrap">
-        <h1 class="phero-title sm" tabindex="-1">Dental Brand<br>Program</h1>
-        <p class="phero-sub">원장님과 치과를 차별화하고,<br>구환자가 쌓이는 4단계</p>
+        <h1 class="phero-title sm" tabindex="-1">Dental<br>Golden Time</h1>
+        <p class="phero-sub">환자를 얻고 잃는 네 번의 순간,<br>그 골든타임을 잡는 프로그램</p>
       </div>
     </header>
 
-    <!-- 문제: 새는 구조와 쌓이는 구조 -->
+    <!-- 네 번의 골든타임: 환자 여정 위의 결정적 순간 -->
     <section class="sec">
       <div class="wrap">
-        <div class="shead-row"><div class="shead"><h2 class="h2">신환만 쫓으면<br>매년 처음부터 다시 시작합니다</h2></div></div>
+        <div class="shead-row"><div class="shead"><h2 class="h2">환자는 네 번의 순간에<br>치과를 고르고, 떠납니다</h2></div></div>
+        <ol class="gt">
+          <li><span class="gt-no">GOLDEN TIME 01</span><b class="gt-t">검색하는 순간</b><p class="gt-miss"><b>놓치면</b>검색 결과에서 다른 치과 선택</p><p class="gt-win"><b>잡으면</b>첫 화면에서 예약까지</p></li>
+          <li><span class="gt-no">GOLDEN TIME 02</span><b class="gt-t">비교하는 순간</b><p class="gt-miss"><b>놓치면</b>채널마다 다른 정보 · 멈춘 소식</p><p class="gt-win"><b>잡으면</b>어디서 봐도 같은 치과</p></li>
+          <li><span class="gt-no">GOLDEN TIME 03</span><b class="gt-t">진료 직후</b><p class="gt-miss"><b>놓치면</b>다음 검진은 다른 치과</p><p class="gt-win"><b>잡으면</b>플랫폼으로 이어지는 재방문 · 소개</p></li>
+          <li><span class="gt-no">GOLDEN TIME 04</span><b class="gt-t">청구 기한</b><p class="gt-miss"><b>놓치면</b>청구하지 않은 보험 진료비 소멸</p><p class="gt-win"><b>잡으면</b>전문가 연계로 누락 점검</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 골든타임을 놓친 치과 · 잡은 치과 -->
+    <section class="sec bg-white">
+      <div class="wrap">
+        <div class="shead-row"><div class="shead"><h2 class="h2">골든타임을 놓친 치과,<br>잡은 치과</h2></div></div>
         <figure class="pg-fig panel panel-white">
           <div class="ba">
             <svg class="pg-svg ba-svg" viewBox="0 0 460 380" role="img" aria-label="Before: 광고로 들어온 환자가 다른 치과로 빠져나가는 구조">
               <defs><marker id="ar-ink-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="mk-ink"/></marker><marker id="ar-gray-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="mk-gray"/></marker></defs>
               <text x="40" y="44" class="t-lbl">BEFORE</text>
-              <text x="40" y="70" class="t-sub">신환에만 의존하는 치과</text>
+              <text x="40" y="70" class="t-sub">골든타임을 놓친 치과</text>
               <text x="40" y="174" class="t-sm">광고 · 검색</text>
               <line x1="40" y1="190" x2="146" y2="190" class="ln" marker-end="url(#ar-ink-b)"/>
               <rect x="150" y="140" width="150" height="100" rx="6" class="box"/>
@@ -1755,7 +1840,7 @@ h1:focus { outline: none; }
             <svg class="pg-svg ba-svg" viewBox="0 0 460 380" role="img" aria-label="After: 치과 전용 플랫폼으로 연결된 환자가 재방문하고 소개로 다시 들어오며, 이탈이 차단되는 구조">
               <defs><marker id="ar-ink-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="mk-ink"/></marker><marker id="ar-gold-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="mk-gold"/></marker></defs>
               <text x="40" y="44" class="t-lbl t-goldd">AFTER</text>
-              <text x="40" y="70" class="t-sub">환자가 쌓이는 치과</text>
+              <text x="40" y="70" class="t-sub">골든타임을 잡은 치과</text>
               <text x="40" y="174" class="t-sm">광고 · 검색</text>
               <line x1="40" y1="190" x2="146" y2="190" class="ln" marker-end="url(#ar-ink-a)"/>
               <rect x="150" y="140" width="150" height="100" rx="6" class="box box-strong"/>
@@ -1775,10 +1860,10 @@ h1:focus { outline: none; }
       </div>
     </section>
 
-    <!-- 4단계 -->
-    <section class="sec bg-white">
+    <!-- 4단계: 골든타임마다 하나씩 -->
+    <section class="sec">
       <div class="wrap">
-        <div class="shead-row"><div class="shead"><h2 class="h2">4단계로 쌓아 올립니다</h2></div></div>
+        <div class="shead-row"><div class="shead"><h2 class="h2">골든타임마다<br>잡는 장치를 만듭니다</h2></div></div>
         <ol class="chapters">
           <li class="chap">
             <div class="chap-visual">
@@ -1795,8 +1880,9 @@ h1:focus { outline: none; }
               </div>
             </div>
             <div class="chap-text">
-              <span class="chap-no">1차</span>
+              <span class="chap-no">GOLDEN TIME 01 · 검색하는 순간</span>
               <h3>치과 전용 플랫폼<small>+ 브랜드 홈페이지</small></h3>
+              <dl class="gt-vs"><div><dt>놓치면</dt><dd>검색 결과에서 다른 치과 선택</dd></div><div class="win"><dt>잡으면</dt><dd>첫 화면에서 예약까지</dd></div></dl>
               <ul class="chips"><li class="chip-key">치과 전용 플랫폼</li><li class="chip-key">AI 치과비서</li><li>브랜드 홈페이지</li><li>모바일 최적화</li></ul>
             </div>
           </li>
@@ -1833,8 +1919,9 @@ h1:focus { outline: none; }
               </figure>
             </div>
             <div class="chap-text">
-              <span class="chap-no">2차</span>
+              <span class="chap-no">GOLDEN TIME 02 · 비교하는 순간</span>
               <h3>온라인 전체 브랜딩</h3>
+              <dl class="gt-vs"><div><dt>놓치면</dt><dd>채널마다 다른 정보 · 멈춘 소식</dd></div><div class="win"><dt>잡으면</dt><dd>어디서 봐도 같은 치과</dd></div></dl>
               <ul class="chips chips-logo"><li><svg class="chip-logo" aria-hidden="true"><use href="#logo-naver"></use></svg>네이버</li><li><svg class="chip-logo" aria-hidden="true"><use href="#logo-google"></use></svg>구글</li><li><svg class="chip-logo" aria-hidden="true"><use href="#logo-kakao"></use></svg>카카오</li><li><svg class="chip-logo" aria-hidden="true"><use href="#logo-instagram"></use></svg>인스타그램</li><li><svg class="chip-logo" aria-hidden="true"><use href="#logo-youtube"></use></svg>숏폼 (쇼츠 · 릴스)</li></ul>
             </div>
           </li>
@@ -1865,9 +1952,11 @@ h1:focus { outline: none; }
               </figure>
             </div>
             <div class="chap-text">
-              <span class="chap-no">3차</span>
+              <span class="chap-no">GOLDEN TIME 03 · 진료 직후</span>
               <h3>환자 인프라 브랜딩</h3>
-              <ul class="chips"><li>기존 환자 연결</li><li>재방문 관리</li><li>소개 유입</li></ul>
+              <dl class="gt-vs"><div><dt>놓치면</dt><dd>다음 검진은 다른 치과</dd></div><div class="win"><dt>잡으면</dt><dd>플랫폼으로 이어지는 재방문 · 소개</dd></div></dl>
+              <ul class="chips"><li>기존 환자 연결</li><li>정기검진 · 스케일링 안내</li><li>재방문 관리</li><li>소개 유입</li></ul>
+              <p class="chap-case"><b>매년 돌아오는 골든타임</b>스케일링 건강보험 · 만 19세 이상 연 1회 · 매년 1월 1일 다시 시작</p>
             </div>
           </li>
 
@@ -1891,9 +1980,11 @@ h1:focus { outline: none; }
               </figure>
             </div>
             <div class="chap-text">
-              <span class="chap-no">4차</span>
+              <span class="chap-no">GOLDEN TIME 04 · 청구 기한</span>
               <h3>보험 · 지원사업 전문가 연계</h3>
+              <dl class="gt-vs"><div><dt>놓치면</dt><dd>청구하지 않은 보험 진료비 소멸</dd></div><div class="win"><dt>잡으면</dt><dd>전문가 연계로 누락 점검</dd></div></dl>
               <ul class="chips"><li>보험 청구 전문가 연계</li><li>지원사업 신청 연계</li><li>인력 운영 효율화</li></ul>
+              <p class="chap-case"><b>3년의 골든타임</b>보험급여 비용을 받을 권리 · 3년 동안 행사하지 않으면 소멸 · 국민건강보험법 제91조</p>
               <p class="src">보험 청구 · 의료광고 · 개인정보는 관련 법령과 자격을 갖춘 전문가 검토를 거쳐 진행합니다.</p>
             </div>
           </li>
@@ -1901,10 +1992,57 @@ h1:focus { outline: none; }
       </div>
     </section>
 
+    <!-- 놓치기 쉬운 골든타임: 건강보험 기준 (공개 자료) -->
+    <section class="sec dark">
+      <div class="wrap">
+        <div class="shead"><h2 class="h2">달력에 정해진 골든타임,<br>먼저 알리는 치과가 잡습니다</h2></div>
+        <ul class="gt-facts">
+          <li><b>연 1회</b><strong>스케일링 건강보험</strong><span>만 19세 이상 · 매년 1월 1일 – 12월 31일</span><em>재방문 안내 시점</em></li>
+          <li><b>평생 2개</b><strong>임플란트 건강보험</strong><span>만 65세 이상 · 본인부담 30%</span><em>만 65세 환자 안내 시점</em></li>
+          <li><b>7년 1회</b><strong>노인틀니 건강보험</strong><span>만 65세 이상</span><em>틀니 교체 안내 시점</em></li>
+          <li><b>3년</b><strong>보험급여 비용 청구권</strong><span>행사하지 않으면 소멸</span><em>청구 누락 점검 시점</em></li>
+        </ul>
+        <p class="src">출처 · <a href="https://www.khan.co.kr/article/202309052155015" target="_blank" rel="noopener">국민건강보험공단 제공 자료 (경향신문 2023.09.05)</a> · <a href="https://casenote.kr/%EB%B2%95%EB%A0%B9/%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95/%EC%A0%9C91%EC%A1%B0" target="_blank" rel="noopener">국민건강보험법 제91조</a> · 세부 적용 조건은 개인별로 다를 수 있습니다.</p>
+      </div>
+    </section>
+
+    <!-- 우리 치과 골든타임 체크 -->
+    <section class="sec bg-white">
+      <div class="wrap">
+        <div class="shead-row"><div class="shead"><h2 class="h2">우리 치과는<br>골든타임을 잡고 있을까요?</h2></div></div>
+        <div class="gt-check" id="gt-check">
+          <label><input type="checkbox"><span>네이버 플레이스 · 블로그 소식이 멈춰 있다</span></label>
+          <label><input type="checkbox"><span>홈페이지가 모바일에서 불편하다</span></label>
+          <label><input type="checkbox"><span>채널마다 진료 시간 · 정보가 다르다</span></label>
+          <label><input type="checkbox"><span>진료 후 환자에게 먼저 연락하지 않는다</span></label>
+          <label><input type="checkbox"><span>정기검진 · 스케일링 시기를 알리지 않는다</span></label>
+          <label><input type="checkbox"><span>보험 청구 누락을 점검한 적이 없다</span></label>
+        </div>
+        <div class="gt-check-foot">
+          <p class="gt-count" id="gt-count" aria-live="polite">하나라도 해당되면, 지금이 골든타임입니다.</p>
+          <a class="btn btn-navy" href="#contact">무료 상담에서 함께 점검<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 치과 시장을 아는 사람: 덴딜 실제 숫자 -->
+    <section class="kpi-sec">
+      <div class="wrap">
+        <div class="kpi-head"><img class="rl-dd" src="img/dendeal-logo.png" alt="Den.deal"><b>치과 3,500곳과 일해 본 경험</b><a class="tlink" href="#work-dendeal">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a></div>
+        <ul class="kpi">
+          <li class="kpi-main"><b>3,500<em>+</em></b><span>협력 치과</span></li>
+          <li><b>300<em>+</em></b><span>협력 기공소</span></li>
+          <li><b>35<em>%</em></b><span>수도권 점유율</span></li>
+          <li><b>200만<em>+</em></b><span>누적 접속 수</span></li>
+        </ul>
+        <p class="src">덴딜 기준 · 김상우 대표 (덴딜 창업 · 前 덴탈서비스 주식회사 대표)</p>
+      </div>
+    </section>
+
     <!-- 매출 구조 -->
     <section class="sec">
       <div class="wrap">
-        <div class="shead-row"><div class="shead"><h2 class="h2">구환자가 쌓이는 매출 구조</h2></div></div>
+        <div class="shead-row"><div class="shead"><h2 class="h2">골든타임을 잡으면<br>구환자가 쌓입니다</h2></div></div>
         <figure class="pg-fig panel panel-paper rev-fig">
           <div class="hchart" role="img" aria-label="개념도: 해마다 신환 매출은 비슷하게 유지되고, 누적 구환자 매출이 쌓이면서 전체 매출이 커지는 구조">
             <div class="hc-legend"><span><i class="hc-sw hc-old"></i>누적 구환자</span><span><i class="hc-sw hc-new"></i>신환</span><span class="hc-note">개념도</span></div>
@@ -1936,8 +2074,14 @@ h1:focus { outline: none; }
     </section>
 
     <section class="sec-m">
-      <div class="wrap pg-cta">
-        <h2 class="h2">우리 치과도 이렇게<br>바꿀 수 있을까요?</h2>
+      <div class="wrap gt-offer">
+        <h2 class="h2">골든타임은<br>기다려 주지 않습니다</h2>
+        <div class="gt-plan">
+          <span>추천 상품</span>
+          <b>올인원 성장 파트너</b>
+          <p>월 300만원 · 1년 계약 · VAT 별도</p>
+          <a class="tlink" href="#services-all-in-one">포함 내용 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
         <div class="btns">
           <a class="btn btn-navy" href="#contact">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           <a class="btn btn-ink" href="#industries">업종 전체 보기</a>
@@ -2609,6 +2753,12 @@ h1:focus { outline: none; }
   window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ================= 이벤트 ================= */
+  /* 치과 골든타임 체크: 체크한 개수를 보여 준다 (저장하지 않음) */
+  $('#gt-check').addEventListener('change', () => {
+    const n = $$('#gt-check input:checked').length;
+    $('#gt-count').innerHTML = n ? `<b>${n}</b>개 해당 · 지금이 골든타임입니다.` : '하나라도 해당되면, 지금이 골든타임입니다.';
+  });
+
   document.addEventListener('click', e => {
     const t = e.target;
     const gi = t.closest('[data-lb]');
