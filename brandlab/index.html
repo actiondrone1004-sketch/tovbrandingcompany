@@ -1037,6 +1037,49 @@ h1:focus { outline: none; }
 .collage .c-main { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 1px solid var(--rule); }
 .collage .c-phone { position: absolute; right: 0; bottom: 0; width: 30%; border: 5px solid var(--ink); border-radius: 14px; background: var(--white); box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .5); }
 .collage-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; font-size: .75rem; color: var(--muted); }
+/* 치과: 지역 인프라 · 상생 */
+.local { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.localsvg .ring { fill: none; stroke: var(--rule-dark); stroke-dasharray: 2 7; }
+.localsvg .t-lhub { font-family: var(--serif-ko); font-size: 19px; font-weight: 600; fill: var(--navy); }
+.localsvg .t-lhub-s { font-size: 13px; font-weight: 700; fill: var(--navy); }
+.localsvg .t-lnode { font-size: 15px; font-weight: 700; fill: var(--navy); }
+.local-text h3 { margin-top: 16px; font-family: var(--serif-ko); font-size: clamp(1.35rem, 1.15rem + .8vw, 1.9rem); font-weight: 500; }
+.local-list { margin-top: 18px; border-top: 1px solid var(--ink); }
+.local-list li { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--rule); font-size: .9375rem; }
+.local-list b { font-weight: 500; }
+.local-list span { color: var(--muted); }
+.local-win { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin-top: clamp(40px, 5vw, 64px); }
+.local-win li { position: relative; display: grid; gap: 6px; align-content: start; padding: 18px 20px; border: 1px solid var(--rule); background: var(--paper); }
+.local-win li + li::before { content: "+"; position: absolute; left: -22px; top: 50%; transform: translateY(-50%); font-family: var(--serif-en); font-size: 1.5rem; line-height: 1; color: var(--gold-deep); }
+.local-win li.master::before { content: "="; }
+.local-win span { font-size: .75rem; letter-spacing: .04em; color: var(--muted); }
+.local-win b { font-family: var(--serif-ko); font-size: clamp(1rem, .95rem + .3vw, 1.2rem); font-weight: 500; line-height: 1.45; }
+.local-win .master { background: var(--navy); border-color: var(--navy); }
+.local-win .master span { color: var(--gold); }
+.local-win .master b { color: var(--white); font-size: clamp(1.15rem, 1rem + .6vw, 1.5rem); }
+.local-proof { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px 24px; margin-top: 28px; padding: 18px 0; border-block: 1px solid var(--rule); }
+.local-proof img { width: auto; height: 40px; }
+.local-proof p { display: grid; gap: 2px; font-size: .8125rem; color: var(--muted); }
+.local-proof b { font-family: var(--serif-ko); font-size: clamp(1rem, .95rem + .3vw, 1.2rem); font-weight: 500; color: var(--ink); }
+.local-proof + .src { margin-top: 14px; }
+@media (max-width: 900px) {
+  .local { grid-template-columns: 1fr; }
+  .local-win { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .local-win li + li::before, .local-win li.master::before { content: none; }
+}
+@media (max-width: 640px) {
+  .local { gap: 16px; }
+  .local-text h3 { margin-top: 10px; font-size: 1.15rem; }
+  .local-list li { grid-template-columns: 7.5em minmax(0, 1fr); gap: 8px; padding-block: 8px; font-size: .8125rem; }
+  .local-win { margin-top: 28px; gap: 8px; }
+  .local-win li { padding: 12px; }
+  .local-win b { font-size: .9rem; }
+  .local-win .master b { font-size: 1.05rem; }
+  .local-proof { grid-template-columns: auto minmax(0, 1fr); padding: 12px 0; }
+  .local-proof img { height: 30px; }
+  .local-proof .tlink { grid-column: 1 / -1; justify-self: start; }
+}
+
 /* 치과 골든타임 */
 .gt { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
 .gt li { position: relative; display: grid; gap: 12px; align-content: start; padding: 30px clamp(14px, 2vw, 28px) 0 0; }
@@ -1750,7 +1793,7 @@ h1:focus { outline: none; }
             <span class="ind-no">01</span>
             <span class="ind-en">Dental &amp; Healthcare</span>
             <h2 class="ind-ko">치과 · 의료</h2>
-            <ul class="ind-list"><li>신규 사업 기획</li><li>수익모델 검토</li><li>브랜드 · 마케팅 방향</li><li>환자 유입 실행</li><li>치과 전용 플랫폼</li></ul>
+            <ul class="ind-list"><li>신규 사업 기획</li><li>수익모델 검토</li><li>브랜드 · 마케팅 방향</li><li>환자 유입 실행</li><li>치과 전용 플랫폼</li><li>지역 협력 네트워크</li></ul>
             <p class="src">의료광고 · 개인정보 · 보험 청구는 관련 법령과 자격을 갖춘 전문가 검토를 거쳐 진행합니다.</p>
             <a class="tlink" href="#dental-program">Dental Golden Time<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </li>
@@ -1991,6 +2034,56 @@ h1:focus { outline: none; }
       </div>
     </section>
 
+    <!-- 지역 인프라: 지역 기업 · 소상공인과 상생하며 지역의 마스터가 된다 -->
+    <section class="sec bg-white">
+      <div class="wrap">
+        <div class="shead-row"><div class="shead"><h2 class="h2">지역과 함께 크는 치과,<br>지역의 마스터가 됩니다</h2></div></div>
+        <div class="local">
+          <figure class="pg-fig panel panel-navy">
+            <svg class="pg-svg hubsvg localsvg" viewBox="0 0 480 440" role="img" aria-label="우리 치과를 가운데 두고 지역 기업, 소상공인 · 상권, 학교 · 학원, 복지관 · 경로당, 아파트 · 주민, 지역 축제 · 행사가 연결된 지역 협력 네트워크">
+              <circle cx="240" cy="220" r="205" class="ring"/>
+              <g class="spokes"><line x1="240" y1="220" x2="240" y2="60"/><line x1="240" y1="220" x2="379" y2="140"/><line x1="240" y1="220" x2="379" y2="300"/><line x1="240" y1="220" x2="240" y2="380"/><line x1="240" y1="220" x2="101" y2="300"/><line x1="240" y1="220" x2="101" y2="140"/></g>
+              <circle cx="240" cy="220" r="74" class="hub"/>
+              <text x="240" y="214" text-anchor="middle" class="t-lhub">우리 치과</text>
+              <text x="240" y="238" text-anchor="middle" class="t-lhub-s">지역의 마스터</text>
+                  <rect x="174" y="39" width="132" height="42" rx="21" class="node"/><text x="240" y="65" text-anchor="middle" class="t-lnode">지역 기업</text>
+                  <rect x="313" y="119" width="132" height="42" rx="21" class="node"/><text x="379" y="145" text-anchor="middle" class="t-lnode">소상공인 · 상권</text>
+                  <rect x="313" y="279" width="132" height="42" rx="21" class="node"/><text x="379" y="305" text-anchor="middle" class="t-lnode">학교 · 학원</text>
+                  <rect x="174" y="359" width="132" height="42" rx="21" class="node"/><text x="240" y="385" text-anchor="middle" class="t-lnode">복지관 · 경로당</text>
+                  <rect x="35" y="279" width="132" height="42" rx="21" class="node"/><text x="101" y="305" text-anchor="middle" class="t-lnode">아파트 · 주민</text>
+                  <rect x="35" y="119" width="132" height="42" rx="21" class="node"/><text x="101" y="145" text-anchor="middle" class="t-lnode">지역 축제 · 행사</text>
+            </svg>
+          </figure>
+          <div class="local-text">
+            <span class="chap-no">LOCAL MASTER · 지역 인프라</span>
+            <h3>지역 협력 네트워크</h3>
+            <ul class="local-list">
+              <li><b>지역 기업</b><span>임직원 구강 건강 강의 · 건강 캠페인</span></li>
+              <li><b>소상공인 · 상권</b><span>상호 홍보 · 공동 지역 캠페인</span></li>
+              <li><b>학교 · 학원</b><span>구강 보건 교육</span></li>
+              <li><b>복지관 · 경로당</b><span>어르신 건강보험 임플란트 · 틀니 안내</span></li>
+              <li><b>아파트 · 주민</b><span>주민 구강 건강 캠페인</span></li>
+              <li><b>지역 축제 · 행사</b><span>부스 · 체험 프로그램</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <ol class="local-win" aria-label="상생 구조">
+          <li><span>치과</span><b>지역 신뢰 · 소개 유입</b></li>
+          <li><span>지역 기업 · 소상공인</span><b>임직원 복지 · 고객 · 홍보</b></li>
+          <li><span>지역 주민</span><b>가까운 구강 건강 관리</b></li>
+          <li class="master"><span>상생이 쌓이면</span><b>지역의 마스터</b></li>
+        </ol>
+
+        <div class="local-proof">
+          <img src="img/actiondrone-logo.png" alt="액션드론">
+          <p><b>학교 200+ · 기업 · 기관 100+ · 지역 축제 30+</b>지역과 협력 구조를 만들어 본 경험 · 액션드론 (학교 · 기관 수 2018년 기준)</p>
+          <a class="tlink" href="#work-actiondrone">Case Study<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <p class="src">환자 유인 · 본인부담금 할인 등 의료법상 금지되는 방식은 쓰지 않으며, 협력 활동은 관련 법령 검토를 거쳐 진행합니다.</p>
+      </div>
+    </section>
+
     <!-- 놓치기 쉬운 골든타임: 건강보험 기준 (공개 자료) -->
     <section class="sec dark">
       <div class="wrap">
@@ -2063,11 +2156,12 @@ h1:focus { outline: none; }
     <section class="sec dark">
       <div class="wrap">
         <div class="shead"><h2 class="h2">치과에 남는 것</h2></div>
-        <ul class="outs">
+        <ul class="outs outs-5">
           <li><svg class="i" aria-hidden="true"><use href="#i-trend"></use></svg><b>재방문 · 소개 유입</b></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-layers"></use></svg><b>구환자 누적</b></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-monitor"></use></svg><b>치과 업무 관리 편의</b></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-shield"></use></svg><b>브랜딩 안정화</b></li>
+          <li class="out-key"><svg class="i" aria-hidden="true"><use href="#i-award"></use></svg><b>지역의 마스터</b></li>
         </ul>
       </div>
     </section>
