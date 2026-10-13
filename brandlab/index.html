@@ -1469,7 +1469,6 @@ h1:focus { outline: none; }
           <a class="tlink" href="#services">서비스 · 가격 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
         </div>
         <ol class="svc-index" id="home-svc"></ol>
-        <p class="src">부가가치세 별도</p>
       </div>
     </section>
 
@@ -1726,7 +1725,7 @@ h1:focus { outline: none; }
           <div class="sd-block"><p class="sd-k">Process<span>진행 절차</span></p>
             <ol class="flow4"><li><span>01</span><b>무료 상담 신청</b></li><li><span>02</span><b>무료 상담</b><small>현황 · 목표 확인</small></li><li><span>03</span><b>제안서 · 견적</b></li><li><span>04</span><b>계약 · 착수</b></li></ol></div>
           <div class="sd-block"><p class="sd-k">Notice<span>유의 사항</span></p>
-            <ul class="terms-list"><li>모든 가격은 부가가치세 별도</li><li>성과는 사업 조건과 실행 수준에 따라 달라질 수 있습니다</li><li>광고성 정보 발송(TM · 문자 · 이메일)은 정보통신망법 등 관련 규정에 따라 진행합니다</li></ul></div>
+            <ul class="terms-list"><li>모든 상품은 1년 단위 계약</li><li>모든 가격은 부가가치세 별도</li><li>성과는 사업 조건과 실행 수준에 따라 달라질 수 있습니다</li><li>광고성 정보 발송(TM · 문자 · 이메일)은 정보통신망법 등 관련 규정에 따라 진행합니다</li></ul></div>
         </div>
       </div>
     </section>
@@ -2079,8 +2078,8 @@ h1:focus { outline: none; }
         <div class="gt-plan">
           <span>추천 상품</span>
           <b>올인원 성장 파트너</b>
-          <p>월 300만원 · 1년 계약 · VAT 별도</p>
-          <a class="tlink" href="#services-all-in-one">포함 내용 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <p>기획 · 개발 · 마케팅 · 영업 올인원 · 1년 계약</p>
+          <a class="tlink" href="#services-all-in-one">포함 내용 · 가격 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
         </div>
         <div class="btns">
           <a class="btn btn-navy" href="#contact">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
@@ -2441,21 +2440,21 @@ h1:focus { outline: none; }
 <script>
 (function () {
   /* ================= 데이터 ================= */
-  /* 판매 상품 3종 (가격 공개, 부가가치세 별도). 홈 · SERVICES · CONTACT 가 같은 데이터를 쓴다 */
+  /* 판매 상품 3종 (모두 1년 계약). 금액은 SERVICES 페이지에서만 보여 준다 — 홈 · CONTACT 는 이름과 요약만 */
   const MKT = { h: '토브 마케팅 · 월 45건', p: '구글 블로거 10 · 네이버 블로그 10 · 인스타그램 10 · 스레드 10 · 숏폼 5' };
   const TM = { h: '토브 TM · 월 1,000건', p: '관련 고객 아웃바운드 · 미팅 일정 조율 · 제안서 발송' };
   const PLANS = [
-    { slug: 'all-in-one', no: '01', en: 'All-in-One Growth', ko: '올인원 성장 파트너', price: '300', term: '1년 계약', main: true,
+    { slug: 'all-in-one', no: '01', en: 'All-in-One Growth', ko: '올인원 성장 파트너', price: '300', term: '1년 계약', main: true, sum: '기획 · 개발 · 마케팅 · 영업 올인원',
       tag: '매출 성장을 위한 기획 · 개발 · 마케팅 · 영업 올인원',
       items: [
         { h: '사업 기획', p: '매출 · 고객 유치 기획 회의 · 시장 · 고객 니즈 파악' },
         { h: '홈페이지 · 플랫폼', p: '사업에 맞춘 전문 홈페이지 · 플랫폼 제작 · 홍보' },
         MKT, TM],
       fit: ['신사업 · 신규 서비스 준비', '매출 정체 중소기업', '시장 진입 전 스타트업'] },
-    { slug: 'marketing-sales', no: '02', en: 'Marketing & Sales', ko: '마케팅 · 영업 파트너', price: '200',
-      items: [MKT, TM],
+    { slug: 'marketing', no: '02', en: 'Marketing', ko: '마케팅 파트너', price: '200', term: '1년 계약', sum: '토브 마케팅 월 45건',
+      items: [MKT],
       fit: ['홈페이지 · 플랫폼을 갖춘 기업'] },
-    { slug: 'platform-care', no: '03', en: 'Platform Care', ko: '플랫폼 케어', price: '100', term: '올인원 계약 연장 시',
+    { slug: 'platform-care', no: '03', en: 'Platform Care', ko: '플랫폼 케어', price: '100', term: '1년 계약 · 올인원 계약 연장 시', sum: '홈페이지 · 플랫폼 유지보수',
       items: [{ h: '유지보수', p: '홈페이지 · 플랫폼 수정 · 보수' }],
       fit: ['올인원 1년 계약 고객'] }
   ];
@@ -2559,8 +2558,7 @@ h1:focus { outline: none; }
       </div>
     </section>`;
 
-  const won = p => `월 ${p.price}만원`;
-  const svcRow = p => `<li><a class="svc-row" href="#services-${p.slug}"><span class="sr-no">${p.no}</span><span class="sr-en">${p.en}</span><span class="sr-ko"><b>${p.ko}</b>${won(p)}${p.term ? ` · ${p.term}` : ''}</span><span class="sr-go">${ic('arrow')}</span></a></li>`;
+  const svcRow = p => `<li><a class="svc-row" href="#services-${p.slug}"><span class="sr-no">${p.no}</span><span class="sr-en">${p.en}</span><span class="sr-ko"><b>${p.ko}</b>${p.sum} · 1년 계약</span><span class="sr-go">${ic('arrow')}</span></a></li>`;
 
   const planCard = p => `
     <article class="plan${p.main ? ' plan-main dark' : ''}" id="svc-${p.slug}">
@@ -2583,7 +2581,7 @@ h1:focus { outline: none; }
   function renderStatic() {
     $('#home-svc').innerHTML = PLANS.map(svcRow).join('');
     $('#plans').innerHTML = PLANS.map(planCard).join('');
-    $('#side-plans').innerHTML = PLANS.map(p => `<li><b>${p.ko}</b><span>${won(p)}</span></li>`).join('');
+    $('#side-plans').innerHTML = PLANS.map(p => `<li><b>${p.ko}</b><span>${p.en}</span></li>`).join('');
 
     const [f, ...rest] = CASES;
     $('#home-work').innerHTML = `
@@ -2850,7 +2848,7 @@ h1:focus { outline: none; }
   const num = n => Number(n || 0).toLocaleString('ko-KR');
   const kstTime = iso => new Date(iso).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
   const mmdd = date => date.slice(5).replace('-', '.');
-  const PAGE_LABEL = { home: '홈', about: '소개', services: '서비스 · 가격', industries: '업종', work: '사례', press: '보도', contact: '상담 신청', 'dental-program': '업종 · 치과 · 의료', 'mfg-program': '업종 · 스타트업', expertise: '서비스 (이전 주소)', diagnosis: '사업 진단 (삭제됨)' };
+  const PAGE_LABEL = { home: '홈', about: '소개', services: '서비스 · 가격', industries: '업종', work: '사례', press: '보도', contact: '상담 신청', 'dental-program': '업종 · 치과 · 의료', 'mfg-program': '업종 · 스타트업', expertise: '서비스 (이전 주소)', diagnosis: '사업 진단 (삭제됨)', 'services-marketing-sales': '서비스 · 마케팅 파트너 (이전 주소)' };
   const pageLabel = k => {
     if (PAGE_LABEL[k]) return PAGE_LABEL[k];
     if (k.indexOf('services-') === 0 && planBy(k.slice(9))) return '서비스 · ' + planBy(k.slice(9)).ko;
