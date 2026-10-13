@@ -254,6 +254,8 @@ h1:focus { outline: none; }
 .m-en { font-family: var(--serif-en); font-size: clamp(1.2rem, 1.05rem + .5vw, 1.5rem); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; line-height: 1; }
 .m-ko { font-size: .9375rem; font-weight: 500; color: var(--on-dark-2); }
 .m-desc { font-size: .9375rem; line-height: 1.8; color: var(--on-dark-2); }
+.method-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.method-3 .m-desc { font-size: .875rem; color: var(--on-dark-3); }
 
 /* ---------- 서비스 목록 ---------- */
 .svc-row { display: grid; grid-template-columns: 70px minmax(0, 1.2fr) minmax(0, 1fr) 40px; align-items: center; gap: 24px; padding: 22px 8px; border-bottom: 1px solid var(--rule); transition: background-color .35s ease, padding .35s ease; }
@@ -299,7 +301,6 @@ h1:focus { outline: none; }
 .ins-m { display: flex; gap: 12px; margin-top: 4px; font-size: .78rem; color: var(--muted); }
 .ins-m span + span::before { content: "·"; margin-right: 12px; }
 .ins-c { letter-spacing: .12em; color: var(--gold-deep); }
-.dg-label { font-size: .72rem; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
 .ins-f { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 24px clamp(32px, 5vw, 96px); align-items: end; padding-top: 32px; margin-bottom: clamp(56px, 6vw, 88px); }
 .ins-f .ins-t { margin-top: 14px; font-size: clamp(1.35rem, 1.15rem + .8vw, 1.8rem); line-height: 1.45; }
 .ins-fr { display: grid; gap: 14px; }
@@ -308,12 +309,14 @@ h1:focus { outline: none; }
 .fbtn:hover { border-color: var(--ink); }
 .fbtn[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--white); }
 
-/* ---------- 진단 유도 띠 ---------- */
+/* ---------- 상담 유도 띠 ---------- */
 .cta-band { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(64px, 8vw, 112px); }
 .cta-bg { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center; opacity: .3; }
 .cta-band::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--navy) 22%, rgba(7, 26, 45, .72)); }
 .cta-in { display: grid; grid-template-columns: minmax(0, 1.4fr) auto; gap: 40px; align-items: end; }
 .cta-in .lead { margin-top: 22px; }
+.cta-steps { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-size: .875rem; color: var(--on-dark-2); }
+.cta-steps span { margin-right: 6px; font-family: var(--serif-en); color: var(--gold); }
 
 /* ---------- ABOUT ---------- */
 @media (max-width: 900px) { .about-intro { grid-template-areas: "pic" "info" "career"; grid-template-rows: none; } }
@@ -479,45 +482,77 @@ h1:focus { outline: none; }
 .press .i { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--gold-deep); }
 .press a:hover b { color: var(--gold-deep); }
 
-/* ---------- EXPERTISE ---------- */
-.svc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(32px, 5vw, 96px); }
-.svc-block { display: grid; gap: 14px; align-content: start; padding: 32px 0 44px; border-top: 1px solid var(--ink); }
-.sb-top { display: flex; justify-content: space-between; align-items: center; }
-.sb-no { font-family: var(--serif-en); font-size: 1.25rem; color: var(--gold-deep); }
-.sb-top .i { width: 26px; height: 26px; color: var(--gold-deep); stroke-width: 1.1; }
-.sb-en { font-family: var(--serif-en); font-size: clamp(1.4rem, 1.2rem + .8vw, 1.9rem); font-weight: 500; line-height: 1; letter-spacing: .01em; text-transform: uppercase; }
-.sb-ko { margin-top: -4px; font-size: .9375rem; font-weight: 500; }
-.sb-p { max-width: 30em; color: var(--muted); }
-.sb-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.sb-tags li { padding: 6px 12px; border: 1px solid var(--rule); background: var(--white); font-size: .8125rem; line-height: 1.5; }
-.svc-block .tlink { justify-self: start; margin-top: 6px; }
-.how { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(40px, 6vw, 120px); }
-.how-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
-.how-steps li { display: grid; gap: 10px; align-content: start; padding-top: 22px; border-top: 1px solid var(--ink); }
-.how-steps span { font-family: var(--serif-en); font-size: 1.5rem; line-height: 1; color: var(--gold-deep); }
-.how-steps b { font-size: 1rem; font-weight: 500; }
-.how-steps p { font-size: .9375rem; color: var(--muted); }
+/* ---------- SERVICES: 상품 3종 ---------- */
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.plan { display: grid; gap: 12px; align-content: start; padding: clamp(22px, 3vw, 40px); border: 1px solid var(--rule); background: var(--white); scroll-margin-top: 88px; }
+.plan-top { display: flex; align-items: baseline; gap: 12px; }
+.plan-no { font-family: var(--serif-en); font-size: 1.1rem; color: var(--gold-deep); }
+.plan-en { font-family: var(--serif-en); font-size: .95rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.plan-ko { font-family: var(--serif-ko); font-size: clamp(1.3rem, 1.1rem + .8vw, 1.8rem); font-weight: 500; }
+.plan-price { display: flex; align-items: baseline; gap: 6px; margin-top: 4px; line-height: 1; }
+.plan-price b { font-family: var(--serif-en); font-size: clamp(2.6rem, 2rem + 2.4vw, 4rem); font-weight: 500; font-variant-numeric: lining-nums; color: var(--navy); }
+.plan-price span { font-size: .9375rem; font-weight: 500; }
+.plan-term { font-size: .8125rem; color: var(--muted); }
+.plan-tag { padding-top: 14px; border-top: 1px solid var(--rule); font-family: var(--serif-ko); font-size: 1.05rem; line-height: 1.6; }
+.plan-items { display: grid; border-top: 1px solid var(--ink); }
+.plan-items li { display: grid; gap: 2px; padding-block: 12px; border-bottom: 1px solid var(--rule); }
+.plan-items b { font-size: .9375rem; font-weight: 500; }
+.plan-items span { font-size: .8125rem; line-height: 1.7; color: var(--muted); }
+.plan-fit { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+.plan-fit > span { font-size: .72rem; letter-spacing: .14em; color: var(--gold-deep); }
+.plan-fit ul { display: flex; flex-wrap: wrap; gap: 6px; }
+.plan-fit li { padding: 4px 10px; border: 1px solid var(--rule); font-size: .78rem; }
+.plan .btn { justify-self: start; margin-top: 8px; }
+/* 주력 상품 (올인원): 네이비 바탕, 한 줄 전체. 왼쪽 이름 · 가격, 오른쪽 포함 내용 */
+.plan-main { grid-column: 1 / -1; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "top items" "ko items" "price items" "term items" "tag items" "fit items" "btn items"; column-gap: clamp(32px, 5vw, 80px); background: var(--navy); border-color: var(--navy); }
+.plan-main .plan-top { grid-area: top; } .plan-main .plan-ko { grid-area: ko; } .plan-main .plan-price { grid-area: price; } .plan-main .plan-term { grid-area: term; }
+.plan-main .plan-tag { grid-area: tag; } .plan-main .plan-fit { grid-area: fit; } .plan-main .btn { grid-area: btn; } .plan-main .plan-items { grid-area: items; align-self: start; }
+.plan-main .plan-en, .plan-main .plan-term, .plan-main .plan-items span { color: var(--on-dark-2); }
+.plan-main .plan-no, .plan-main .plan-fit > span, .plan-main .plan-price span { color: var(--gold); }
+.plan-main .plan-price b { color: var(--white); }
+.plan-main .plan-tag { border-top-color: var(--rule-dark); color: var(--gold-light); }
+.plan-main .plan-items { grid-template-columns: 1fr 1fr; column-gap: 28px; border-top-color: var(--gold-line); }
+.plan-main .plan-items li { border-bottom-color: var(--rule-dark); }
+@media (min-width: 901px) {
+  .plan-main .plan-items li { gap: 6px; padding-block: 22px; }
+  .plan-main .plan-items b { font-size: 1.05rem; }
+  .plan-main .plan-items span { font-size: .875rem; }
+}
+.plan-main .plan-fit li { border-color: var(--rule-dark); color: var(--on-dark-2); }
+.plans + .src { margin-top: 16px; }
 
-/* 서비스 상세 */
-.sd { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 8fr); gap: clamp(40px, 6vw, 120px); align-items: start; }
-.sd-nav { position: sticky; top: 100px; }
-.sd-nav ol { margin-top: 0; border-top: 1px solid var(--rule); }
-.sd-nav a { display: flex; gap: 14px; padding-block: 12px; border-bottom: 1px solid var(--rule); font-family: var(--serif-en); font-size: 1.05rem; color: var(--muted); transition: color .3s ease; }
-.sd-nav a span { font-size: .95rem; color: var(--gold-deep); }
-.sd-nav a:hover, .sd-nav a[aria-current="page"] { color: var(--ink); }
-.sd-nav a[aria-current="page"] { font-weight: 600; }
+/* 계약 전 확인 사항 */
 .sd-block { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 24px; padding-block: 32px; border-top: 1px solid var(--rule); }
 .sd-block:first-child { border-top-color: var(--ink); padding-top: 32px; }
 .sd-k { font-family: var(--serif-en); font-size: 1.15rem; font-weight: 500; line-height: 1.1; letter-spacing: .06em; text-transform: uppercase; }
 .sd-k span { display: block; margin-top: 8px; font-family: var(--sans); font-size: .8125rem; letter-spacing: 0; text-transform: none; color: var(--muted); }
-.sd-tasks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
-.sd-tasks li { display: flex; gap: 16px; align-items: baseline; padding-block: 12px; border-bottom: 1px solid var(--rule); font-size: 1rem; }
-.sd-tasks span { font-family: var(--serif-en); color: var(--gold-deep); }
-.sd-out { display: grid; gap: 14px; }
-.sd-out li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; font-size: 1rem; }
-.sd-out .i { margin-top: 5px; color: var(--gold-deep); }
-.sd-cta { display: grid; gap: 22px; margin-top: 24px; padding: clamp(28px, 4vw, 44px); background: var(--white); border: 1px solid var(--rule); }
-.sd-cta p { font-family: var(--serif-ko); font-size: 1.05rem; }
+.terms .sd-block { grid-template-columns: 200px minmax(0, 1fr); }
+.terms-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+.terms-list li { position: relative; padding: 10px 0 10px 18px; border-bottom: 1px solid var(--rule); font-size: .9375rem; }
+.terms-list li::before { content: ""; position: absolute; left: 0; top: 1.35em; width: 8px; height: 1px; background: var(--gold-deep); }
+.flow4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.flow4 li { display: grid; gap: 4px; align-content: start; padding-top: 14px; border-top: 1px solid var(--ink); }
+.flow4 span { font-family: var(--serif-en); font-size: 1.15rem; line-height: 1; color: var(--gold-deep); }
+.flow4 b { font-size: .9375rem; font-weight: 500; }
+.flow4 small { font-size: .78rem; color: var(--muted); }
+
+/* ---------- INDUSTRIES ---------- */
+.inds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
+.ind { display: grid; gap: 12px; align-content: start; padding-top: 22px; border-top: 1px solid var(--ink); }
+.ind-no { font-family: var(--serif-en); font-size: 1.25rem; line-height: 1; color: var(--gold-deep); }
+.ind-en { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.ind-ko { font-family: var(--serif-ko); font-size: clamp(1.25rem, 1.05rem + .8vw, 1.7rem); font-weight: 500; }
+.ind-list { border-top: 1px solid var(--rule); }
+.ind-list li { padding-block: 10px; border-bottom: 1px solid var(--rule); font-size: .9375rem; }
+.ind .src { margin-top: 0; }
+.ind .tlink { justify-self: start; margin-top: 8px; }
+
+/* ABOUT: 일하는 방식 */
+.ways { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); }
+.ways li { display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 1px solid var(--ink); }
+.ways span { font-family: var(--serif-en); font-size: 1.25rem; line-height: 1; color: var(--gold-deep); }
+.ways b { font-family: var(--serif-ko); font-size: 1.1rem; font-weight: 500; }
+.ways p { font-size: .875rem; line-height: 1.7; color: var(--muted); }
 
 /* 이전·다음 */
 .pn { display: grid; grid-template-columns: 1fr 1fr; margin-block: clamp(56px, 6vw, 96px); border-block: 1px solid var(--rule); }
@@ -536,34 +571,12 @@ h1:focus { outline: none; }
 .case-ind { margin-top: 10px; font-size: .875rem; color: var(--muted); }
 .case-info .tlink { margin-top: 28px; }
 
-/* WORK: 치과 · 기공소 · 제조유통 구분 */
-.segs { display: grid; grid-template-columns: 1.5fr 1fr; gap: 12px; }
-.seg { display: grid; gap: 8px; align-content: start; width: 100%; height: 100%; padding: clamp(18px, 2.4vw, 28px); border: 1px solid var(--rule); background: var(--paper); color: var(--ink); text-align: left; font: inherit; cursor: pointer; transition: border-color .25s ease; }
-.seg:hover { border-color: var(--ink); }
-.seg.main { background: var(--navy); border-color: var(--navy); color: var(--white); }
-.seg-en { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); }
-.seg.main .seg-en, .seg.main .seg-go { color: var(--gold); }
-.seg b { font-family: var(--serif-ko); font-size: clamp(1.3rem, 1.1rem + .8vw, 1.8rem); font-weight: 500; }
-.seg-tags { font-size: .8125rem; line-height: 1.6; color: var(--muted); }
-.seg.main .seg-tags { color: var(--on-dark-2); }
-.seg-go { display: inline-flex; align-items: center; gap: 10px; margin-top: 6px; font-size: .8125rem; font-weight: 500; color: var(--gold-deep); transition: gap .25s ease; }
-.seg-go .i { width: 16px; height: 16px; }
-.seg:hover .seg-go { gap: 16px; }
-.case-group { padding-top: clamp(32px, 4vw, 48px); scroll-margin-top: 80px; }
-.case-group + .case-group { margin-top: clamp(40px, 5vw, 64px); border-top: 1px solid var(--rule); }
-.case-group:first-child { padding-top: 0; }
-.grp-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 20px; }
-.grp-t { font-family: var(--serif-ko); font-size: clamp(1.3rem, 1.1rem + .8vw, 1.75rem); font-weight: 500; }
-.grp-en { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-.grp-n { margin-left: auto; font-size: .8rem; color: var(--muted); }
 .case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 20px; }
 .case-card { position: relative; display: grid; gap: 6px; align-content: start; min-width: 0; }
 .case-card .case-img { aspect-ratio: 4 / 3; margin-bottom: 8px; }
 .case-card .case-name { margin-top: 0; font-size: clamp(1.15rem, 1rem + .5vw, 1.5rem); }
 .case-card .case-ind { margin-top: 0; font-size: .8125rem; color: var(--muted); }
 .badge { position: absolute; top: 10px; left: 10px; z-index: 1; padding: 3px 10px; background: var(--navy); color: var(--white); font-size: .68rem; letter-spacing: .06em; }
-.grp-empty { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: clamp(20px, 3vw, 32px); border: 1px dashed var(--rule); background: var(--white); }
-.grp-empty p { color: var(--muted); }
 @media (max-width: 900px) { .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .cd-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; border-top: 1px solid var(--ink); }
 .cd-meta div { display: grid; gap: 6px; padding-top: 18px; }
@@ -574,6 +587,11 @@ h1:focus { outline: none; }
 .cd-k { display: grid; gap: 8px; align-content: start; font-family: var(--serif-en); font-size: clamp(1.1rem, 1rem + .4vw, 1.4rem); font-weight: 500; line-height: 1.1; letter-spacing: .05em; text-transform: uppercase; }
 .cd-k span { font-size: .875rem; letter-spacing: .1em; color: var(--gold-deep); }
 .cd-v .lead { margin-top: 20px; }
+.cd-k small { font-family: var(--sans); font-size: .8125rem; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
+.cd-kw { border-top: 1px solid var(--ink); }
+.cd-kw li { padding-block: 10px; border-bottom: 1px solid var(--rule); font-size: 1rem; }
+.cd-bca { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); padding-block: clamp(32px, 4vw, 52px); border-top: 1px solid var(--rule); }
+.cd-bca .cd-k { margin-bottom: 16px; }
 .exec { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
 .exec li { display: flex; gap: 16px; align-items: baseline; padding-block: 12px; border-bottom: 1px solid var(--rule); font-family: var(--serif-en); font-size: 1.125rem; font-weight: 500; }
 .exec li span { font-size: .85rem; color: var(--gold-deep); }
@@ -658,9 +676,13 @@ h1:focus { outline: none; }
 .steps3 li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 2px 12px; align-items: baseline; padding-block: 14px; border-bottom: 1px solid var(--rule); }
 .steps3 span { font-family: var(--serif-en); font-size: 1.15rem; line-height: 1.5; color: var(--gold-deep); }
 .steps3 b { font-weight: 500; }
-.steps3 p { font-size: .875rem; line-height: 1.7; color: var(--muted); }
+.steps3 p { grid-column: 2; font-size: .875rem; line-height: 1.7; color: var(--muted); }
 .side-diag { display: grid; gap: 16px; justify-items: start; margin-top: 40px; padding: 28px; }
 .side-diag p { color: var(--on-dark-2); font-size: .9375rem; }
+.side-plans { display: grid; width: 100%; border-top: 1px solid var(--rule-dark); }
+.side-plans li { display: flex; justify-content: space-between; gap: 12px; padding-block: 10px; border-bottom: 1px solid var(--rule-dark); font-size: .875rem; }
+.side-plans b { font-weight: 500; }
+.side-plans span { white-space: nowrap; color: var(--gold); }
 .cform { padding: clamp(28px, 4vw, 56px); background: var(--white); border: 1px solid var(--rule); }
 .cform-h { margin-bottom: 28px; font-family: var(--serif-ko); font-size: 1.25rem; font-weight: 500; }
 .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 32px; }
@@ -766,67 +788,6 @@ h1:focus { outline: none; }
 .agree-more summary { width: max-content; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 .agree-more p { margin-top: 8px; line-height: 1.7; }
 
-/* ---------- BRAND DIAGNOSIS ---------- */
-.dg { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
-.dg-qs { scroll-margin-top: 100px; }
-.dg-legend { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding-bottom: 16px; border-bottom: 1px solid var(--ink); font-size: .8125rem; color: var(--muted); }
-.dg-q { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 4px 20px; padding-block: 24px; border-bottom: 1px solid var(--rule); }
-.dg-no { font-family: var(--serif-en); font-size: 1.3rem; line-height: 1; color: var(--muted); transition: color .3s ease; }
-.dg-q.done .dg-no { color: var(--gold-deep); }
-.dg-area { font-size: .72rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); }
-.dg-area b { margin-right: 10px; font-weight: 500; letter-spacing: .02em; color: var(--ink); }
-.dg-text { margin-top: 6px; font-size: 1rem; font-weight: 500; line-height: 1.65; }
-.scale { grid-column: 2; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; min-width: 0; margin: 14px 0 0; padding: 0; border: 0; }
-.opt { position: relative; cursor: pointer; }
-.opt input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
-.opt span { display: grid; gap: 4px; place-items: center; min-height: 64px; padding: 8px 4px; border: 1px solid var(--rule); background: var(--white); text-align: center; font-size: .72rem; line-height: 1.3; color: var(--muted); transition: background-color .2s ease, border-color .2s ease, color .2s ease; }
-.opt span b { font-family: var(--serif-en); font-size: 1.3rem; font-weight: 500; line-height: 1; color: var(--ink); }
-.opt:hover span { border-color: var(--ink); }
-.opt input:checked + span { background: var(--navy); border-color: var(--navy); color: var(--on-dark-2); }
-.opt input:checked + span b { color: var(--gold); }
-.opt input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
-.dg-aside { position: sticky; top: 100px; }
-.dg-card { display: grid; gap: 20px; padding: clamp(28px, 3vw, 40px); }
-.dg-score { display: flex; align-items: baseline; gap: 8px; font-family: var(--serif-en); line-height: .9; }
-.dg-score b { font-size: clamp(3rem, 2.6rem + 1.4vw, 4rem); font-weight: 500; font-variant-numeric: tabular-nums; }
-.dg-score span { font-size: 1.15rem; color: var(--on-dark-3); }
-.dg-prog { position: relative; height: 2px; background: var(--rule-dark); }
-.dg-prog i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--gold); transition: width .4s ease; }
-.dg-count { margin-top: -8px; font-size: .8125rem; color: var(--on-dark-2); }
-.dg-stage { font-family: var(--serif-ko); font-size: 1.125rem; font-weight: 500; }
-.dg-desc { font-size: .9375rem; line-height: 1.8; color: var(--on-dark-2); }
-.dg-stages { border-top: 1px solid var(--rule-dark); }
-.dg-stages li { display: flex; justify-content: space-between; gap: 12px; padding-block: 10px; border-bottom: 1px solid var(--rule-dark); font-size: .875rem; color: var(--on-dark-3); }
-.dg-stages li b { font-weight: 500; color: var(--on-dark-2); }
-.dg-stages li.on b, .dg-stages li.on span { color: var(--gold); }
-.dg-note { font-size: .78rem; color: var(--gold); }
-.dg-actions { display: grid; gap: 10px; }
-.dg-actions .btn { width: 100%; }
-.linkbtn { justify-self: start; padding: 4px 0; border: 0; background: none; font-size: .8125rem; color: var(--on-dark-2); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
-.linkbtn:hover { color: var(--white); }
-.dg-res { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(40px, 6vw, 100px); }
-.res-score { margin-top: 0; font-family: var(--serif-en); font-size: clamp(3rem, 2.5rem + 2vw, 4.5rem); font-weight: 500; line-height: .85; font-variant-numeric: tabular-nums; }
-.res-score span { margin-left: 6px; font-size: .25em; color: var(--muted); }
-.res-stage { margin-top: 14px; font-family: var(--serif-ko); font-size: 1.2rem; font-weight: 500; }
-.res-desc { margin-top: 10px; color: var(--muted); }
-.bars-head, .bars li { display: grid; grid-template-columns: 150px minmax(0, 1fr) 44px; gap: 16px; align-items: center; }
-.bars-head { padding-bottom: 8px; border-bottom: 1px solid var(--ink); font-size: .72rem; color: var(--muted); }
-.ticks { display: flex; justify-content: space-between; }
-.bars li { padding-block: 11px; border-bottom: 1px solid var(--rule); font-size: .9375rem; }
-.b-t { position: relative; height: 6px; background: var(--paper-2); }
-.b-t i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--navy); }
-.bars li.low .b-t i { background: var(--gold); }
-.bars li.low .b-l { font-weight: 500; }
-.b-v { text-align: right; font-family: var(--serif-en); font-size: 1.15rem; font-variant-numeric: tabular-nums; }
-.weak-h { margin-top: clamp(40px, 5vw, 64px); font-family: var(--serif-ko); font-size: 1.2rem; font-weight: 500; }
-.weak { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
-.weak li { display: grid; gap: 10px; align-content: start; padding-top: 20px; border-top: 1px solid var(--gold); }
-.weak small { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); }
-.weak b { font-family: var(--serif-ko); font-size: 1.05rem; font-weight: 500; }
-.weak p { font-size: .9375rem; color: var(--muted); }
-.weak .tlink { justify-self: start; }
-.res-cta { margin-top: 56px; }
-
 /* ---------- 푸터 ---------- */
 .ftr { padding-top: clamp(56px, 7vw, 96px); }
 .ftr-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; padding-bottom: clamp(40px, 5vw, 64px); border-bottom: 1px solid var(--rule-dark); }
@@ -849,6 +810,7 @@ h1:focus { outline: none; }
 @media (max-width: 1100px) {
   .method { grid-template-columns: 1fr; }
   .method li { grid-template-columns: 40px minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "no en ko"; align-items: baseline; column-gap: 20px; row-gap: 6px; padding: 20px 0; border-left: 0; border-bottom: 1px solid var(--rule-dark); }
+  .method-3 li { grid-template-areas: "no en ko" ". desc desc"; }
   .m-icon { display: none; }
   .m-no { grid-area: no; } .m-en { grid-area: en; } .m-ko { grid-area: ko; } .m-desc { grid-area: desc; }
 }
@@ -862,17 +824,20 @@ h1:focus { outline: none; }
 @media (max-width: 960px) {
   .ins-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ins-grid.three { grid-template-columns: 1fr; }
-  .contact, .dg { grid-template-columns: 1fr; }
-  .dg-aside { position: static; }
+  .contact { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
-  .feat, .about-intro, .philo-in, .story, .cta-in, .how, .sd, .case-row, .cd-sec, .dg-res { grid-template-columns: 1fr; }
+  .feat, .about-intro, .philo-in, .story, .cta-in, .case-row, .cd-sec { grid-template-columns: 1fr; }
   .cd-wide { aspect-ratio: 4 / 3; }
-  .pair, .svc-grid { grid-template-columns: 1fr; }
+  .pair { grid-template-columns: 1fr; }
+  .plan-main { grid-template-columns: minmax(0, 1fr); grid-template-areas: "top" "ko" "price" "term" "tag" "items" "fit" "btn"; }
+  .terms .sd-block { grid-template-columns: 160px minmax(0, 1fr); }
+  .inds { grid-template-columns: 1fr; }
+  .ind-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; }
+  .ways { grid-template-columns: 1fr 1fr; }
   .portrait { max-width: 380px; }
-  .sd-nav { position: static; order: 2; }
   .case-row:nth-child(even) .case-img { order: 0; }
-  .cd-meta, .cd-extra, .weak { grid-template-columns: 1fr; }
+  .cd-meta, .cd-extra { grid-template-columns: 1fr; }
   .ftr-top { grid-template-columns: 1fr; }
   .ftr-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -888,18 +853,14 @@ h1:focus { outline: none; }
   .svc-row:hover { padding-inline: 8px; }
 }
 @media (max-width: 640px) {
-  .ins-grid, .ins-f, .how-steps, .exp, .sd-tasks, .exec, .cd-results { grid-template-columns: 1fr; }
-  .sd-block { grid-template-columns: 1fr; gap: 14px; }
-  .dg-q { grid-template-columns: 1fr; }
-  .scale { grid-column: 1; }
-  .opt span { min-height: 58px; font-size: .62rem; }
+  .ins-grid, .ins-f, .exp, .exec, .cd-results { grid-template-columns: 1fr; }
+  .sd-block, .terms .sd-block { grid-template-columns: 1fr; gap: 14px; }
   .pn { grid-template-columns: 1fr; }
   .pn a + a { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); text-align: left; }
 }
 @media (max-width: 600px) {
   .fgrid { grid-template-columns: 1fr; }
   .nums { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-  .bars-head, .bars li { grid-template-columns: 104px minmax(0, 1fr) 34px; gap: 10px; }
 }
 @media (max-width: 560px) {
   .hdr-cta { display: none; }
@@ -1171,18 +1132,40 @@ h1:focus { outline: none; }
   .sr-en { font-size: 1.05rem; }
   .sr-ko { grid-column: auto; grid-row: auto; font-size: .78rem; }
   .sr-go { display: none; }
-  .svc-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .svc-block { gap: 6px; padding: 14px; border: 1px solid var(--rule); background: var(--white); }
-  .sb-top .i { width: 20px; height: 20px; }
-  .sb-no { font-size: .85rem; }
-  .sb-en { font-size: 1.05rem; }
-  .sb-ko { margin-top: 0; font-size: .75rem; }
-  .sb-tags { display: none; }
-  .svc-block .tlink { margin-top: 4px; font-size: .65rem; }
-  .how-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-  .how-steps li { padding-top: 12px; }
-  .how-steps span { font-size: 1.1rem; }
-  .how-steps b { font-size: .85rem; }
+  .svc-index li:first-child { grid-column: 1 / -1; }
+  .method-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .method-3 li, .method-3 li:first-child { grid-template-columns: minmax(0, 1fr); grid-template-areas: "no" "en" "ko" "desc"; padding: 10px; }
+  .method-3 li:last-child { grid-column: auto; }
+  .method-3 .m-desc { font-size: .68rem; line-height: 1.5; }
+
+  /* 상품 3종: 주력은 넓게, 나머지 2열 */
+  .plans { gap: 8px; }
+  .plan { gap: 8px; padding: 16px; }
+  .plan-en { font-size: .68rem; letter-spacing: .08em; }
+  .plan-ko { font-size: 1.1rem; }
+  .plan-price b { font-size: 2.2rem; }
+  .plan-price span { font-size: .8125rem; }
+  .plan-term { font-size: .72rem; }
+  .plan-tag { padding-top: 10px; font-size: .9rem; }
+  .plan-items li { padding-block: 8px; }
+  .plan-items b { font-size: .8125rem; }
+  .plan-items span { font-size: .72rem; line-height: 1.6; }
+  .plan-main .plan-items { column-gap: 14px; }
+  .plan-fit li { padding: 2px 7px; font-size: .68rem; }
+  .plan .btn { width: 100%; margin-top: 4px; padding: 0 8px; letter-spacing: .04em; }
+  .plan .btn .i { display: none; }
+  .terms-list { grid-template-columns: 1fr; }
+  .terms-list li { padding-block: 7px; font-size: .8125rem; }
+  .flow4 { gap: 6px; }
+  .flow4 li { padding-top: 10px; }
+  .flow4 b { font-size: .78rem; }
+  .flow4 small { font-size: .66rem; }
+  .ind { gap: 8px; padding-top: 16px; }
+  .ind-list li { padding-block: 7px; font-size: .8125rem; }
+  .ways { gap: 12px; }
+  .ways li { padding-top: 12px; gap: 4px; }
+  .ways b { font-size: .95rem; }
+  .ways p { font-size: .75rem; }
 
   /* 프로젝트: 2열 카드 */
   .feat { gap: 16px; }
@@ -1196,21 +1179,11 @@ h1:focus { outline: none; }
   .pair-title { font-size: 1rem; }
   .pair-ind { font-size: .7rem; }
   .pair-item .tlink { display: none; }
-  .segs { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .seg { gap: 4px; padding: 14px; }
-  .seg b { font-size: 1.15rem; }
-  .seg-tags { font-size: .7rem; }
-  .seg-go { gap: 6px; margin-top: 2px; font-size: .72rem; }
-  .seg-go .i { width: 14px; height: 14px; }
-  .grp-head { margin-bottom: 14px; }
-  .grp-t { font-size: 1.15rem; }
   .case-grid { gap: 16px 12px; }
   .case-card .case-img { margin-bottom: 4px; }
   .case-card .case-name { font-size: 1rem; }
   .case-card .case-ind { font-size: .68rem; }
   .badge { top: 6px; left: 6px; padding: 2px 7px; font-size: .6rem; }
-  .grp-empty { padding: 16px; }
-  .grp-empty p { font-size: .8125rem; }
   .case-row, .case-row:first-child { grid-template-columns: 1fr; gap: 8px; align-items: start; padding: 0; border: 0; }
   .case-row:nth-child(even) .case-img { order: 0; }
   .case-name { font-size: 1rem; }
@@ -1256,26 +1229,11 @@ h1:focus { outline: none; }
   .cd-shots, .phones .cd-shots { gap: 8px; }
   .pn { margin-block: 32px; }
   .pn a { padding-block: 16px; }
-  .sd-nav ol { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
   .sd-block { gap: 8px; padding-block: 20px; }
-  .sd-tasks { grid-template-columns: 1fr 1fr; column-gap: 12px; }
-  .sd-tasks li { gap: 8px; padding-block: 8px; font-size: .8125rem; }
-  .sd-cta { gap: 14px; padding: 18px; }
-
-  /* 진단 */
-  .dg-q { gap: 2px; padding-block: 16px; }
-  .dg-no { font-size: 1rem; }
-  .dg-text { font-size: .9rem; }
-  .scale { gap: 4px; margin-top: 10px; }
-  .opt span { min-height: 44px; padding: 6px 2px; font-size: .58rem; }
-  .opt span b { font-size: 1rem; }
-  .dg-card { gap: 14px; padding: 20px; }
-  .dg-score b { font-size: 2.6rem; }
-  .bars li { padding-block: 7px; font-size: .8rem; }
-  .weak { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-  .weak b { font-size: .85rem; }
-  .weak p { font-size: .7rem; }
-  .weak .tlink { font-size: .6rem; }
+  .cd-bca { grid-template-columns: 1fr; gap: 16px; padding-block: 24px; }
+  .cd-bca .cd-k { margin-bottom: 6px; }
+  .cd-kw li { padding-block: 6px; font-size: .875rem; }
+  .cta-steps { gap: 4px 14px; margin-top: 12px; font-size: .78rem; }
 
   /* 상담 · 하단 */
   .contact { gap: 28px; }
@@ -1330,11 +1288,12 @@ h1:focus { outline: none; }
     <nav class="menu" aria-label="주요 메뉴">
       <a href="#home" data-nav="home">HOME</a>
       <a href="#about" data-nav="about">ABOUT</a>
-      <a href="#expertise" data-nav="expertise">EXPERTISE</a>
-      <a href="#work" data-nav="work">WORK</a>
+      <a href="#services" data-nav="services">SERVICES</a>
+      <a href="#industries" data-nav="industries">INDUSTRIES</a>
+      <a href="#work" data-nav="work">CASE STUDIES</a>
       <a href="#contact" data-nav="contact">CONTACT</a>
     </nav>
-    <a class="hdr-cta" href="#diagnosis">BUSINESS DIAGNOSIS</a>
+    <a class="hdr-cta" href="#contact">무료 상담 신청</a>
     <button class="burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mnav"><svg class="i" aria-hidden="true"><use href="#i-menu"></use></svg></button>
   </div>
 </header>
@@ -1347,11 +1306,12 @@ h1:focus { outline: none; }
   <nav class="mnav-links" aria-label="모바일 메뉴">
     <a href="#home" data-nav="home">Home<span>홈</span></a>
     <a href="#about" data-nav="about">About<span>소개</span></a>
-    <a href="#expertise" data-nav="expertise">Expertise<span>서비스</span></a>
-    <a href="#work" data-nav="work">Work<span>프로젝트</span></a>
+    <a href="#services" data-nav="services">Services<span>서비스 · 가격</span></a>
+    <a href="#industries" data-nav="industries">Industries<span>업종</span></a>
+    <a href="#work" data-nav="work">Case Studies<span>사례</span></a>
     <a href="#contact" data-nav="contact">Contact<span>문의</span></a>
   </nav>
-  <a class="btn btn-gold" href="#diagnosis">사업 진단 받기</a>
+  <a class="btn btn-gold" href="#contact">무료 상담 신청</a>
 </div>
 
 <main id="main">
@@ -1361,11 +1321,11 @@ h1:focus { outline: none; }
     <header class="hero dark">
       <div class="hero-bg" aria-hidden="true"><div class="hero-photo"></div><svg class="hero-net" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice"><defs><pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none"/></pattern></defs><rect class="grid" width="1440" height="760" fill="url(#hero-grid)"/><g class="edges"><line x1="404" y1="666" x2="473" y2="652"/><line x1="404" y1="666" x2="535" y2="563"/><line x1="838" y1="183" x2="922" y2="268"/><line x1="838" y1="183" x2="969" y2="171"/><line x1="1235" y1="402" x2="1198" y2="472"/><line x1="1235" y1="402" x2="1263" y2="325"/><line x1="880" y1="551" x2="794" y2="535"/><line x1="880" y1="551" x2="924" y2="648"/><line x1="1198" y1="472" x2="1095" y2="386"/><line x1="1303" y1="205" x2="1218" y2="211"/><line x1="1303" y1="205" x2="1263" y2="325"/><line x1="1209" y1="77" x2="1218" y2="211"/><line x1="1209" y1="77" x2="1140" y2="199"/><line x1="1383" y1="589" x2="1355" y2="657"/><line x1="1383" y1="589" x2="1384" y2="508"/><line x1="642" y1="389" x2="577" y2="317"/><line x1="642" y1="389" x2="750" y2="424"/><line x1="1384" y1="508" x2="1394" y2="419"/><line x1="922" y1="268" x2="969" y2="171"/><line x1="681" y1="242" x2="779" y2="315"/><line x1="681" y1="242" x2="577" y2="317"/><line x1="1394" y1="419" x2="1371" y2="351"/><line x1="1234" y1="637" x2="1159" y2="667"/><line x1="1234" y1="637" x2="1355" y2="657"/><line x1="546" y1="226" x2="577" y2="317"/><line x1="546" y1="226" x2="446" y2="209"/><line x1="1095" y1="386" x2="1003" y2="443"/><line x1="1095" y1="386" x2="1117" y2="278"/><line x1="969" y1="171" x2="1055" y2="153"/><line x1="1373" y1="77" x2="1437" y2="190"/><line x1="1303" y1="205" x2="1373" y2="77"/><line x1="1055" y1="153" x2="1040" y2="62"/><line x1="883" y1="402" x2="1003" y2="443"/><line x1="883" y1="402" x2="750" y2="424"/><line x1="1140" y1="199" x2="1218" y2="211"/><line x1="1140" y1="199" x2="1117" y2="278"/><line x1="1371" y1="351" x2="1263" y2="325"/><line x1="1046" y1="509" x2="1003" y2="443"/><line x1="1095" y1="386" x2="1046" y2="509"/><line x1="626" y1="597" x2="662" y2="667"/><line x1="626" y1="597" x2="653" y2="508"/><line x1="683" y1="93" x2="574" y2="41"/><line x1="681" y1="242" x2="683" y2="93"/><line x1="1303" y1="205" x2="1437" y2="190"/><line x1="662" y1="667" x2="725" y2="699"/><line x1="1355" y1="657" x2="1435" y2="689"/><line x1="577" y1="317" x2="446" y2="209"/><line x1="546" y1="226" x2="574" y2="41"/><line x1="924" y1="648" x2="794" y2="535"/><line x1="1046" y1="509" x2="1159" y2="667"/><line x1="473" y1="652" x2="535" y2="563"/><line x1="626" y1="597" x2="725" y2="699"/><line x1="750" y1="424" x2="779" y2="315"/><line x1="626" y1="597" x2="535" y2="563"/><line x1="969" y1="171" x2="1040" y2="62"/><line x1="642" y1="389" x2="653" y2="508"/><line x1="1383" y1="589" x2="1435" y2="689"/><line x1="750" y1="424" x2="794" y2="535"/></g><g class="nodes"><circle cx="404" cy="666" r="2.5"/><circle cx="838" cy="183" r="2.5"/><circle cx="1235" cy="402" r="2.5"/><circle class="hub" cx="880" cy="551" r="5"/><circle cx="1198" cy="472" r="2.5"/><circle cx="1303" cy="205" r="2.5"/><circle cx="1209" cy="77" r="2.5"/><circle cx="1383" cy="589" r="2.5"/><circle cx="642" cy="389" r="2.5"/><circle cx="1384" cy="508" r="2.5"/><circle cx="922" cy="268" r="2.5"/><circle class="hub" cx="681" cy="242" r="5"/><circle cx="1394" cy="419" r="2.5"/><circle cx="1234" cy="637" r="2.5"/><circle cx="546" cy="226" r="2.5"/><circle cx="1095" cy="386" r="2.5"/><circle cx="969" cy="171" r="2.5"/><circle cx="1373" cy="77" r="2.5"/><circle cx="1055" cy="153" r="2.5"/><circle class="hub" cx="883" cy="402" r="5"/><circle cx="1140" cy="199" r="2.5"/><circle cx="1371" cy="351" r="2.5"/><circle cx="1046" cy="509" r="2.5"/><circle cx="1218" cy="211" r="2.5"/><circle cx="1117" cy="278" r="2.5"/><circle cx="626" cy="597" r="2.5"/><circle cx="577" cy="317" r="2.5"/><circle class="hub" cx="683" cy="93" r="5"/><circle cx="1437" cy="190" r="2.5"/><circle cx="1003" cy="443" r="2.5"/><circle cx="662" cy="667" r="2.5"/><circle cx="1355" cy="657" r="2.5"/><circle cx="446" cy="209" r="2.5"/><circle cx="574" cy="41" r="2.5"/><circle cx="924" cy="648" r="2.5"/><circle cx="1159" cy="667" r="2.5"/><circle class="hub" cx="473" cy="652" r="5"/><circle cx="725" cy="699" r="2.5"/><circle cx="750" cy="424" r="2.5"/><circle cx="535" cy="563" r="2.5"/><circle cx="1040" cy="62" r="2.5"/><circle cx="653" cy="508" r="2.5"/><circle cx="1435" cy="689" r="2.5"/><circle cx="1263" cy="325" r="2.5"/><circle cx="794" cy="535" r="2.5"/><circle cx="779" cy="315" r="2.5"/></g></svg></div>
       <div class="wrap">
-        <h1 class="hero-title" tabindex="-1">좋은 사업이<br>제대로 성장하도록 만듭니다.</h1>
-        <p class="hero-kw">사업기획 · 개발 · 마케팅 · 매출 · 투자</p>
+        <h1 class="hero-title" tabindex="-1">좋은 아이디어를,<br>실행 가능한 사업으로.</h1>
+        <p class="hero-sub">사업 기획부터 수익모델 설계,<br>시장 진입과 실행 관리까지.</p>
         <div class="btns">
-          <a class="btn btn-gold" href="#diagnosis">사업 진단 받기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          <a class="btn btn-light" href="#work">포트폴리오 보기</a>
+          <a class="btn btn-gold" href="#contact">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <a class="btn btn-light" href="#services">서비스 살펴보기</a>
         </div>
       </div>
     </header>
@@ -1418,14 +1378,12 @@ h1:focus { outline: none; }
     <section class="sec dark">
       <div class="wrap">
         <div class="shead">
-          <h2 class="h2">아이디어에서 매출까지,<br>5단계 사업화</h2>
+          <h2 class="h2">설계하고, 계획하고,<br>끝까지 관리합니다</h2>
         </div>
-        <ol class="method">
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-briefcase"></use></svg><span class="m-no">01</span><h3 class="m-en">Business</h3><p class="m-ko">사업기획</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-monitor"></use></svg><span class="m-no">02</span><h3 class="m-en">Product</h3><p class="m-ko">서비스 · 플랫폼 개발</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-gem"></use></svg><span class="m-no">03</span><h3 class="m-en">Brand</h3><p class="m-ko">브랜딩 · 마케팅</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-trend"></use></svg><span class="m-no">04</span><h3 class="m-en">Sales</h3><p class="m-ko">매출 · 판로</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-award"></use></svg><span class="m-no">05</span><h3 class="m-en">Value</h3><p class="m-ko">투자 · 기업가치</p></li>
+        <ol class="method method-3">
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-compass"></use></svg><span class="m-no">01</span><h3 class="m-en">Design</h3><p class="m-ko">사업모델 설계</p><p class="m-desc">고객 · 문제 · 가치 제안 · 수익 구조</p></li>
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="m-no">02</span><h3 class="m-en">Plan</h3><p class="m-ko">실행 계획 수립</p><p class="m-desc">우선순위 · 일정 · 예산 · 핵심 지표</p></li>
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-trend"></use></svg><span class="m-no">03</span><h3 class="m-en">Execute</h3><p class="m-ko">실행 관리</p><p class="m-desc">개발 · 마케팅 · 영업 · 외부 전문가 협업</p></li>
         </ol>
       </div>
     </section>
@@ -1434,11 +1392,12 @@ h1:focus { outline: none; }
       <div class="wrap">
         <div class="shead-row">
           <div class="shead">
-            <h2 class="h2">기획에서 끝나지 않습니다.<br>매출이 날 때까지 함께합니다.</h2>
+            <h2 class="h2">기획에서 끝나지 않습니다.<br>실행 관리까지 함께합니다.</h2>
           </div>
-          <a class="tlink" href="#expertise">전체 서비스 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <a class="tlink" href="#services">서비스 · 가격 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
         </div>
         <ol class="svc-index" id="home-svc"></ol>
+        <p class="src">부가가치세 별도</p>
       </div>
     </section>
 
@@ -1448,7 +1407,7 @@ h1:focus { outline: none; }
           <div class="shead">
             <h2 class="h2 en-h">Real Business.<br>Real Experience.</h2>
           </div>
-          <a class="tlink" href="#work">전체 프로젝트 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <a class="tlink" href="#work">전체 사례 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
         </div>
         <div id="home-work"></div>
       </div>
@@ -1482,7 +1441,7 @@ h1:focus { outline: none; }
           <li><b>35<em>%</em></b><span>수도권 점유율</span><small>덴딜</small></li>
           <li><b>200만<em>+</em></b><span>누적 접속 수</span><small>덴딜</small></li>
         </ul>
-        <p class="about-aff ab-aff">덴탈서비스 주식회사 CEO · 前 한국드론항공과학(액션드론) 대표 · 트리거뉴스 칼럼니스트</p>
+        <p class="about-aff ab-aff">前 덴탈서비스 주식회사(덴딜) 대표 · 前 한국드론항공과학(액션드론) 대표 · 트리거뉴스 칼럼니스트</p>
       </div>
       <!-- 경력 · 수상: 프로필 바로 아래 -->
       <div class="wrap ab-cv">
@@ -1492,7 +1451,7 @@ h1:focus { outline: none; }
             <ol class="cv">
               <li><span class="cv-y">2024</span><span>법무부 법무보호위원 경기지부협의회 위원</span></li>
               <li><span class="cv-y">2023 –</span><span>트리거뉴스 청년창업분야 칼럼니스트</span></li>
-              <li><span class="cv-y">2022 –</span><span>덴탈서비스 주식회사 CEO · 덴딜 창업</span></li>
+              <li><span class="cv-y">2022</span><span>덴딜 창업 · 前 덴탈서비스 주식회사 대표</span></li>
               <li><span class="cv-y">2019</span><span>사단법인 희망조약돌 자문위원</span></li>
               <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업멘토위원</span></li>
               <li><span class="cv-y">2018</span><span>한국서비스산업진흥원 진로직업교육학회 학술이사</span></li>
@@ -1570,7 +1529,7 @@ h1:focus { outline: none; }
                 <li><span class="ab-live">진행 중</span><b>KOK 부동산 경매 교육 플랫폼</b><small>공인중개사 1,000여 곳을 하나로</small></li>
                 <li><span class="ab-live">진행 중</span><b>치과 · 기공소 · 덴탈 기업</b><small>브랜딩 · 사업화</small></li>
               </ul>
-              <a class="tlink" href="#work">Work<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+              <a class="tlink" href="#work">Case Studies<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
             </div>
           </li>
         </ol>
@@ -1613,7 +1572,20 @@ h1:focus { outline: none; }
       </div>
     </section>
 
-    <!-- 5. 대상별 문의 -->
+    <!-- 5. 일하는 방식 · 협업 원칙 -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="shead-row"><div class="shead"><h2 class="h2">일하는 방식</h2></div></div>
+        <ol class="ways">
+          <li><span>01</span><b>범위 · 비용 먼저</b><p>가격 공개 · 별도 비용 사전 안내</p></li>
+          <li><span>02</span><b>지표로 점검</b><p>합의한 지표 · 월간 실행 점검</p></li>
+          <li><span>03</span><b>한 팀으로 실행</b><p>기획 · 개발 · 마케팅 · 영업</p></li>
+          <li><span>04</span><b>전문가 검토</b><p>의료광고 · 개인정보 · 보험 등 규제 영역</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6. 대상별 문의 -->
     <section class="sec dark ab-cta">
       <div class="wrap">
         <div class="shead"><h2 class="h2">다음 성장이 필요한 곳이라면,<br>어디든 함께합니다</h2></div>
@@ -1622,7 +1594,7 @@ h1:focus { outline: none; }
             <span class="ab-aud-k">Startup</span>
             <b>스타트업</b>
             <p class="ab-q">“아이디어는 있는데,<br>사업이 되지 않습니다.”</p>
-            <p class="ab-a">기획부터 첫 매출까지<br>함께 만듭니다.</p>
+            <p class="ab-a">기획부터 시장 진입까지<br>함께 만듭니다.</p>
             <a class="tlink" href="#contact">사업화 상담<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </li>
           <li>
@@ -1643,37 +1615,88 @@ h1:focus { outline: none; }
         <div class="ab-final">
           <p class="ab-final-h">사람이 모이는 사업,<br>이번엔 당신의 차례입니다.</p>
           <div class="btns">
-            <a class="btn btn-gold" href="#contact">상담 신청하기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-            <a class="btn btn-light" href="#diagnosis">사업 진단 받기</a>
+            <a class="btn btn-gold" href="#contact">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <a class="btn btn-light" href="#services">서비스 살펴보기</a>
           </div>
         </div>
       </div>
     </section>
   </section>
 
-  <!-- ===================== EXPERTISE ===================== -->
-  <section class="page" data-route="expertise" hidden>
+  <!-- ===================== SERVICES: 판매 상품 3종 · 가격 공개 ===================== -->
+  <section class="page" data-route="services" hidden>
     <header class="phero dark">
       <div class="phero-bg" style="background-image: url('img/drone-workshop.jpg');" aria-hidden="true"></div>
       <div class="wrap">
-        <h1 class="phero-title" tabindex="-1">Expertise</h1>
-        <p class="phero-sub">기획에서 끝나지 않습니다.<br>매출이 날 때까지 함께합니다.</p>
+        <h1 class="phero-title" tabindex="-1">Services</h1>
+        <p class="phero-sub">기획에서 끝나지 않습니다.<br>실행 관리까지 함께합니다.</p>
       </div>
     </header>
 
     <section class="sec">
-      <div class="wrap"><div class="svc-grid" id="svc-grid"></div></div>
+      <div class="wrap">
+        <div class="plans" id="plans"></div>
+        <p class="src">부가가치세 별도 · 성과는 사업 조건과 실행 수준에 따라 달라질 수 있습니다.</p>
+      </div>
     </section>
 
-    <section class="sec-m bg-white">
-      <div class="wrap how">
-        <div>
-          <h2 class="h2">모든 프로젝트는<br>진단에서 시작합니다</h2>
+    <!-- 계약 전 확인 사항: 산출물 · 고객 준비 · 별도 비용 · 절차 · 유의 사항 -->
+    <section class="sec bg-white">
+      <div class="wrap">
+        <div class="shead-row"><div class="shead"><h2 class="h2">계약 전에 확인하실 것</h2></div></div>
+        <div class="terms">
+          <div class="sd-block"><p class="sd-k">Deliverables<span>산출물 · 올인원 기준</span></p>
+            <ul class="terms-list"><li>사업 기획안 · 고객 · 수익 구조 · 실행 계획</li><li>전문 홈페이지 · 플랫폼 1식</li><li>월간 콘텐츠 45건</li><li>월간 아웃바운드 1,000건 · 미팅 일정</li><li>월간 실행 점검 · 합의한 지표 기준</li></ul></div>
+          <div class="sd-block"><p class="sd-k">From You<span>고객 준비 자료 · 참여</span></p>
+            <ul class="terms-list"><li>회사 · 제품 · 가격 자료</li><li>로고 · 사진 등 브랜드 자료</li><li>목표 고객 정보 · 공개 가능한 범위</li><li>콘텐츠 · 제안서 검수 · 승인 담당자 1명</li><li>정기 기획 회의 참석</li></ul></div>
+          <div class="sd-block"><p class="sd-k">Not Included<span>별도 비용</span></p>
+            <ul class="terms-list"><li>광고 매체비 · 검색 · SNS 유료 광고 집행비</li><li>서버 · 도메인 · 유료 솔루션 이용료</li><li>촬영 · 인쇄 등 오프라인 제작비</li><li>의료광고 심의 등 법정 비용</li><li>계약 범위를 넘는 추가 개발 · 별도 견적</li></ul></div>
+          <div class="sd-block"><p class="sd-k">Process<span>진행 절차</span></p>
+            <ol class="flow4"><li><span>01</span><b>무료 상담 신청</b></li><li><span>02</span><b>무료 상담</b><small>현황 · 목표 확인</small></li><li><span>03</span><b>제안서 · 견적</b></li><li><span>04</span><b>계약 · 착수</b></li></ol></div>
+          <div class="sd-block"><p class="sd-k">Notice<span>유의 사항</span></p>
+            <ul class="terms-list"><li>모든 가격은 부가가치세 별도</li><li>성과는 사업 조건과 실행 수준에 따라 달라질 수 있습니다</li><li>광고성 정보 발송(TM · 문자 · 이메일)은 정보통신망법 등 관련 규정에 따라 진행합니다</li></ul></div>
         </div>
-        <ol class="how-steps">
-          <li><span>01</span><b>진단</b></li>
-          <li><span>02</span><b>제안</b></li>
-          <li><span>03</span><b>실행</b></li>
+      </div>
+    </section>
+
+    <div class="js-cta"></div>
+  </section>
+
+  <!-- ===================== INDUSTRIES ===================== -->
+  <section class="page" data-route="industries" hidden>
+    <header class="phero dark">
+      <div class="phero-bg" style="background-image: url('img/drone-mou.jpg');" aria-hidden="true"></div>
+      <div class="wrap">
+        <h1 class="phero-title" tabindex="-1">Industries</h1>
+        <p class="phero-sub">치과 · 의료부터 스타트업,<br>중소기업까지</p>
+      </div>
+    </header>
+
+    <section class="sec">
+      <div class="wrap">
+        <ol class="inds">
+          <li class="ind">
+            <span class="ind-no">01</span>
+            <span class="ind-en">Dental &amp; Healthcare</span>
+            <h2 class="ind-ko">치과 · 의료</h2>
+            <ul class="ind-list"><li>신규 사업 기획</li><li>수익모델 검토</li><li>브랜드 · 마케팅 방향</li><li>환자 유입 실행</li><li>치과 전용 플랫폼</li></ul>
+            <p class="src">의료광고 · 개인정보 · 보험 청구는 관련 법령과 자격을 갖춘 전문가 검토를 거쳐 진행합니다.</p>
+            <a class="tlink" href="#dental-program">Dental Brand Program<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </li>
+          <li class="ind">
+            <span class="ind-no">02</span>
+            <span class="ind-en">Startup</span>
+            <h2 class="ind-ko">스타트업</h2>
+            <ul class="ind-list"><li>아이디어 검증</li><li>고객 정의</li><li>수익모델 설계</li><li>시장 진입 전략</li><li>초기 마케팅 실험</li><li>90일 실행 계획</li></ul>
+            <a class="tlink" href="#mfg-program">Business Building Program<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </li>
+          <li class="ind">
+            <span class="ind-no">03</span>
+            <span class="ind-en">SME &amp; Business</span>
+            <h2 class="ind-ko">중소기업 · 기존 사업자</h2>
+            <ul class="ind-list"><li>성장 정체 원인 점검</li><li>신규 상품 · 서비스 기획</li><li>고객군 확장</li><li>영업 · 마케팅 실행 과제</li></ul>
+            <a class="tlink" href="#contact">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </li>
         </ol>
       </div>
     </section>
@@ -1681,20 +1704,15 @@ h1:focus { outline: none; }
     <div class="js-cta"></div>
   </section>
 
-  <!-- 서비스 상세 (스크립트가 채움) -->
-  <section class="page" data-route="service" id="pg-service" hidden></section>
-
   <!-- ===================== WORK ===================== -->
   <section class="page" data-route="work" hidden>
     <header class="phero dark">
       <div class="phero-bg" style="background-image: url('img/drone-festival-aerial.jpg');" aria-hidden="true"></div>
       <div class="wrap">
-        <h1 class="phero-title sm" tabindex="-1">Real Business.<br>Real Experience.<br>Real Brand Strategy.</h1>
+        <h1 class="phero-title" tabindex="-1">Case Studies</h1>
+        <p class="phero-sub">직접 창업하고 운영한<br>사업의 기록</p>
       </div>
     </header>
-    <section class="sec-m bg-white">
-      <div class="wrap"><ul class="segs" id="work-segs" aria-label="분야별 브랜딩 자세히 보기"></ul></div>
-    </section>
     <section class="sec">
       <div class="wrap" id="cases-list"></div>
     </section>
@@ -1711,7 +1729,7 @@ h1:focus { outline: none; }
       <div class="phero-bg" style="background-image: url('img/dental-consult.jpg');" aria-hidden="true"></div>
       <div class="wrap">
         <h1 class="phero-title sm" tabindex="-1">Dental Brand<br>Program</h1>
-        <p class="phero-sub">원장님과 치과를 차별화하고,<br>매출과 구환자를 쌓는 4단계</p>
+        <p class="phero-sub">원장님과 치과를 차별화하고,<br>구환자가 쌓이는 4단계</p>
       </div>
     </header>
 
@@ -1868,14 +1886,15 @@ h1:focus { outline: none; }
                   <text x="235" y="244" text-anchor="middle" class="t-under">보이지 않던 보험 비용</text>
                   <text x="235" y="266" text-anchor="middle" class="t-under-s">청구 누락 · 보조금 미신청</text>
                   <line x1="420" y1="318" x2="352" y2="292" class="ln-gold" marker-end="url(#ar-gold-i)"/>
-                  <text x="420" y="342" text-anchor="middle" class="t-sea">전문 대행 관리</text>
+                  <text x="420" y="342" text-anchor="middle" class="t-sea">전문가 연계 관리</text>
                 </svg>
               </figure>
             </div>
             <div class="chap-text">
               <span class="chap-no">4차</span>
-              <h3>보험 · 보조금 대행 연계</h3>
-              <ul class="chips"><li>보험 청구 관리</li><li>보조금 대행</li><li>인력비 절감</li></ul>
+              <h3>보험 · 지원사업 전문가 연계</h3>
+              <ul class="chips"><li>보험 청구 전문가 연계</li><li>지원사업 신청 연계</li><li>인력 운영 효율화</li></ul>
+              <p class="src">보험 청구 · 의료광고 · 개인정보는 관련 법령과 자격을 갖춘 전문가 검토를 거쳐 진행합니다.</p>
             </div>
           </li>
         </ol>
@@ -1885,7 +1904,7 @@ h1:focus { outline: none; }
     <!-- 매출 구조 -->
     <section class="sec">
       <div class="wrap">
-        <div class="shead-row"><div class="shead"><h2 class="h2">매출이 매년 쌓이는 구조</h2></div></div>
+        <div class="shead-row"><div class="shead"><h2 class="h2">구환자가 쌓이는 매출 구조</h2></div></div>
         <figure class="pg-fig panel panel-paper rev-fig">
           <div class="hchart" role="img" aria-label="개념도: 해마다 신환 매출은 비슷하게 유지되고, 누적 구환자 매출이 쌓이면서 전체 매출이 커지는 구조">
             <div class="hc-legend"><span><i class="hc-sw hc-old"></i>누적 구환자</span><span><i class="hc-sw hc-new"></i>신환</span><span class="hc-note">개념도</span></div>
@@ -1899,6 +1918,7 @@ h1:focus { outline: none; }
             </div>
           </div>
         </figure>
+        <p class="src">개념도 · 실제 결과는 치과별 조건과 실행 수준에 따라 달라질 수 있습니다.</p>
       </div>
     </section>
 
@@ -1907,7 +1927,7 @@ h1:focus { outline: none; }
       <div class="wrap">
         <div class="shead"><h2 class="h2">치과에 남는 것</h2></div>
         <ul class="outs">
-          <li><svg class="i" aria-hidden="true"><use href="#i-trend"></use></svg><b>매년 매출 향상</b></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-trend"></use></svg><b>재방문 · 소개 유입</b></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-layers"></use></svg><b>구환자 누적</b></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-monitor"></use></svg><b>치과 업무 관리 편의</b></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-shield"></use></svg><b>브랜딩 안정화</b></li>
@@ -1919,8 +1939,8 @@ h1:focus { outline: none; }
       <div class="wrap pg-cta">
         <h2 class="h2">우리 치과도 이렇게<br>바꿀 수 있을까요?</h2>
         <div class="btns">
-          <a class="btn btn-navy" href="#contact">치과 · 기공소 브랜딩 상담<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          <a class="btn btn-ink" href="#work">WORK로 돌아가기</a>
+          <a class="btn btn-navy" href="#contact">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <a class="btn btn-ink" href="#industries">업종 전체 보기</a>
         </div>
       </div>
     </section>
@@ -1932,7 +1952,7 @@ h1:focus { outline: none; }
       <div class="phero-bg" style="background-image: url('img/dendeal-cover.jpg');" aria-hidden="true"></div>
       <div class="wrap">
         <h1 class="phero-title sm" tabindex="-1">Business Building<br>Program</h1>
-        <p class="phero-sub">아이디어가 매출이 되는 4단계,<br>덴딜의 실제 사례로</p>
+        <p class="phero-sub">아이디어가 사업이 되는 4단계,<br>덴딜의 실제 사례로</p>
       </div>
     </header>
 
@@ -2120,7 +2140,7 @@ h1:focus { outline: none; }
       <div class="wrap">
         <div class="shead"><h2 class="h2">회사에 남는 것</h2></div>
         <ul class="outs outs-5">
-          <li class="out-key"><svg class="i" aria-hidden="true"><use href="#i-trend"></use></svg><b>매출 향상</b></li>
+          <li class="out-key"><svg class="i" aria-hidden="true"><use href="#i-trend"></use></svg><b>반복 매출 구조</b></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-compass"></use></svg><b>판로 확대</b></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-layers"></use></svg><b>거래처 누적</b></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-monitor"></use></svg><b>재주문 · 정산 자동화</b></li>
@@ -2133,8 +2153,8 @@ h1:focus { outline: none; }
       <div class="wrap pg-cta">
         <h2 class="h2">우리 사업도 이렇게<br>키울 수 있을까요?</h2>
         <div class="btns">
-          <a class="btn btn-navy" href="#contact">사업화 상담<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          <a class="btn btn-ink" href="#work">WORK로 돌아가기</a>
+          <a class="btn btn-navy" href="#contact">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <a class="btn btn-ink" href="#industries">업종 전체 보기</a>
         </div>
       </div>
     </section>
@@ -2146,7 +2166,7 @@ h1:focus { outline: none; }
       <div class="phero-bg" style="background-image: url('img/drone-expo.jpg');" aria-hidden="true"></div>
       <div class="wrap">
         <h1 class="phero-title sm" tabindex="-1">Let's Build<br>Your Business.</h1>
-        <p class="phero-sub">좋은 사업을,<br>더 멀리 더 크게.</p>
+        <p class="phero-sub">상담은 무료입니다.</p>
       </div>
     </header>
 
@@ -2154,48 +2174,31 @@ h1:focus { outline: none; }
       <div class="wrap contact">
         <aside>
           <ol class="steps3">
-            <li><span>01</span><b>상담 신청</b></li>
-            <li><span>02</span><b>사전 검토</b></li>
-            <li><span>03</span><b>진단 미팅</b></li>
+            <li><span>01</span><b>무료 상담 신청</b></li>
+            <li><span>02</span><b>무료 상담</b><p>현황 · 목표 확인</p></li>
+            <li><span>03</span><b>제안서 · 견적</b></li>
+            <li><span>04</span><b>계약 · 착수</b></li>
           </ol>
           <div class="side-diag dark">
-            <a class="tlink" href="#diagnosis">사업 진단 받기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <ul class="side-plans" id="side-plans"></ul>
+            <a class="tlink" href="#services">서비스 · 가격 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </div>
         </aside>
 
         <form class="cform" id="cform" novalidate>
           <p class="hp" aria-hidden="true"><label>이 칸은 비워 두세요<input id="c-bot" name="bot" tabindex="-1" autocomplete="off"></label></p>
-          <h2 class="cform-h">상담 신청서</h2>
+          <h2 class="cform-h">무료 상담 신청서</h2>
           <div class="fgrid">
             <div class="f"><label for="c-company">회사명</label><input id="c-company" name="company" autocomplete="organization" required></div>
             <div class="f"><label for="c-name">대표자명</label><input id="c-name" name="name" autocomplete="name" required></div>
             <div class="f full"><label for="c-phone">연락처</label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000" required></div>
             <label class="agree full" for="c-agree"><input id="c-agree" name="agree" value="동의" type="checkbox" required><span>상담을 위한 개인정보 수집·이용에 동의합니다.</span></label>
             <details class="agree-more full"><summary>수집 · 이용 내용</summary><p>수집 항목: 회사명, 대표자명, 연락처<br>이용 목적: 상담 신청 확인 및 회신<br>보유 기간: 상담 종료 후 1년</p></details>
-            <button class="btn btn-navy full" type="submit">상담 신청하기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+            <button class="btn btn-navy full" type="submit">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
             <p class="fmsg full" id="cmsg" role="status" hidden></p>
           </div>
         </form>
       </div>
-    </section>
-  </section>
-
-  <!-- ===================== BUSINESS DIAGNOSIS ===================== -->
-  <section class="page" data-route="diagnosis" hidden>
-    <header class="phero dark">
-      <div class="wrap">
-        <h1 class="phero-title sm" tabindex="-1">Business<br>Diagnosis</h1>
-        <p class="phero-sub">우리 사업은 지금<br>어느 단계에 있습니까?</p>
-      </div>
-    </header>
-    <section class="sec-m">
-      <div class="wrap dg">
-        <form class="dg-qs" id="dg-form" aria-label="사업 진단 문항"></form>
-        <aside class="dg-aside"><div class="dg-card dark" id="dg-card" aria-live="polite"></div></aside>
-      </div>
-    </section>
-    <section class="sec-m bg-white" id="dg-result-sec" hidden>
-      <div class="wrap" id="dg-result"></div>
     </section>
   </section>
 
@@ -2272,15 +2275,16 @@ h1:focus { outline: none; }
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#expertise">Expertise</a></li>
-          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#work">Case Studies</a></li>
           <li><a href="#press">Press</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div>
-        <p class="ftr-h">Business Diagnosis</p>
-        <a class="tlink" href="#diagnosis">진단 시작<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        <p class="ftr-h">Free Consultation</p>
+        <a class="tlink" href="#contact">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
       </div>
     </div>
     <div class="ftr-bot">
@@ -2293,36 +2297,33 @@ h1:focus { outline: none; }
 <script>
 (function () {
   /* ================= 데이터 ================= */
-  const SERVICES = [
-    { slug: 'business-diagnosis', no: '01', en: 'Business Diagnosis', ko: '사업 진단', icon: 'compass',
-      tasks: ['시장 · 경쟁 분석', '고객 · 수익 구조 점검', '사업 단계 진단', '우선순위 로드맵', 'Business Score'],
-      outcomes: ['지금 해야 할 일의 우선순위', '예산 · 인력 판단 기준'] },
-    { slug: 'business-planning', no: '02', en: 'Business Planning', ko: '사업기획 · 사업화', icon: 'briefcase',
-      tasks: ['비즈니스 모델 설계', '수익 모델 · 가격 전략', '사업계획서', '정부지원사업 준비', '신사업 기획'],
-      outcomes: ['한 장으로 설명되는 사업', '실행 가능한 사업화 일정'] },
-    { slug: 'product-platform', no: '03', en: 'Product & Platform', ko: '서비스 · 플랫폼 개발', icon: 'monitor',
-      tasks: ['MVP 기획', '앱 · 웹 플랫폼 기획', '개발사 선정 · 관리', '운영 시스템 설계', '홈페이지 · 온라인몰'],
-      outcomes: ['빠르게 검증하는 첫 제품', '개발 비용 · 일정 관리'] },
-    { slug: 'brand-marketing', no: '04', en: 'Brand & Marketing', ko: '브랜딩 · 마케팅', icon: 'gem',
-      tasks: ['포지셔닝 · 브랜드 메시지', '대표 브랜딩', '콘텐츠 · PR', '검색 · SNS 광고', '행사 · 교육 프로그램'],
-      outcomes: ['고객이 먼저 찾는 브랜드', '마케팅 비용 대비 효과 관리'] },
-    { slug: 'sales-growth', no: '05', en: 'Sales & Growth', ko: '매출 · 판로 확대', icon: 'trend',
-      tasks: ['B2B 영업 구조', '제휴 · 파트너십', '판로 · 채널 확대', '고객 관리 · 재구매', '영업 자료 · 제안서'],
-      outcomes: ['반복되는 매출 구조', '새 거래처 유입 경로'] },
-    { slug: 'funding-value', no: '06', en: 'Funding & Value', ko: '투자 · 기업가치', icon: 'award',
-      tasks: ['IR 자료 · 투자 전략', '정부지원 · R&D 과제', '벤처 · 특허 · 인증', '기술 임치 · 지식재산', '기업가치 스토리'],
-      outcomes: ['투자 · 지원 심사의 설득력', '기업가치를 보여주는 근거'] }
+  /* 판매 상품 3종 (가격 공개, 부가가치세 별도). 홈 · SERVICES · CONTACT 가 같은 데이터를 쓴다 */
+  const MKT = { h: '토브 마케팅 · 월 45건', p: '구글 블로거 10 · 네이버 블로그 10 · 인스타그램 10 · 스레드 10 · 숏폼 5' };
+  const TM = { h: '토브 TM · 월 1,000건', p: '관련 고객 아웃바운드 · 미팅 일정 조율 · 제안서 발송' };
+  const PLANS = [
+    { slug: 'all-in-one', no: '01', en: 'All-in-One Growth', ko: '올인원 성장 파트너', price: '300', term: '1년 계약', main: true,
+      tag: '매출 성장을 위한 기획 · 개발 · 마케팅 · 영업 올인원',
+      items: [
+        { h: '사업 기획', p: '매출 · 고객 유치 기획 회의 · 시장 · 고객 니즈 파악' },
+        { h: '홈페이지 · 플랫폼', p: '사업에 맞춘 전문 홈페이지 · 플랫폼 제작 · 홍보' },
+        MKT, TM],
+      fit: ['신사업 · 신규 서비스 준비', '매출 정체 중소기업', '시장 진입 전 스타트업'] },
+    { slug: 'marketing-sales', no: '02', en: 'Marketing & Sales', ko: '마케팅 · 영업 파트너', price: '200',
+      items: [MKT, TM],
+      fit: ['홈페이지 · 플랫폼을 갖춘 기업'] },
+    { slug: 'platform-care', no: '03', en: 'Platform Care', ko: '플랫폼 케어', price: '100', term: '올인원 계약 연장 시',
+      items: [{ h: '유지보수', p: '홈페이지 · 플랫폼 수정 · 보수' }],
+      fit: ['올인원 1년 계약 고객'] }
   ];
 
   const ALL_CASES = [
     { slug: 'dendeal', no: '01', cat: 'platform', name: 'DENDEAL', img: 'img/dendeal-cover.jpg', alt: '덴딜 로고와 앱 화면', logo: 'img/dendeal-logo.png',
       gallery: { type: 'phones', items: [['img/dendeal-app1.jpg', '덴딜 앱 주문목록 화면'], ['img/dendeal-app-delivery.jpg', '덴딜 앱 기공물 배송 화면'], ['img/dendeal-app2.jpg', '덴딜 앱 제조중개 화면']] },
-      industry: 'Dental / Platform / B2B', role: 'Founder & CEO / Brand Strategy / Platform / Growth',
-      summary: '덴탈 시장을 대상으로 사업 모델과 브랜드를 구축하고, 고객이 서비스를 이해하고 접근할 수 있도록 브랜드·플랫폼·마케팅 구조를 개발한 프로젝트입니다.',
-      challenge: '시장에 새로운 서비스를 어떻게 이해시킬 것인가?',
-      challengeNote: '치과와 기공소 사이의 기공물 배송, 재료 구매, 제조 의뢰를 하나의 플랫폼으로 묶는 새로운 서비스였습니다.',
-      insight: '기능 설명만으로는 새로운 서비스를 이해시키기 어렵다.',
-      strategy: '제품 중심이 아니라 고객 문제와 해결 구조 중심으로 브랜드를 재구성한다.',
+      industry: 'Dental / Platform / B2B', role: 'Founder · 前 대표 / Brand Strategy / Platform / Growth',
+      background: ['치과 ↔ 기공소 거래', '기공물 배송 · 재료 구매 · 제조 의뢰가 따로 움직이는 시장'],
+      challenge: ['처음 보는 서비스를 시장에 이해시키기'],
+      approach: ['기능이 아닌 고객 문제 중심 브랜드', '배송 · 구매 · 제조 중개를 하나의 플랫폼으로'],
+      scope: ['덴딜 창업 · 前 덴탈서비스 주식회사 대표', '사업기획 · 플랫폼 · 브랜드 · 영업 직접 수행'],
       execution: ['Brand Strategy', 'Business Positioning', 'Platform Strategy', 'Website', 'Content', 'Marketing', 'Sales Structure'],
       metrics: [['200만+', '누적 접속 수'], ['3,500+', '협력 치과'], ['300+', '협력 기공소']],
       metricsSource: '덴딜 기준',
@@ -2340,7 +2341,11 @@ h1:focus { outline: none; }
         { h: '학교', items: [['img/drone-lecture.jpg', '초등학교 강당 강연'], ['img/drone-aerial.jpg', '드론으로 촬영한 단체사진'], ['img/drone-school-fly.jpg', '드론 기초비행 체험'], ['img/drone-gym.jpg', 'VR · 드론 체험 존'], ['img/drone-school-logo.jpg', '초등학교 드론 수업'], ['img/drone-junior-cup.jpg', '액션드론 주니어 드론대회']] },
         { h: '페스티벌', items: [['img/drone-festival-aerial.jpg', '광명 스피돔 어린이날 페스티벌 전경'], ['img/drone-festival.jpg', '스피돔 어린이날 페스티벌'], ['img/drone-booth.jpg', '지역 축제 액션드론 부스'], ['img/drone-fest-row.jpg', '지역 축제 드론 체험 부스'], ['img/drone-fest-stage.jpg', '지역 축제 현장'], ['img/drone-fest-tent.jpg', '지역 축제 드론 비행 체험']] }
       ] },
-      industry: 'Drone / Education / Festival', role: 'Founder & CEO / Education Program / Event / Platform',
+      industry: 'Drone / Education / Festival', role: 'Founder · 前 대표 / Education Program / Event / Platform',
+      background: ['2016 · 드론 교육 창업', '학교 · 기관 · 지역 축제의 체험 교육 수요'],
+      challenge: ['드론 교육을 학교 · 기관 · 축제의 판로로 넓히기'],
+      approach: ['학교 · 기관 체험 교육 모델', '교육 커리큘럼 · 드론 교구 · 강사 과정'],
+      scope: ['前 한국드론항공과학 대표이사 (2016 – 2018)', '교육 프로그램 · 행사 · 영업 직접 수행'],
       execution: ['Education Program', 'School Partnership', 'Drone Festival', 'Corporate Event', 'Instructor Training', 'Platform'],
       metrics: [['5만+', '누적 교육 인원'], ['200+', '학교 체험학습 (2018)'], ['100+', '기업 · 기관 행사 · 교육 (2018)']],
       metricsSource: '액션드론 자료 기준 · 교육 인원은 대표 제공',
@@ -2354,26 +2359,17 @@ h1:focus { outline: none; }
       gallery: { type: 'wide', items: [['img/kok-logo.jpg', 'KOK 부동산학원 로고'], ['img/kok-course.jpg', 'KOK 부동산학원 강의 썸네일']] },
       link: 'https://www.kokstudy.com/', linkLabel: 'kokstudy.com',
       industry: 'Real Estate / Education Platform', role: 'Platform Planning / Business Development / Brand',
+      background: ['부동산 경매 교육 · 공인중개사 네트워크'],
+      challenge: ['공인중개사 1,000여 곳을 하나의 교육 플랫폼으로'],
+      approach: ['경매 교육 브랜드 + 중개사 파트너 네트워크'],
+      scope: ['플랫폼 기획 · 사업 개발 · 브랜드 직접 수행'],
       execution: ['Platform Planning', 'Business Model', 'Partner Network', 'Education Content', 'Brand'],
       metrics: [['1,000여 곳', '연결할 공인중개사']],
       metricsSource: '기획 진행 중 · 대표 제공',
-      results: ['공인중개사 1,000여 곳을 하나로 잇는 경매 교육 플랫폼 기획', '부동산 경매 교육 브랜드 · 강의 콘텐츠'] },
-    { slug: 'dental-manufacturing', no: '04', cat: 'dental', name: 'Dental Manufacturing', img: 'img/case-manufacturing.jpg', alt: '장갑 낀 손에 들린 임플란트와 크라운',
-      industry: 'Dental / Manufacturing / B2B', role: 'Corporate Brand / Founder Branding / B2B Marketing',
-      summary: '덴탈 제조 기업의 기업 브랜드와 제품 포지셔닝을 세우고, 대표 브랜딩과 B2B 마케팅으로 영업을 지원한 프로젝트입니다.',
-      challenge: '기술력이 있어도 제품의 차이가 잘 보이지 않는 B2B 제조 시장에서 신뢰를 얻는 것.',
-      strategy: '기업 브랜드와 대표 브랜딩을 함께 세우고, 제품 포지셔닝을 영업 현장에서 쓰는 자료로 연결한다.',
-      execution: ['Corporate Brand', 'Product Positioning', 'Founder Branding', 'Website', 'B2B Marketing', 'Sales Support'],
-      results: ['기업 브랜드 체계 정리', '제품 포지셔닝 정립', '대표 브랜딩 콘텐츠 구축', 'B2B 영업 지원 자료 구축'] }
+      results: ['공인중개사 1,000여 곳을 하나로 잇는 경매 교육 플랫폼 기획', '부동산 경매 교육 브랜드 · 강의 콘텐츠'] }
   ];
   /* hidden: true 인 사례는 사이트에 보이지 않는다 (데이터는 보관) */
   const CASES = ALL_CASES.filter(c => !c.hidden);
-
-  /* WORK 분야: 위 타일은 각 분야의 대표 페이지로 이동. 치과 · 기공소는 업체명을 공개하지 않는다 */
-  const WORK_CATS = [
-    { key: 'platform', ko: '플랫폼 · 스타트업', en: 'Platform & Startup', main: true, link: '#mfg-program', tags: '사업기획 · 플랫폼 개발 · 교육 사업 · 제휴 · 판로' },
-    { key: 'dental', ko: '덴탈 · 헬스케어', en: 'Dental & Healthcare', link: '#dental-program', tags: '치과 · 기공소 브랜딩 · 덴탈 제조 · 유통' }
-  ];
 
   const PRESS = [
     { outlet: '생생투데이', date: '2026.01.09', title: '덴딜 김상우 대표 “의사들의 진료가 존중받는 환경을”', url: 'https://www.sstoday.co.kr/news/912309', img: 'img/founder.jpg', pos: 'center 15%' },
@@ -2395,43 +2391,13 @@ h1:focus { outline: none; }
     ['p22', '서초와이티플러스기공소', '감사장'], ['p23', '에이엔디기공소', '감사장']
   ];
 
-  const DIAG = [
-    { ko: '사업 모델', en: 'Business Model', q: '우리 사업이 누구에게 무엇으로 돈을 버는지 한 문장으로 설명할 수 있다.', svc: 'business-planning' },
-    { ko: '고객 이해', en: 'Customer', q: '핵심 고객이 누구이고, 왜 우리를 선택하는지 알고 있다.', svc: 'business-diagnosis' },
-    { ko: '시장 · 경쟁', en: 'Market', q: '시장 규모와 경쟁사 대비 강점을 숫자와 근거로 말할 수 있다.', svc: 'business-diagnosis' },
-    { ko: '제품 · 서비스', en: 'Product', q: '고객이 쓰는 제품이나 서비스가 준비되어 있고, 개선 계획이 있다.', svc: 'product-platform' },
-    { ko: '온라인 · 플랫폼', en: 'Platform', q: '홈페이지나 앱에서 문의 · 주문 · 결제까지 이어진다.', svc: 'product-platform' },
-    { ko: '브랜드', en: 'Brand', q: '회사와 제품의 차별점이 홈페이지 · 자료 · 영업 현장에서 같은 말로 전달된다.', svc: 'brand-marketing' },
-    { ko: '마케팅', en: 'Marketing', q: '새 고객이 들어오는 경로를 알고, 비용 대비 효과를 확인하고 있다.', svc: 'brand-marketing' },
-    { ko: '매출 구조', en: 'Revenue', q: '재구매나 계약 갱신처럼 반복되는 매출 구조가 있다.', svc: 'sales-growth' },
-    { ko: '영업 · 제휴', en: 'Sales', q: '영업 자료, 제휴처, 판로 확대 계획이 정리되어 있다.', svc: 'sales-growth' },
-    { ko: '투자 · 지원', en: 'Funding', q: '투자 유치나 정부지원사업에 쓸 사업계획서와 근거 자료가 준비되어 있다.', svc: 'funding-value' }
-  ];
-  const SCALE = ['전혀 아니다', '아니다', '보통이다', '그렇다', '매우 그렇다'];
-  const STAGES = [
-    { min: 80, name: '확장 단계', range: '80–100', desc: '사업이 잘 작동하고 있습니다. 판로를 넓히고 기업가치를 키울 때입니다.' },
-    { min: 60, name: '성장 준비 단계', range: '60–79', desc: '사업의 뼈대가 있습니다. 마케팅과 매출 구조를 다듬으면 성장으로 이어집니다.' },
-    { min: 40, name: '정리 단계', range: '40–59', desc: '기본 요소는 있지만 제품 · 고객 · 메시지가 흩어져 있습니다. 사업 전략을 하나로 정리할 때입니다.' },
-    { min: 0, name: '기반 정비 단계', range: '0–39', desc: '강점이 아직 사업 구조로 정리되지 않았습니다. 진단과 사업기획부터 시작하는 것이 좋습니다.' }
-  ];
-  const EXAMPLE = [4, 3, 2, 2, 3, 4, 2, 1, 2, 2];
-
   /* ================= 도우미 ================= */
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const ic = (id, cls = 'i') => `<svg class="${cls}" aria-hidden="true"><use href="#i-${id}"></use></svg>`;
   const pad = n => String(n).padStart(2, '0');
-  const svcBy = slug => SERVICES.find(s => s.slug === slug);
+  const planBy = slug => PLANS.find(p => p.slug === slug);
   const caseBy = slug => CASES.find(c => c.slug === slug);
-
-  /* Business Score: 문항 1~5점 → 0~10점, 10문항 합계 100점 */
-  const itemScore = v => (v ? (v - 1) / 4 * 10 : 0);
-  const scoreOf = ans => Math.round(ans.reduce((s, v) => s + itemScore(v), 0));
-  const stageOf = score => STAGES.find(s => score >= s.min);
-  const fmt = v => (Number.isInteger(v) ? String(v) : v.toFixed(1));
-  const weakest = ans => DIAG.map((d, i) => ({ d, i, v: itemScore(ans[i]) })).sort((a, b) => a.v - b.v || a.i - b.i).slice(0, 3);
-
-  const state = { insCat: 'ALL', answers: new Array(DIAG.length).fill(0), example: false };
 
   /* ================= 조각 ================= */
   const ctaBand = () => `
@@ -2439,27 +2405,31 @@ h1:focus { outline: none; }
       <div class="cta-bg" style="background-image:url('img/drone-xwing.jpg')" aria-hidden="true"></div>
       <div class="wrap cta-in">
         <div>
-          <h2 class="h2">우리 사업은 지금<br>어느 단계에 있습니까?</h2>
+          <h2 class="h2">상담은 무료입니다.</h2>
+          <ol class="cta-steps"><li><span>01</span>무료 상담 신청</li><li><span>02</span>무료 상담</li><li><span>03</span>제안서 · 견적</li><li><span>04</span>계약 · 착수</li></ol>
         </div>
         <div class="btns">
-          <a class="btn btn-gold" href="#diagnosis">사업 진단 시작${ic('arrow')}</a>
-          <a class="btn btn-light" href="#contact">상담 신청하기</a>
+          <a class="btn btn-gold" href="#contact">무료 상담 신청${ic('arrow')}</a>
+          <a class="btn btn-light" href="#services">서비스 · 가격 보기</a>
         </div>
       </div>
     </section>`;
 
-  const svcRow = s => `<li><a class="svc-row" href="#expertise-${s.slug}"><span class="sr-no">${s.no}</span><span class="sr-en">${s.en}</span><span class="sr-ko">${s.ko}</span><span class="sr-go">${ic('arrow')}</span></a></li>`;
+  const won = p => `월 ${p.price}만원`;
+  const svcRow = p => `<li><a class="svc-row" href="#services-${p.slug}"><span class="sr-no">${p.no}</span><span class="sr-en">${p.en}</span><span class="sr-ko"><b>${p.ko}</b>${won(p)}${p.term ? ` · ${p.term}` : ''}</span><span class="sr-go">${ic('arrow')}</span></a></li>`;
 
-  const svcBlock = s => `
-    <article class="svc-block">
-      <div class="sb-top"><span class="sb-no">${s.no}</span>${ic(s.icon)}</div>
-      <h2 class="sb-en">${s.en}</h2>
-      <p class="sb-ko">${s.ko}</p>
-      <ul class="sb-tags">${s.tasks.map(t => `<li>${t}</li>`).join('')}</ul>
-      <a class="tlink" href="#expertise-${s.slug}">자세히 보기${ic('arrow')}</a>
+  const planCard = p => `
+    <article class="plan${p.main ? ' plan-main dark' : ''}" id="svc-${p.slug}">
+      <div class="plan-top"><span class="plan-no">${p.no}</span><span class="plan-en">${p.en}</span></div>
+      <h2 class="plan-ko">${p.ko}</h2>
+      <p class="plan-price"><span>월</span><b>${p.price}</b><span>만원</span></p>
+      <p class="plan-term">${p.term ? `${p.term} · ` : ''}VAT 별도</p>
+      ${p.tag ? `<p class="plan-tag">${p.tag}</p>` : ''}
+      <ul class="plan-items">${p.items.map(x => `<li><b>${x.h}</b><span>${x.p}</span></li>`).join('')}</ul>
+      <div class="plan-fit"><span>대상</span><ul>${p.fit.map(f => `<li>${f}</li>`).join('')}</ul></div>
+      <a class="btn ${p.main ? 'btn-gold' : 'btn-navy'}" href="#contact">무료 상담 신청${ic('arrow')}</a>
     </article>`;
 
-  const metaDl = c => `<dl class="meta"><div><dt>Project</dt><dd>${c.project || c.name}</dd></div><div><dt>Industry</dt><dd>${c.industry}</dd></div><div><dt>Role</dt><dd>${c.role}</dd></div></dl>`;
   const numsList = c => (c.metrics ? `<ul class="nums">${c.metrics.map(m => `<li><b>${m[0]}</b><span>${m[1]}</span></li>`).join('')}</ul><p class="src">${c.metricsSource}</p>` : '');
 
   const newsItem = a => `<li><a class="news-item" href="${a.url}" target="_blank" rel="noopener"><span class="news-img"><img src="${a.img}" alt="" loading="lazy"${a.pos ? ` style="object-position:${a.pos}"` : ''}></span><span class="news-meta">${a.outlet}${a.date ? ` · ${a.date}` : ''}</span><b class="news-t">${a.title}</b><span class="news-go">${ic('out')}</span></a></li>`;
@@ -2467,8 +2437,9 @@ h1:focus { outline: none; }
 
   /* ================= 렌더 ================= */
   function renderStatic() {
-    $('#home-svc').innerHTML = SERVICES.map(svcRow).join('');
-    $('#svc-grid').innerHTML = SERVICES.map(svcBlock).join('');
+    $('#home-svc').innerHTML = PLANS.map(svcRow).join('');
+    $('#plans').innerHTML = PLANS.map(planCard).join('');
+    $('#side-plans').innerHTML = PLANS.map(p => `<li><b>${p.ko}</b><span>${won(p)}</span></li>`).join('');
 
     const [f, ...rest] = CASES;
     $('#home-work').innerHTML = `
@@ -2490,68 +2461,15 @@ h1:focus { outline: none; }
         </article>`).join('')}
       </div>`;
 
-    const inCat = k => CASES.filter(c => c.cat === k);
-    const countLabel = k => { const n = inCat(k).length; return n ? `사례 ${n}` : '사례 준비 중'; };
-    $('#work-segs').innerHTML = WORK_CATS.filter(g => g.link).map(g => `
-      <li><a class="seg${g.main ? ' main' : ''}" href="${g.link}">
-        <span class="seg-en">${g.en}</span><b>${g.ko}</b><span class="seg-tags">${g.tags}</span><span class="seg-go">자세히 보기${ic('arrow')}</span>
-      </a></li>`).join('');
-    $('#cases-list').innerHTML = WORK_CATS.map(g => {
-      const list = inCat(g.key);
-      if (!list.length && !g.empty) return '';
-      const body = list.length
-        ? `<div class="case-grid">${list.map(c => `
-            <article class="case-card">
-              ${c.collab ? '<span class="badge">덴딜 협업</span>' : ''}${c.status ? `<span class="badge badge-live">${c.status}</span>` : ''}
-              <a class="case-img" href="#work-${c.slug}"><img src="${c.img}" alt="${c.alt}" loading="lazy"></a>
-              <h3 class="case-name">${c.name}</h3>
-              <p class="case-ind">${c.industry}</p>
-            </article>`).join('')}</div>`
-        : `<div class="grp-empty"><p>${g.empty}</p><a class="btn btn-navy" href="#contact">${g.ko} 브랜딩 상담${ic('arrow')}</a></div>`;
-      return `<div class="case-group" id="grp-${g.key}"><div class="grp-head"><h2 class="grp-t">${g.ko}</h2><span class="grp-en">${g.en}</span><span class="grp-n">${countLabel(g.key)}</span></div>${body}</div>`;
-    }).join('');
+    $('#cases-list').innerHTML = `<div class="case-grid">${CASES.map(c => `
+      <article class="case-card">
+        ${c.status ? `<span class="badge badge-live">${c.status}</span>` : ''}
+        <a class="case-img" href="#work-${c.slug}"><img src="${c.img}" alt="${c.alt}" loading="lazy"></a>
+        <h3 class="case-name">${c.name}</h3>
+        <p class="case-ind">${c.industry}</p>
+      </article>`).join('')}</div>`;
 
     $$('.js-cta').forEach(el => { el.outerHTML = ctaBand(); });
-  }
-
-
-  function renderService(slug) {
-    const s = svcBy(slug);
-    const i = SERVICES.indexOf(s);
-    const prev = SERVICES[(i + SERVICES.length - 1) % SERVICES.length];
-    const next = SERVICES[(i + 1) % SERVICES.length];
-    $('#pg-service').innerHTML = `
-      <header class="phero dark">
-        <div class="wrap">
-          <h1 class="phero-title sm" tabindex="-1">${s.en}</h1>
-          <p class="phero-sub">${s.ko}</p>
-        </div>
-      </header>
-      <section class="sec">
-        <div class="wrap sd">
-          <nav class="sd-nav" aria-label="서비스 목록">
-            <ol>${SERVICES.map(x => `<li><a href="#expertise-${x.slug}"${x === s ? ' aria-current="page"' : ''}><span>${x.no}</span>${x.en}</a></li>`).join('')}</ol>
-          </nav>
-          <div>
-            <div class="sd-block"><p class="sd-k">Scope<span>주요 업무</span></p><ol class="sd-tasks">${s.tasks.map((t, k) => `<li><span>${pad(k + 1)}</span>${t}</li>`).join('')}</ol></div>
-            <div class="sd-block"><p class="sd-k">Outcome<span>기대 결과</span></p><ul class="sd-out">${s.outcomes.map(o => `<li>${ic('check')}<span>${o}</span></li>`).join('')}</ul></div>
-            <div class="sd-cta">
-              <p>${s.ko} 서비스가 필요하신가요?</p>
-              <div class="btns">
-                <a class="btn btn-navy" href="#contact">상담 신청하기${ic('arrow')}</a>
-                <a class="btn btn-ink" href="#diagnosis">사업 진단 받기</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="wrap">
-        <nav class="pn" aria-label="이전·다음 서비스">
-          <a href="#expertise-${prev.slug}"><small>Previous</small><b>${prev.en}</b></a>
-          <a href="#expertise-${next.slug}"><small>Next</small><b>${next.en}</b></a>
-        </nav>
-      </div>
-      ${ctaBand()}`;
   }
 
   const caseVisual = c => (c.gallery
@@ -2562,16 +2480,22 @@ h1:focus { outline: none; }
     const c = caseBy(slug);
     const i = CASES.indexOf(c);
     const next = CASES[(i + 1) % CASES.length];
+    /* 사례 구성: 배경 → 과제 → 접근 → 실행 → 결과 → 범위 (문장 대신 키워드) */
     let n = 0;
-    const sec = (k, body, id) => `<div class="cd-sec"${id ? ` id="${id}"` : ''}><p class="cd-k"><span>${pad(++n)}</span>${k}</p><div class="cd-v">${body}</div></div>`;
-    const exec = sec('Execution', `<ol class="exec">${c.execution.map((x, k) => `<li><span>${pad(k + 1)}</span>${x}</li>`).join('')}</ol>`);
-    const result = sec('Result',
+    const label = (k, ko) => `<p class="cd-k"><span>${pad(++n)}</span>${k}<small>${ko}</small></p>`;
+    const sec = (k, ko, body, id) => `<div class="cd-sec"${id ? ` id="${id}"` : ''}>${label(k, ko)}<div class="cd-v">${body}</div></div>`;
+    const kw = list => `<ul class="cd-kw">${list.map(x => `<li>${x}</li>`).join('')}</ul>`;
+    const col = (k, ko, list) => `<div>${label(k, ko)}${kw(list)}</div>`;
+    const story = c.background ? `<div class="cd-bca">${col('Background', '배경', c.background)}${col('Challenge', '과제', c.challenge)}${col('Approach', '접근', c.approach)}</div>` : '';
+    const exec = sec('Execution', '실행', `<ol class="exec">${c.execution.map((x, k) => `<li><span>${pad(k + 1)}</span>${x}</li>`).join('')}</ol>`);
+    const result = sec('Result', '결과',
       (c.metrics ? numsList(c) : '') +
       `<ul class="cd-results">${c.results.map(r => `<li>${ic('check')}<span>${r}</span></li>`).join('')}</ul>` +
       (c.extra ? `<div class="cd-extra">${c.extra.map(x => `<div><h4>${x.h}</h4><p>${x.p}</p></div>`).join('')}</div>` : '') +
       (c.link ? `<div class="cd-links"><a class="tlink" href="${c.link}" target="_blank" rel="noopener">${c.linkLabel}${ic('out')}</a></div>` : ''));
-    const press = c.press ? sec('Press', `<ul class="news">${PRESS.map(newsItem).join('')}</ul>`, 'press-sec') : '';
-    const partners = c.partners ? sec('Partnership', `<p class="gal-count">기공소 · 치과 · 기업<b>${PARTNERS.length}</b>곳</p><ul class="gallery">${PARTNERS.map(galItem).join('')}</ul>`) : '';
+    const scope = c.scope ? sec('Scope', '범위', kw(c.scope)) : '';
+    const press = c.press ? sec('Press', '언론 보도', `<ul class="news">${PRESS.map(newsItem).join('')}</ul>`, 'press-sec') : '';
+    const partners = c.partners ? sec('Partnership', '협업', `<p class="gal-count">기공소 · 치과 · 기업<b>${PARTNERS.length}</b>곳</p><ul class="gallery">${PARTNERS.map(galItem).join('')}</ul>`) : '';
 
     $('#pg-case').innerHTML = `
       <header class="phero dark cd-cover">
@@ -2589,104 +2513,43 @@ h1:focus { outline: none; }
       <section>
         <div class="wrap">
           ${caseVisual(c)}
+          ${story}
           ${exec}
           ${result}
+          ${scope}
           ${press}
           ${partners}
         </div>
       </section>
       <div class="wrap">
         <nav class="pn" aria-label="다른 사례">
-          <a href="#work"><small>All Work</small><b>전체 프로젝트</b></a>
+          <a href="#work"><small>All Cases</small><b>전체 사례</b></a>
           <a href="#work-${next.slug}"><small>Next Case</small><b>${next.name}</b></a>
         </nav>
       </div>
       ${ctaBand()}`;
   }
 
-  /* ================= 사업 진단 ================= */
-  function renderDiagQuestions() {
-    $('#dg-form').innerHTML =
-      `<div class="dg-legend"><span>각 문장이 우리 회사에 얼마나 해당하나요?</span><span>1 전혀 아니다 · 5 매우 그렇다</span></div>` +
-      DIAG.map((d, i) => `
-        <div class="dg-q" id="dgq-${i}">
-          <span class="dg-no">${pad(i + 1)}</span>
-          <div><p class="dg-text" id="dgt-${i}">${d.q}</p></div>
-          <fieldset class="scale" aria-labelledby="dgt-${i}">
-            ${SCALE.map((l, k) => `<label class="opt"><input type="radio" name="dg-${i}" id="dg-${i}-${k + 1}" value="${k + 1}"><span><b>${k + 1}</b>${l}</span></label>`).join('')}
-          </fieldset>
-        </div>`).join('');
-  }
-
-  function updateDiag() {
-    const answered = state.answers.filter(Boolean).length;
-    const done = answered === DIAG.length;
-    const score = scoreOf(state.answers);
-    const st = done ? stageOf(score) : null;
-    $('#dg-card').innerHTML = `
-      <p class="dg-label">Business Score</p>
-      <p class="dg-score"><b>${done ? score : '—'}</b><span>/100</span></p>
-      <div class="dg-prog" role="progressbar" aria-label="응답 진행률" aria-valuemin="0" aria-valuemax="${DIAG.length}" aria-valuenow="${answered}"><i style="width:${answered / DIAG.length * 100}%"></i></div>
-      <p class="dg-count">${answered} / ${DIAG.length} 응답</p>
-      ${done ? `<p class="dg-stage">${st.name}</p>` : ''}
-      <ul class="dg-stages">${STAGES.map(s => `<li class="${st && st.name === s.name ? 'on' : ''}"><b>${s.name}</b><span>${s.range}</span></li>`).join('')}</ul>
-      ${state.example ? '<p class="dg-note">예시 응답으로 계산한 결과입니다.</p>' : ''}
-      <div class="dg-actions">
-        ${done ? `<a class="btn btn-gold" href="#contact">상담 신청하기${ic('arrow')}</a><button type="button" class="btn btn-light" data-diag-scroll>결과 자세히 보기</button>` : ''}
-        ${answered ? '<button type="button" class="linkbtn" data-diag-reset>다시 하기</button>' : '<button type="button" class="linkbtn" data-diag-example>예시 응답으로 미리 보기</button>'}
-      </div>`;
-    DIAG.forEach((d, i) => $('#dgq-' + i).classList.toggle('done', !!state.answers[i]));
-
-    const sec = $('#dg-result-sec');
-    sec.hidden = !done;
-    if (!done) return;
-    const weak = weakest(state.answers);
-    const weakIdx = weak.map(w => w.i);
-    $('#dg-result').innerHTML = `
-      <div class="dg-res">
-        <div>
-          <p class="res-score">${score}<span>/100</span></p>
-          <p class="res-stage">${st.name}</p>
-        </div>
-        <div>
-          <div class="bars-head"><span>영역</span><span class="ticks"><span>0</span><span>5</span><span>10</span></span><span></span></div>
-          <ul class="bars">${DIAG.map((d, i) => { const v = itemScore(state.answers[i]); return `<li class="${weakIdx.includes(i) ? 'low' : ''}"><span class="b-l">${d.ko}</span><span class="b-t"><i style="width:${v * 10}%"></i></span><span class="b-v">${fmt(v)}</span></li>`; }).join('')}</ul>
-        </div>
-      </div>
-      <h3 class="weak-h">먼저 보완할 영역</h3>
-      <ul class="weak">${weak.map(w => { const s = svcBy(w.d.svc); return `<li><b>${w.d.ko}</b><p>${fmt(w.v)}점 · ${s.en}</p><a class="tlink" href="#expertise-${s.slug}">서비스 보기${ic('arrow')}</a></li>`; }).join('')}</ul>
-      <div class="btns res-cta">
-        <a class="btn btn-navy" href="#contact">상담 신청하기${ic('arrow')}</a>
-        <button type="button" class="btn btn-ink" data-diag-reset>다시 하기</button>
-      </div>`;
-  }
-
-  function fillAnswers(arr, example) {
-    state.answers = arr.slice();
-    state.example = example;
-    DIAG.forEach((d, i) => $$(`input[name="dg-${i}"]`).forEach(r => { r.checked = Number(r.value) === arr[i]; }));
-    updateDiag();
-  }
-
   /* ================= 라우터 ================= */
-  const PAGES = ['home', 'about', 'expertise', 'work', 'contact', 'diagnosis'];
+  const PAGES = ['home', 'about', 'services', 'industries', 'work', 'contact'];
   let ready = false;
 
   function parse() {
     const h = decodeURIComponent(location.hash.slice(1));
-    if (h.indexOf('expertise-') === 0 && svcBy(h.slice(10))) return { page: 'service', slug: h.slice(10), nav: 'expertise' };
+    if (h.indexOf('services-') === 0 && planBy(h.slice(9))) return { page: 'services', nav: 'services', anchor: 'svc-' + h.slice(9) };
     if (h.indexOf('work-') === 0 && caseBy(h.slice(5))) return { page: 'case', slug: h.slice(5), nav: 'work' };
     if (h === 'press' && caseBy('dendeal')) return { page: 'case', slug: 'dendeal', nav: 'work', anchor: 'press-sec' };   // 보도는 덴딜 사례 안에 있다
-    if (h === 'dental-program') return { page: 'program', nav: 'work' };
-    if (h === 'mfg-program') return { page: 'mfg', nav: 'work' };
+    if (h === 'dental-program') return { page: 'program', nav: 'industries' };
+    if (h === 'mfg-program') return { page: 'mfg', nav: 'industries' };
     if (h === 'admin') return { page: 'admin', nav: '' };
+    if (h === 'expertise' || h.indexOf('expertise-') === 0) return { page: 'services', nav: 'services' };   // 예전 서비스 주소
+    if (h === 'diagnosis') return { page: 'contact', nav: 'contact' };   // 사업 진단 페이지는 없앴다
     if (PAGES.indexOf(h) > -1) return { page: h, nav: h };
     return { page: 'home', nav: 'home' };
   }
 
   function route() {
     const r = parse();
-    if (r.page === 'service') renderService(r.slug);
     if (r.page === 'case') renderCase(r.slug);
     if (r.page === 'admin') admEnter();
     $$('.page').forEach(p => { p.hidden = p.dataset.route !== r.page; });
@@ -2746,20 +2609,8 @@ h1:focus { outline: none; }
   window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ================= 이벤트 ================= */
-  document.addEventListener('change', e => {
-    const t = e.target;
-    if (t.type === 'radio' && t.name.indexOf('dg-') === 0) {
-      state.answers[Number(t.name.slice(3))] = Number(t.value);
-      state.example = false;
-      updateDiag();
-    }
-  });
-
   document.addEventListener('click', e => {
     const t = e.target;
-    if (t.closest('[data-diag-example]')) { fillAnswers(EXAMPLE, true); return; }
-    if (t.closest('[data-diag-reset]')) { fillAnswers(new Array(DIAG.length).fill(0), false); $('#dg-form').scrollIntoView({ block: 'start' }); return; }
-    if (t.closest('[data-diag-scroll]')) { $('#dg-result-sec').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
     const gi = t.closest('[data-lb]');
     if (gi) { openLb(gi.dataset.lb, gi.dataset.cap); return; }
     if (t.closest('.lb-close') || t === lb) { closeLb(); return; }
@@ -2849,10 +2700,11 @@ h1:focus { outline: none; }
   const num = n => Number(n || 0).toLocaleString('ko-KR');
   const kstTime = iso => new Date(iso).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
   const mmdd = date => date.slice(5).replace('-', '.');
-  const PAGE_LABEL = { home: '홈', about: '소개', expertise: '서비스', work: '프로젝트', press: '보도', contact: '상담 신청', diagnosis: '사업 진단', 'dental-program': '치과 & 기공소 자세히 보기', 'mfg-program': '사업화 프로그램' };
+  const PAGE_LABEL = { home: '홈', about: '소개', services: '서비스 · 가격', industries: '업종', work: '사례', press: '보도', contact: '상담 신청', 'dental-program': '업종 · 치과 · 의료', 'mfg-program': '업종 · 스타트업', expertise: '서비스 (이전 주소)', diagnosis: '사업 진단 (삭제됨)' };
   const pageLabel = k => {
     if (PAGE_LABEL[k]) return PAGE_LABEL[k];
-    if (k.indexOf('expertise-') === 0 && svcBy(k.slice(10))) return '서비스 · ' + svcBy(k.slice(10)).en;
+    if (k.indexOf('services-') === 0 && planBy(k.slice(9))) return '서비스 · ' + planBy(k.slice(9)).ko;
+    if (k.indexOf('expertise-') === 0) return '서비스 (이전 주소)';
     if (k.indexOf('work-') === 0 && caseBy(k.slice(5))) return '사례 · ' + caseBy(k.slice(5)).name;
     return k;
   };
@@ -3024,8 +2876,6 @@ h1:focus { outline: none; }
 
   /* ================= 시작 ================= */
   renderStatic();
-  renderDiagQuestions();
-  updateDiag();
   window.addEventListener('hashchange', route);
   route();
   ready = true;

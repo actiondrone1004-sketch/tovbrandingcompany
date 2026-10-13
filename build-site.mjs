@@ -26,12 +26,12 @@ const head = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="스타트업 · 중소기업을 위한 사업화 컨설팅. 사업기획 · 개발 · 마케팅 · 매출 · 투자까지, 사업을 직접 만들어 본 창업자가 함께합니다.">
+<meta name="description" content="좋은 아이디어를, 실행 가능한 사업으로. 사업 기획부터 수익모델 설계, 시장 진입과 실행 관리까지. 상담은 무료입니다.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="토브 파트너스">
 <meta property="og:title" content="토브 파트너스">
-<meta property="og:description" content="좋은 사업이 제대로 성장하도록 만듭니다.">
+<meta property="og:description" content="좋은 아이디어를, 실행 가능한 사업으로.">
 <meta name="theme-color" content="#071A2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 `;
