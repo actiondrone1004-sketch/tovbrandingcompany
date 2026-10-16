@@ -257,6 +257,46 @@ h1:focus { outline: none; }
 .method-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .method-3 .m-desc { font-size: .875rem; color: var(--on-dark-3); }
 
+/* ---------- 홈: 고민 → 방안 (상세페이지식 설득) ---------- */
+.pain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 3vw, 44px) clamp(20px, 2.6vw, 36px); }
+.pain li { display: grid; grid-template-rows: auto auto 1fr; gap: 12px; padding-top: 20px; border-top: 1px solid var(--ink); }
+.pain-no { font-family: var(--serif-en); font-size: 1.1rem; line-height: 1; color: var(--gold-deep); }
+.pain-q { font-family: var(--serif-ko); font-size: clamp(1.1rem, 1rem + .4vw, 1.3rem); font-weight: 500; line-height: 1.5; letter-spacing: -.02em; }
+.pain-a { display: flex; gap: 10px; align-items: flex-start; font-size: .9375rem; line-height: 1.7; color: var(--muted); }
+.pain-a .i { width: 16px; height: 16px; margin-top: .3em; color: var(--gold-deep); }
+.pain-bridge { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; margin-top: clamp(48px, 5vw, 72px); padding-top: clamp(28px, 3vw, 40px); border-top: 1px solid var(--rule); }
+.pain-bridge p { font-family: var(--serif-ko); font-size: clamp(1.2rem, 1.05rem + .7vw, 1.6rem); font-weight: 500; line-height: 1.45; letter-spacing: -.03em; }
+.pain-bridge em { font-style: normal; color: var(--gold-deep); }
+
+.vs { margin-top: clamp(48px, 5vw, 72px); border-top: 1px solid var(--rule-dark); }
+.vs-head, .vs li { display: grid; grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr); align-items: center; gap: 16px; }
+.vs-head { padding: 18px 0 14px; font-size: .75rem; font-weight: 500; letter-spacing: .14em; color: var(--on-dark-3); }
+.vs-head span:last-child { color: var(--gold); }
+.vs li { padding: 18px 0; border-top: 1px solid var(--rule-dark); }
+.vs-a { font-size: .9375rem; color: var(--on-dark-3); }
+.vs-b { font-family: var(--serif-ko); font-size: clamp(1rem, .95rem + .3vw, 1.15rem); font-weight: 500; color: var(--white); }
+.vs li > .i { width: 18px; height: 18px; justify-self: center; color: var(--gold); }
+
+@media (max-width: 900px) { .pain { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .pain { gap: 8px; }
+  .pain li { gap: 6px; padding: 12px; border: 1px solid var(--rule); background: var(--white); }
+  .pain-no { font-size: .8rem; }
+  .pain-q { font-size: .9rem; line-height: 1.45; }
+  .pain-a { gap: 6px; font-size: .72rem; line-height: 1.55; }
+  .pain-a .i { width: 12px; height: 12px; }
+  .pain-bridge { gap: 14px; margin-top: 28px; padding-top: 20px; }
+  .pain-bridge p { font-size: 1.1rem; }
+  .vs { margin-top: 32px; }
+  .vs-head, .vs li { grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr); gap: 8px; }
+  .vs-head { padding: 12px 0 8px; font-size: .62rem; letter-spacing: .08em; }
+  .vs li { padding: 10px 0; }
+  .vs-a { font-size: .72rem; line-height: 1.5; }
+  .vs-b { font-size: .8125rem; line-height: 1.5; }
+  .vs li > .i { width: 14px; height: 14px; }
+  .method-3 .m-en { font-size: .88rem; letter-spacing: .02em; }
+}
+
 /* ---------- 서비스 목록 ---------- */
 .svc-row { display: grid; grid-template-columns: 70px minmax(0, 1.2fr) minmax(0, 1fr) 40px; align-items: center; gap: 24px; padding: 22px 8px; border-bottom: 1px solid var(--rule); transition: background-color .35s ease, padding .35s ease; }
 .svc-index li:first-child .svc-row { border-top: 1px solid var(--ink); }
@@ -1514,6 +1554,50 @@ h1:focus { outline: none; }
       </div>
     </header>
 
+    <!-- 상세페이지식 설득 1: 고객의 고민 → 토브의 방안 -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="shead-row">
+          <div class="shead"><h2 class="h2">혹시, 이런 고민 중이신가요?</h2></div>
+        </div>
+        <ol class="pain">
+          <li><span class="pain-no">01</span><b class="pain-q">매출이 더 이상 늘지 않나요?</b><p class="pain-a"><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg>고객&nbsp;· 상품&nbsp;· 수익 구조부터 다시 봅니다</p></li>
+          <li><span class="pain-no">02</span><b class="pain-q">어떻게 확장해야 할지 고민인가요?</b><p class="pain-a"><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg>다음 시장&nbsp;· 신사업&nbsp;· 제휴 방향을 함께 찾습니다</p></li>
+          <li><span class="pain-no">03</span><b class="pain-q">아이디어는 있는데, 사업이 되지 않나요?</b><p class="pain-a"><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg>고객 검증&nbsp;· 수익모델&nbsp;· 출시 계획으로 바꿉니다</p></li>
+          <li><span class="pain-no">04</span><b class="pain-q">마케팅비는 쓰는데 문의가 늘지 않나요?</b><p class="pain-a"><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg>채널&nbsp;· 콘텐츠&nbsp;· 홈페이지를 하나의 흐름으로 잇습니다</p></li>
+          <li><span class="pain-no">05</span><b class="pain-q">홈페이지는 있는데 고객이 머물지 않나요?</b><p class="pain-a"><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg>사업에 맞춘 홈페이지로 다시 설계합니다</p></li>
+          <li><span class="pain-no">06</span><b class="pain-q">영업을 누구에게, 어떻게 할지 막막한가요?</b><p class="pain-a"><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg>대상 발굴&nbsp;· TM&nbsp;· 제안서&nbsp;· 미팅까지 함께합니다</p></li>
+        </ol>
+        <div class="pain-bridge">
+          <p>혼자 답을 찾지 않아도 됩니다.<br>방안은 <em>함께</em> 찾겠습니다.</p>
+          <a class="btn btn-navy" href="#contact">무료 상담 신청<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 상세페이지식 설득 2: 방안 모색 → 대안 마련 → 함께 실행 + 혼자 할 때 vs 함께할 때 -->
+    <section class="sec dark">
+      <div class="wrap">
+        <div class="shead">
+          <h2 class="h2">방안을 찾고, 대안을 만들고,<br>끝까지 함께합니다</h2>
+        </div>
+        <ol class="method method-3">
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-compass"></use></svg><span class="m-no">01</span><h3 class="m-en">Discover</h3><p class="m-ko">방안 모색</p><p class="m-desc">현황&nbsp;· 시장&nbsp;· 고객 진단&nbsp;· 막힌 지점 찾기</p></li>
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="m-no">02</span><h3 class="m-en">Plan</h3><p class="m-ko">대안 마련</p><p class="m-desc">수익 구조&nbsp;· 우선순위&nbsp;· 일정&nbsp;· 핵심 지표</p></li>
+          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-trend"></use></svg><span class="m-no">03</span><h3 class="m-en">Together</h3><p class="m-ko">함께 실행</p><p class="m-desc">홈페이지&nbsp;· 마케팅&nbsp;· 영업 실행&nbsp;· 월간 점검</p></li>
+        </ol>
+        <div class="vs">
+          <p class="vs-head" aria-hidden="true"><span>혼자 할 때</span><span></span><span>토브와 함께할 때</span></p>
+          <ul>
+            <li><span class="vs-a"><span class="sr">혼자 할 때: </span>감으로 내리는 결정</span><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg><span class="vs-b"><span class="sr">토브와 함께할 때: </span>고객&nbsp;· 지표로 내리는 결정</span></li>
+            <li><span class="vs-a"><span class="sr">혼자 할 때: </span>채널마다 따로 움직이는 마케팅</span><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg><span class="vs-b"><span class="sr">토브와 함께할 때: </span>하나의 계획으로 움직이는 마케팅</span></li>
+            <li><span class="vs-a"><span class="sr">혼자 할 때: </span>기획서에서 멈추는 계획</span><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg><span class="vs-b"><span class="sr">토브와 함께할 때: </span>실행&nbsp;· 월간 점검까지 가는 계획</span></li>
+            <li><span class="vs-a"><span class="sr">혼자 할 때: </span>대표 혼자 뛰는 영업</span><svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg><span class="vs-b"><span class="sr">토브와 함께할 때: </span>대상 발굴부터 미팅까지 함께하는 영업</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- 대표가 만든 플랫폼 → 브랜딩 분야 (글보다 그림) -->
     <section class="sec">
       <div class="wrap">
@@ -1559,19 +1643,6 @@ h1:focus { outline: none; }
       </div>
     </section>
 
-    <section class="sec dark">
-      <div class="wrap">
-        <div class="shead">
-          <h2 class="h2">설계하고, 계획하고,<br>끝까지 관리합니다</h2>
-        </div>
-        <ol class="method method-3">
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-compass"></use></svg><span class="m-no">01</span><h3 class="m-en">Design</h3><p class="m-ko">사업모델 설계</p><p class="m-desc">고객 · 문제 · 가치 제안 · 수익 구조</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-layers"></use></svg><span class="m-no">02</span><h3 class="m-en">Plan</h3><p class="m-ko">실행 계획 수립</p><p class="m-desc">우선순위 · 일정 · 예산 · 핵심 지표</p></li>
-          <li><svg class="i m-icon" aria-hidden="true"><use href="#i-trend"></use></svg><span class="m-no">03</span><h3 class="m-en">Execute</h3><p class="m-ko">실행 관리</p><p class="m-desc">개발 · 마케팅 · 영업 · 외부 전문가 협업</p></li>
-        </ol>
-      </div>
-    </section>
-
     <section class="sec">
       <div class="wrap">
         <div class="shead-row">
@@ -1596,7 +1667,7 @@ h1:focus { outline: none; }
       </div>
     </section>
 
-    <div class="js-cta"></div>
+    <div class="js-cta" data-h="고민을 말씀해 주세요.&lt;br&gt;방안은 함께 찾겠습니다."></div>
   </section>
 
   <!-- ===================== ABOUT ===================== -->
@@ -2762,12 +2833,13 @@ h1:focus { outline: none; }
   const caseBy = slug => CASES.find(c => c.slug === slug);
 
   /* ================= 조각 ================= */
-  const ctaBand = () => `
+  /* 제목은 페이지마다 data-h 로 바꿀 수 있다 (홈: 설득형 문구) */
+  const ctaBand = (h = '상담은 무료입니다.') => `
     <section class="cta-band dark">
       <div class="cta-bg" style="background-image:url('img/drone-xwing.jpg')" aria-hidden="true"></div>
       <div class="wrap cta-in">
         <div>
-          <h2 class="h2">상담은 무료입니다.</h2>
+          <h2 class="h2">${h}</h2>
           <ol class="cta-steps"><li><span>01</span>무료 상담 신청</li><li><span>02</span>무료 상담</li><li><span>03</span>제안서 · 견적</li><li><span>04</span>계약 · 착수</li></ol>
         </div>
         <div class="btns">
@@ -2830,7 +2902,7 @@ h1:focus { outline: none; }
         <p class="case-ind">${c.industry}</p>
       </article>`).join('')}</div>`;
 
-    $$('.js-cta').forEach(el => { el.outerHTML = ctaBand(); });
+    $$('.js-cta').forEach(el => { el.outerHTML = ctaBand(el.dataset.h); });
   }
 
   const caseVisual = c => (c.gallery
