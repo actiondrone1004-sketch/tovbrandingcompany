@@ -1615,6 +1615,16 @@ h1:focus { outline: none; }
   .advid { grid-template-columns: 1fr; }
   .advid-media { width: min(100%, 320px); margin-inline: auto; }
 }
+/* 홈: 업종별 영상 두 개 나란히 (휴대폰에서는 위아래) */
+.hvids { display: grid; grid-template-columns: repeat(2, minmax(0, 340px)); justify-content: center; gap: clamp(32px, 6vw, 112px); }
+.advid.hv { display: block; }
+.hv-cap { margin-top: 24px; }
+.hv-k { font-size: .75rem; font-weight: 500; letter-spacing: .08em; color: var(--gold-deep); }
+.hv-t { margin: 8px 0 12px; font-family: var(--serif-ko); font-size: clamp(1.15rem, 1rem + .5vw, 1.4rem); font-weight: 500; line-height: 1.4; letter-spacing: -.03em; }
+@media (max-width: 760px) {
+  .hvids { grid-template-columns: 1fr; gap: 56px; }
+  .hv-cap { width: min(100%, 320px); margin-inline: auto; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -1786,6 +1796,40 @@ h1:focus { outline: none; }
         <div class="what-plans" id="home-plans">
           <p class="what-h">상품 3종</p>
           <ol class="svc-index" id="home-svc"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 홈: 영상으로 보는 업종별 프로그램 (치과 · 기업 상세와 같은 영상 파일, 2026-10-29 사용자: "홈화면에서도 보이게") -->
+    <section class="sec bg-white">
+      <div class="wrap">
+        <div class="shead-row">
+          <div class="shead"><h2 class="h2">영상으로 보는<br>업종별 프로그램</h2></div>
+          <a class="tlink" href="#industries">업종 전체 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <div class="hvids">
+          <div class="advid hv">
+            <figure class="advid-media">
+              <video src="img/dental-ad.mp4" poster="img/dental-ad-poster.jpg" controls muted loop playsinline preload="none" aria-label="35초 광고 영상: 우리 동네 구강건강 상생 캠페인"></video>
+              <button type="button" class="advid-snd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>소리 켜기</button>
+            </figure>
+            <div class="hv-cap">
+              <p class="hv-k">치과 · 의료  ·  35초</p>
+              <h3 class="hv-t">우리 동네 구강건강 상생 캠페인</h3>
+              <a class="tlink" href="#dental-program">치과 프로그램 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </div>
+          <div class="advid hv">
+            <figure class="advid-media">
+              <video src="img/biz-ad.mp4" poster="img/biz-ad-poster.jpg" controls muted loop playsinline preload="none" aria-label="광고 영상: 찾아가는 영업에서 찾아오는 플랫폼으로, 제조사 · 유통사를 위한 제안"></video>
+              <button type="button" class="advid-snd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>소리 켜기</button>
+            </figure>
+            <div class="hv-cap">
+              <p class="hv-k">기업 · 제조 · 유통  ·  1분 13초</p>
+              <h3 class="hv-t">찾아오는 플랫폼 회사</h3>
+              <a class="tlink" href="#mfg-program">기업 프로그램 보기<svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -3712,7 +3756,7 @@ h1:focus { outline: none; }
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   });
 
-  /* ================= 업종 상세 광고 영상 (치과 · 기업, .advid 마다) ================= */
+  /* ================= 광고 영상 (홈 · 치과 · 기업 상세, .advid 마다) ================= */
   // 화면에 반 이상 보이면 소리 없이 자동 재생, 벗어나면 멈춘다 (사용자가 직접 멈추면 다시 틀지 않는다. 동작 줄이기 설정이면 자동 재생 안 함)
   // '소리 켜기'나 장면 목록을 누르면 소리를 켜고 처음(또는 그 장면)부터 한 번 재생한다. 다른 페이지로 가면 멈춘다
   document.querySelectorAll('.advid').forEach(box => {
@@ -3725,7 +3769,10 @@ h1:focus { outline: none; }
     let autoPause = false, userStopped = false;
     v.muted = true;
     const stop = () => { if (!v.paused) { autoPause = true; v.pause(); } };
-    const withSound = t => { v.muted = false; v.loop = false; v.currentTime = t; userStopped = false; v.play().catch(() => {}); };
+    const withSound = t => {
+      document.querySelectorAll('.advid video').forEach(o => { if (o !== v && !o.paused) o.pause(); });   // 소리 켠 영상 하나만 (홈에 둘이 함께 있다)
+      v.muted = false; v.loop = false; v.currentTime = t; userStopped = false; v.play().catch(() => {});
+    };
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(es => es.forEach(e => {
         if (e.isIntersecting && e.intersectionRatio >= .5) { if (!reduce && !userStopped && v.paused) v.play().catch(() => {}); }
