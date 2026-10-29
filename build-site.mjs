@@ -26,12 +26,12 @@ const head = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="좋은 아이디어를, 실행 가능한 사업으로. 사업 기획부터 수익모델 설계, 시장 진입과 실행 관리까지. 상담은 무료입니다.">
+<meta name="description" content="기획부터 실행까지 함께하는 사업 컨설팅. 사업 기획 · 홈페이지 · 마케팅 · 영업을 한 팀이 맡습니다. 상담은 무료입니다.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="토브 파트너스">
-<meta property="og:title" content="토브 파트너스">
-<meta property="og:description" content="좋은 아이디어를, 실행 가능한 사업으로.">
+<meta property="og:title" content="토브 파트너스 · 사업 컨설팅">
+<meta property="og:description" content="기획부터 실행까지 함께하는 사업 컨설팅">
 <meta name="theme-color" content="#071A2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 `;
@@ -42,8 +42,8 @@ rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, 'index.html'), html);
 
-// 4) 이미지 복사: 페이지에서 실제로 쓰는 이미지와 사진 출처(CREDITS.txt)만
-const used = new Set([...html.matchAll(/img\/([\w.-]+\.(?:jpg|png|svg))/g)].map(m => m[1]));
+// 4) 이미지 · 영상 복사: 페이지에서 실제로 쓰는 파일과 사진 출처(CREDITS.txt)만 (mp4: 치과 상세 35초 광고 영상)
+const used = new Set([...html.matchAll(/img\/([\w.-]+\.(?:jpg|png|svg|mp4))/g)].map(m => m[1]));
 for (const m of html.matchAll(/\['(p\d+)', '/g)) used.add(m[1] + '.jpg'); // 파트너 사진 (img/partners/${id}.jpg)
 const skip = name => name !== 'CREDITS.txt' && !used.has(name);
 function copyDir(from, to) {

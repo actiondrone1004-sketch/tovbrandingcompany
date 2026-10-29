@@ -22,3 +22,16 @@ Stock photos (Unsplash License: free for commercial use, no attribution required
   dental-waiting.jpg      https://unsplash.com/photos/pxOQ-P97sA8
   dental-platform.jpg     사용자 제공 치과 플랫폼(AI 치과비서) 화면. 치과명·이름은 OO로 가림
   actiondrone-cover.jpg        액션드론 로고를 4:3 흰 배경에 배치한 대표 이미지
+
+2026-10-28 업종 상세 페이지 (제안서 맞춤)
+  dendeal-map.jpg              사용자 제공 덴딜 거래처 지도 (네이버 지도 화면 · NAVER · OpenStreetMap 표기 유지). 상태 표시줄 · 버튼은 잘라냄
+  ex-qr-counter.png / ex-qr-booking.png / ex-qr-done.png   HTML로 그린 가상 예시 화면 (제안서/_build/build_mocks_qr.js). A치과는 가상, QR은 example.com
+  poster-shop.jpg / poster-academy.jpg / poster-company.jpg   토브가 만든 지역 상생 구강건강 포스터 (제안서/지역협력)
+  startup-hero.jpg             Pexels  https://www.pexels.com/photo/a-man-discussing-while-pointing-on-the-sticky-notes-4623462/
+  biz-hero.jpg                 Pexels  https://www.pexels.com/photo/engineer-in-industrial-factory-using-tablet-32845694/
+
+2026-10-29 우리 동네 구강건강 상생 캠페인 (상생캠페인 제안서 맞춤)
+  ex-qr-counter.png (교체)     계산대 QR 스탠드: "QR로 구강건강 정보" · A치과 주관 · 심의필 자리 (build_mocks_qr.js 다시 생성)
+  ex-qr-info.png               HTML로 그린 가상 구강건강 정보 페이지 (제안서/_build/build_mocks_qr.js). A치과는 가상, 치과 안내 · 예약은 '심의 후 연결' 표시
+  dental-ad.mp4                직접 만든 35초 광고 영상 홈페이지용 (720×1280). 원본 제안서/영상/토브파트너스_치과지역광고_35초.mp4, 배경음악은 스크립트로 직접 작곡 · 합성 (외부 음원 없음)
+  dental-ad-poster.jpg         위 영상의 첫 장면 (3초) 정지 화면
