@@ -35,3 +35,5 @@ Stock photos (Unsplash License: free for commercial use, no attribution required
   ex-qr-info.png               HTML로 그린 가상 구강건강 정보 페이지 (제안서/_build/build_mocks_qr.js). A치과는 가상, 치과 안내 · 예약은 '심의 후 연결' 표시
   dental-ad.mp4                직접 만든 35초 광고 영상 홈페이지용 (720×1280). 원본 제안서/영상/토브파트너스_치과지역광고_35초.mp4, 배경음악은 스크립트로 직접 작곡 · 합성 (외부 음원 없음)
   dental-ad-poster.jpg         위 영상의 첫 장면 (3초) 정지 화면
+  biz-ad.mp4                   직접 만든 제조사 · 유통사 광고 영상 홈페이지용 (73초, 720×1280). 원본 제안서/영상/토브파트너스_제조유통_광고영상.mp4, 배경음악 직접 합성
+  biz-ad-poster.jpg            위 영상의 첫 장면 정지 화면

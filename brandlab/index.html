@@ -1598,8 +1598,12 @@ h1:focus { outline: none; }
 
 /* 치과 상세: 35초 광고 영상 (세로 9:16, 장면 목록을 누르면 그 시점부터 재생) */
 .advid { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
-.advid-media { margin: 0; aspect-ratio: 9 / 16; background: var(--navy); box-shadow: 0 24px 48px rgba(7, 26, 45, .18); }
+.advid-media { position: relative; margin: 0; aspect-ratio: 9 / 16; background: var(--navy); box-shadow: 0 24px 48px rgba(7, 26, 45, .18); }
 .advid-media video { display: block; width: 100%; height: 100%; object-fit: cover; background: var(--navy); }
+.advid-snd { position: absolute; right: 12px; top: 12px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: rgba(7, 26, 45, .8); color: var(--white); font: inherit; font-size: .8rem; font-weight: 500; letter-spacing: .02em; cursor: pointer; transition: background-color .2s ease; }
+.advid-snd:hover, .advid-snd:focus-visible { background: var(--navy); }
+.advid-snd svg { width: 18px; height: 18px; flex: none; }
+.advid-snd[hidden] { display: none; }
 .advid-text .h2 { margin-bottom: clamp(24px, 3vw, 36px); }
 .advid-ch { list-style: none; margin: 0 0 18px; padding: 0; border-top: 1px solid var(--rule); }
 .advid-ch li { border-bottom: 1px solid var(--rule); }
@@ -2080,12 +2084,13 @@ h1:focus { outline: none; }
     </header>
 
     <!-- 35초 광고 영상: 제안서/영상/토브파트너스_치과지역광고_35초.mp4 의 홈페이지용 가벼운 판 (720×1280, 2026-10-29).
-         누르기 전에는 내려받지 않는다 (preload="none"). 다시 만들기: 제안서/_build/build_ad_video.js --web -->
+         화면에 보이면 소리 없이 자동 재생 (브라우저 규칙상 소리는 사용자가 켜야 한다), 안 보이면 멈춘다. 다시 만들기: 제안서/_build/build_ad_video.js --web -->
     <section class="sec bg-white">
       <div class="wrap">
         <div class="advid">
           <figure class="advid-media">
-            <video id="adVideo" src="img/dental-ad.mp4" poster="img/dental-ad-poster.jpg" controls playsinline preload="none" aria-label="35초 광고 영상: 우리 동네 구강건강 상생 캠페인"></video>
+            <video src="img/dental-ad.mp4" poster="img/dental-ad-poster.jpg" controls muted loop playsinline preload="none" aria-label="35초 광고 영상: 우리 동네 구강건강 상생 캠페인"></video>
+            <button type="button" class="advid-snd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>소리 켜기</button>
           </figure>
           <div class="advid-text">
             <h2 class="h2">35초로 보는<br>우리 동네 구강건강 상생 캠페인</h2>
@@ -2648,6 +2653,33 @@ h1:focus { outline: none; }
         <p class="phero-sub">영업사원이 찾아가는 회사에서,<br>고객이 먼저 찾는 플랫폼 회사로</p>
       </div>
     </header>
+
+    <!-- 제조사 · 유통사 광고 영상 (73초): 제안서/영상/토브파트너스_제조유통_광고영상.mp4 의 홈페이지용 가벼운 판 (720×1280, 2026-10-29).
+         포인트임플란트 제안 영상을 회사 이름 없이 일반화하고 바이럴 · 기업 인프라 · 매출이 도는 구조를 더했다. 다시 만들기: 제안서/_build/build_ad_video_biz.js --web -->
+    <section class="sec bg-white">
+      <div class="wrap">
+        <div class="advid">
+          <figure class="advid-media">
+            <video src="img/biz-ad.mp4" poster="img/biz-ad-poster.jpg" controls muted loop playsinline preload="none" aria-label="광고 영상: 찾아가는 영업에서 찾아오는 플랫폼으로, 제조사 · 유통사를 위한 제안"></video>
+            <button type="button" class="advid-snd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>소리 켜기</button>
+          </figure>
+          <div class="advid-text">
+            <h2 class="h2">영상으로 보는<br>찾아오는 플랫폼 회사</h2>
+            <ol class="advid-ch" aria-label="영상 장면 바로 보기">
+              <li><button type="button" data-t="5"><span>0:05</span>찾아가는 영업에서, 찾아오는 플랫폼으로</button></li>
+              <li><button type="button" data-t="17"><span>0:17</span>기본 바이럴 광고 5가지</button></li>
+              <li><button type="button" data-t="24"><span>0:24</span>주문 · A/S · 교육, 플랫폼 하나로</button></li>
+              <li><button type="button" data-t="31"><span>0:31</span>영업사원은 계약하러 갑니다</button></li>
+              <li><button type="button" data-t="38"><span>0:38</span>거래처 · 대리점 · 협력사를 하나의 인프라로</button></li>
+              <li><button type="button" data-t="45"><span>0:45</span>문의 → 계약 → 재주문, 매출이 도는 구조</button></li>
+              <li><button type="button" data-t="57"><span>0:57</span>회원 위에 쌓는 플랫폼 수익 구조</button></li>
+              <li><button type="button" data-t="63"><span>1:03</span>해외 대리점 · 바이어로</button></li>
+            </ol>
+            <p class="src">소리가 있는 영상입니다. 앱 · 검색 화면은 예시이며, 매출 증가 폭을 약속하지 않습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 대표가 직접 만든 플랫폼: 거래처 지도 · 앱 화면 · 기능 확장 -->
     <section class="sec">
@@ -3680,24 +3712,38 @@ h1:focus { outline: none; }
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   });
 
-  /* ================= 치과 상세: 35초 광고 영상 ================= */
-  // 장면 목록을 누르면 그 시점부터 재생하고, 지금 장면을 표시한다. 다른 페이지로 가면 멈춘다
-  (() => {
-    const v = document.getElementById('adVideo');
+  /* ================= 업종 상세 광고 영상 (치과 · 기업, .advid 마다) ================= */
+  // 화면에 반 이상 보이면 소리 없이 자동 재생, 벗어나면 멈춘다 (사용자가 직접 멈추면 다시 틀지 않는다. 동작 줄이기 설정이면 자동 재생 안 함)
+  // '소리 켜기'나 장면 목록을 누르면 소리를 켜고 처음(또는 그 장면)부터 한 번 재생한다. 다른 페이지로 가면 멈춘다
+  document.querySelectorAll('.advid').forEach(box => {
+    const v = box.querySelector('video');
     if (!v) return;
-    const items = [...document.querySelectorAll('.advid-ch li')];
+    const snd = box.querySelector('.advid-snd');
+    const items = [...box.querySelectorAll('.advid-ch li')];
     const at = li => +li.querySelector('button').dataset.t;
-    items.forEach(li => li.querySelector('button').addEventListener('click', () => {
-      v.currentTime = at(li);
-      v.play().catch(() => {});
-    }));
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let autoPause = false, userStopped = false;
+    v.muted = true;
+    const stop = () => { if (!v.paused) { autoPause = true; v.pause(); } };
+    const withSound = t => { v.muted = false; v.loop = false; v.currentTime = t; userStopped = false; v.play().catch(() => {}); };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting && e.intersectionRatio >= .5) { if (!reduce && !userStopped && v.paused) v.play().catch(() => {}); }
+        else stop();
+      }), { threshold: [0, .5] }).observe(v);
+    }
+    v.addEventListener('pause', () => { if (autoPause) { autoPause = false; return; } if (!v.ended) userStopped = true; });
+    v.addEventListener('play', () => { userStopped = false; });
+    v.addEventListener('volumechange', () => { if (snd) snd.hidden = !v.muted; });
+    if (snd) snd.addEventListener('click', () => withSound(0));
+    items.forEach(li => li.querySelector('button').addEventListener('click', () => withSound(at(li))));
     v.addEventListener('timeupdate', () => {
       let cur = -1;
       items.forEach((li, k) => { if (v.currentTime >= at(li)) cur = k; });
       items.forEach((li, k) => li.classList.toggle('on', k === cur));
     });
-    window.addEventListener('hashchange', () => { if (!v.paused) v.pause(); });
-  })();
+    window.addEventListener('hashchange', stop);
+  });
 
   /* ================= 시작 ================= */
   renderStatic();
