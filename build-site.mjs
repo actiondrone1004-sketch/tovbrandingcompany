@@ -26,12 +26,12 @@ const head = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="기획부터 실행까지 함께하는 사업 컨설팅. 사업 기획 · 홈페이지 · 마케팅 · 영업을 한 팀이 맡습니다. 상담은 무료입니다.">
+<meta name="description" content="브랜딩 · 마케팅 · 매출을 설계하고 실행하는 에이전시. 브랜딩 · 마케팅 · 영업을 한 팀이 맡고, 매출로 봅니다. 상담은 무료입니다.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="토브 파트너스">
-<meta property="og:title" content="토브 파트너스 · 사업 컨설팅">
-<meta property="og:description" content="기획부터 실행까지 함께하는 사업 컨설팅">
+<meta property="og:title" content="토브 파트너스 · 매출 에이전시">
+<meta property="og:description" content="브랜딩 · 마케팅 · 매출을 설계하고 실행하는 에이전시">
 <meta name="theme-color" content="#071A2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 `;
