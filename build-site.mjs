@@ -21,6 +21,18 @@ for (const slug of hiddenSlugs) {
 // 2) 완전한 HTML 문서로 감싸고, 검색 · 공유용 정보를 넣는다
 if (!html.startsWith('<meta charset="utf-8">')) throw new Error('원본 첫 줄이 예상과 다릅니다');
 html = html.replace('<meta charset="utf-8">\n', '');
+// 검색 · AI 답변용 구조화 데이터: 회사 정보 + 홈 '자주 묻는 질문' (화면 문구를 그대로 쓴다, 2026-11-08)
+const SITE = 'https://tovpartners.web.app/';
+const plain = t => t.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim();
+const faq = [...html.matchAll(/<details><summary>([\s\S]*?)<\/summary><p>([\s\S]*?)<\/p><\/details>/g)]
+  .map(m => ({ '@type': 'Question', name: plain(m[1]), acceptedAnswer: { '@type': 'Answer', text: plain(m[2]) } }));
+if (faq.length < 3) throw new Error('홈의 자주 묻는 질문을 찾지 못했습니다');
+const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': [
+  { '@type': 'ProfessionalService', '@id': SITE + '#org', name: '토브 파트너스', alternateName: 'TOV PARTNERS', url: SITE, image: SITE + 'img/og-image.jpg',
+    description: '브랜딩 · 마케팅 · 매출을 설계하고 실행하는 에이전시', founder: { '@type': 'Person', name: '김상우' },
+    areaServed: { '@type': 'Country', name: 'KR' }, knowsAbout: ['브랜딩', '마케팅', '매출 설계', '영업', '홈페이지 제작'] },
+  { '@type': 'FAQPage', mainEntity: faq }
+] }).replace(/</g, '\\u003c');
 const head = `<!doctype html>
 <html lang="ko">
 <head>
@@ -32,6 +44,14 @@ const head = `<!doctype html>
 <meta property="og:site_name" content="토브 파트너스">
 <meta property="og:title" content="토브 파트너스 · 매출 에이전시">
 <meta property="og:description" content="브랜딩 · 마케팅 · 매출을 설계하고 실행하는 에이전시">
+<meta property="og:url" content="${SITE}">
+<meta property="og:image" content="${SITE}img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="토브 파트너스 · 브랜딩부터 매출까지, 설계하고 실행하는 에이전시">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="${SITE}">
+<script type="application/ld+json">${ld}</script>
 <meta name="theme-color" content="#071A2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 `;
